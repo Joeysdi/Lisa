@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Lisa Modeling Protection — แพลตฟอร์ม AI ปกป้องภาพลักษณ์สำหรับนางแบบ ครีเอเตอร์ และดารา"/>
+<title>Lisa Modeling Protection | ปกป้องภาพลักษณ์ด้วย AI</title>
+<style>
+:root{
+  --bg:#000;
+  --bg2:#0a0a0a;
+  --bg3:#111;
+  --card:#0f0f0f;
+  --card2:#161616;
+  --border:rgba(255,255,255,0.08);
+  --border2:rgba(255,255,255,0.14);
+  --text:#fff;
+  --muted:#888;
+  --subtle:#444;
+  --accent:#fff;
+  --accent-inv:#000;
+  --green:#4ade80;
+  --red:#f87171;
+  --yellow:#fbbf24;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Tahoma,system-ui,-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* progress */
+#spb{position:fixed;top:0;left:0;height:1px;width:0%;background:#fff;z-index:500;transition:width .08s linear;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:400;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:64px;background:rgba(0,0,0,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.logo-mark{width:32px;height:32px;background:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:900;color:#000;flex-shrink:0;}
+.logo-text{font-size:.98rem;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.2px;}
+.logo-text small{display:block;font-size:.58rem;color:var(--muted);font-weight:400;letter-spacing:.5px;}
+.nav-center{display:flex;gap:2px;}
+.nav-center a{color:var(--muted);font-size:.86rem;font-weight:500;padding:7px 13px;border-radius:7px;transition:all .18s;}
+.nav-center a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-signin{color:var(--muted);font-size:.86rem;padding:8px 13px;border-radius:7px;transition:all .18s;}
+.nav-signin:hover{color:#fff;}
+.nav-demo{background:#fff;color:#000;font-size:.86rem;font-weight:700;padding:9px 20px;border-radius:8px;transition:all .2s;}
+.nav-demo:hover{background:#e5e5e5;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.hamburger span{width:20px;height:1.5px;background:var(--muted);border-radius:2px;}
+.mob-nav{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.98);backdrop-filter:blur(24px);z-index:399;flex-direction:column;padding:24px 6%;gap:2px;}
+.mob-nav.open{display:flex;}
+.mob-nav a{color:var(--muted);font-size:1rem;padding:14px 0;border-bottom:1px solid var(--border);font-weight:500;}
+.mob-nav a:last-child{border:none;color:#fff;font-weight:700;margin-top:12px;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 6% 90px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 30%,transparent 100%);}
+.hero-pill{position:relative;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--border2);border-radius:100px;padding:6px 16px 6px 10px;font-size:.76rem;color:var(--muted);font-weight:600;letter-spacing:.3px;margin-bottom:28px;}
+.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:ldot 2s ease-in-out infinite;flex-shrink:0;}
+@keyframes ldot{0%,100%{opacity:1;}50%{opacity:.2;}}
+h1{position:relative;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:.98;letter-spacing:-3px;margin-bottom:26px;max-width:900px;}
+h1 .thin{font-weight:200;color:var(--muted);}
+.hero-p{position:relative;font-size:1.05rem;color:var(--muted);max-width:500px;line-height:1.85;margin-bottom:36px;}
+.hero-actions{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:70px;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:13px 26px;border-radius:9px;font-weight:700;font-size:.92rem;transition:all .2s;}
+.btn-p:hover{background:#e5e5e5;transform:translateY(-1px);}
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--muted);padding:13px 26px;border-radius:9px;font-weight:500;font-size:.92rem;border:1px solid var(--border2);transition:all .2s;}
+.btn-o:hover{border-color:rgba(255,255,255,.3);color:#fff;}
+.trust-strip{position:relative;display:flex;background:var(--card);border:1px solid var(--border);border-radius:13px;overflow:hidden;max-width:560px;}
+.tstat{flex:1;padding:18px 16px;text-align:center;border-right:1px solid var(--border);}
+.tstat:last-child{border:none;}
+.tstat-n{font-size:1.5rem;font-weight:900;color:#fff;line-height:1;}
+.tstat-l{font-size:.65rem;color:var(--muted);margin-top:5px;font-weight:500;letter-spacing:.3px;}
+
+/* TICKER */
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--bg2);}
+.ticker-inner{display:flex;gap:48px;animation:tick 30s linear infinite;width:max-content;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick-item{font-size:.7rem;color:var(--subtle);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+.tick-item::before{content:'+';color:rgba(255,255,255,.2);}
+
+/* SECTIONS */
+.sec{padding:100px 6%;}
+.sec-dark{background:var(--bg2);}
+.eyebrow{font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;}
+.sec-h{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;letter-spacing:-1px;line-height:1.08;margin-bottom:16px;}
+.sec-p{font-size:.96rem;color:var(--muted);line-height:1.88;max-width:480px;}
+
+/* HOW */
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:60px;}
+.steps{display:flex;flex-direction:column;gap:2px;}
+.step{display:flex;gap:18px;padding:20px 16px;border-radius:12px;cursor:pointer;transition:background .18s;}
+.step:hover{background:rgba(255,255,255,.03);}
+.step.on{background:rgba(255,255,255,.05);}
+.step-n{width:36px;height:36px;border-radius:8px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--subtle);flex-shrink:0;transition:all .25s;font-family:monospace;}
+.step.on .step-n{background:#fff;border-color:#fff;color:#000;}
+.step-t{font-size:.93rem;font-weight:700;color:var(--muted);margin-bottom:5px;transition:color .25s;}
+.step.on .step-t{color:#fff;}
+.step-d{font-size:.84rem;color:var(--muted);line-height:1.78;display:none;}
+.step.on .step-d{display:block;}
+.how-panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;min-height:370px;position:relative;overflow:hidden;}
+.panel-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+.panel-title{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
+.live-badge{display:flex;align-items:center;gap:5px;font-size:.7rem;color:var(--green);font-weight:600;}
+.live-badge::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:ldot 2s infinite;}
+.sbar{display:flex;align-items:center;gap:10px;font-size:.76rem;margin-bottom:10px;}
+.sbar-l{width:78px;color:var(--subtle);flex-shrink:0;font-size:.72rem;}
+.sbar-t{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.sbar-f{height:100%;border-radius:2px;background:#fff;}
+.sbar-v{width:30px;text-align:right;font-size:.72rem;font-weight:600;color:var(--muted);}
+.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+.mc{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:12px 13px;}
+.mc-l{font-size:.65rem;color:var(--subtle);margin-bottom:4px;letter-spacing:.3px;}
+.mc-v{font-size:1.2rem;font-weight:900;}
+.cv-w{color:#fff;}
+.cv-r{color:var(--red);}
+.cv-g{color:var(--green);}
+.alert-rows{display:flex;flex-direction:column;gap:7px;}
+.arow{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:10px 12px;font-size:.78rem;}
+.adot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.atext{flex:1;color:var(--muted);}
+.atime{font-size:.68rem;color:var(--subtle);}
+.review-box{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:15px;margin-bottom:11px;}
+.review-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px;}
+.rtag{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:5px;border:1px solid;}
+.rtag-ai{border-color:rgba(248,113,113,.3);color:var(--red);}
+.rtag-risk{border-color:rgba(251,191,36,.3);color:var(--yellow);}
+.rtag-src{border-color:var(--border2);color:var(--muted);}
+.review-meta{font-size:.76rem;color:var(--muted);line-height:1.75;}
+.review-actions{display:flex;gap:8px;}
+.ract{flex:1;border-radius:8px;padding:10px;text-align:center;font-size:.78rem;font-weight:700;cursor:pointer;border:1px solid;}
+.ract-remove{border-color:rgba(248,113,113,.3);color:var(--red);}
+.ract-safe{border-color:var(--border2);color:var(--muted);}
+.td-rows{display:flex;flex-direction:column;gap:8px;}
+.tdr{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:11px 13px;}
+.tdr-icon{font-size:1rem;flex-shrink:0;}
+.tdr-body{flex:1;}
+.tdr-name{font-size:.8rem;font-weight:600;}
+.tdr-plat{font-size:.68rem;color:var(--subtle);}
+.badge{font-size:.65rem;font-weight:700;padding:3px 9px;border-radius:100px;border:1px solid;}
+.b-sent{border-color:rgba(251,191,36,.25);color:var(--yellow);}
+.b-done{border-color:rgba(74,222,128,.25);color:var(--green);}
+.b-pend{border-color:var(--border2);color:var(--muted);}
+.td-avg{border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:10px;text-align:center;font-size:.78rem;color:var(--green);font-weight:600;margin-top:10px;}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-top:60px;}
+.fc{background:var(--card);padding:30px 26px;transition:background .18s;}
+.fc:hover{background:var(--card2);}
+.fc-ico{font-size:1.4rem;margin-bottom:14px;filter:grayscale(1);}
+.fc-t{font-size:.93rem;font-weight:700;margin-bottom:8px;}
+.fc-d{font-size:.84rem;color:var(--muted);line-height:1.72;}
+.fc-tag{display:inline-block;margin-top:12px;font-size:.62rem;font-weight:700;color:var(--subtle);border:1px solid var(--border);padding:2px 8px;border-radius:4px;letter-spacing:1px;text-transform:uppercase;}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;display:flex;flex-direction:column;}
+.tcard:hover{border-color:var(--border2);transform:translateY(-2px);}
+.stars{color:#fff;font-size:.8rem;letter-spacing:3px;margin-bottom:14px;opacity:.5;}
+.tquote{font-size:.88rem;color:var(--muted);line-height:1.82;flex:1;margin-bottom:20px;}
+.tauthor{display:flex;align-items:center;gap:10px;}
+.tavatar{width:36px;height:36px;border-radius:50%;background:var(--card2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:#fff;flex-shrink:0;}
+.tname{font-size:.84rem;font-weight:700;}
+.trole{font-size:.71rem;color:var(--muted);}
+.press-row{display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:56px;padding-top:44px;border-top:1px solid var(--border);}
+.press-item{font-size:.78rem;font-weight:800;color:var(--subtle);letter-spacing:2px;text-transform:uppercase;transition:color .2s;}
+.press-item:hover{color:var(--muted);}
+
+/* PRICING */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px;position:relative;transition:transform .2s;}
+.pcard:hover{transform:translateY(-3px);}
+.pcard.hot{border-color:rgba(255,255,255,.22);background:var(--card2);}
+.hot-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#fff;color:#000;font-size:.66rem;font-weight:800;padding:4px 14px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;}
+.p-tier{font-size:.64rem;font-weight:700;color:var(--subtle);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
+.p-name{font-size:1.3rem;font-weight:900;margin-bottom:6px;}
+.p-price{font-size:2rem;font-weight:900;color:#fff;margin-bottom:2px;}
+.p-price span{font-size:.84rem;color:var(--muted);font-weight:400;}
+.p-billing{font-size:.72rem;color:var(--subtle);margin-bottom:18px;}
+.p-desc{font-size:.84rem;color:var(--muted);line-height:1.72;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:18px;}
+.p-ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+.p-ul li{font-size:.84rem;color:var(--muted);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+.p-ul li.y::before{content:'✓';color:#fff;font-weight:700;flex-shrink:0;opacity:.6;}
+.p-ul li.n::before{content:'–';color:var(--subtle);flex-shrink:0;}
+.p-ul li.n{opacity:.4;}
+.p-btn{display:block;text-align:center;padding:12px;border-radius:9px;font-weight:700;font-size:.88rem;transition:all .2s;}
+.p-btn.solid{background:#fff;color:#000;}
+.p-btn.solid:hover{background:#e5e5e5;}
+.p-btn.line{border:1px solid var(--border2);color:var(--muted);}
+.p-btn.line:hover{border-color:rgba(255,255,255,.3);color:#fff;}
+
+.ctable{margin-top:44px;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:.84rem;}
+thead th{background:var(--card);padding:13px 18px;text-align:left;font-size:.65rem;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+thead th:first-child{border-radius:9px 0 0 0;}thead th:last-child{border-radius:0 9px 0 0;}
+tbody td{padding:13px 18px;border-bottom:1px solid var(--border);color:var(--muted);}
+tbody td:first-child{color:var(--text);font-weight:500;}
+tbody tr:hover td{background:rgba(255,255,255,.015);}
+td.y{color:#fff;opacity:.7;}
+td.n{color:var(--subtle);}
+td.p{color:var(--yellow);}
+
+/* FAQ */
+.faq-box{max-width:720px;margin:56px auto 0;}
+.fi{border-bottom:1px solid var(--border);}
+.fi-q{width:100%;background:none;border:none;color:#fff;font-family:inherit;font-size:.92rem;font-weight:600;padding:20px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;transition:color .2s;line-height:1.6;}
+.fi-q:hover{color:var(--muted);}
+.fi-ch{font-size:1rem;color:var(--muted);transition:transform .35s;flex-shrink:0;font-weight:300;font-size:1.3rem;line-height:1;}
+.fi-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.fi-ai{padding-bottom:20px;font-size:.88rem;color:var(--muted);line-height:1.88;}
+.fi.open .fi-a{max-height:320px;}
+.fi.open .fi-ch{transform:rotate(45deg);}
+
+/* DEMO */
+.demo-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;margin-top:60px;}
+.demo-pts{display:flex;flex-direction:column;gap:26px;}
+.dpt{display:flex;gap:15px;align-items:flex-start;}
+.dpt-ico{width:40px;height:40px;background:var(--card2);border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;filter:grayscale(1);}
+.dpt-t{font-size:.93rem;font-weight:700;margin-bottom:5px;}
+.dpt-d{font-size:.84rem;color:var(--muted);line-height:1.78;}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:34px;}
+.form-card h3{font-size:1.2rem;font-weight:800;margin-bottom:5px;}
+.form-card .sub{font-size:.84rem;color:var(--muted);margin-bottom:24px;line-height:1.7;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+.field label{font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.3px;}
+.field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--border2);color:#fff;font-family:inherit;font-size:.86rem;padding:11px 13px;border-radius:8px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+.field input::placeholder{color:var(--subtle);}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,255,255,.4);}
+.field textarea{resize:vertical;min-height:84px;}
+.field select option{background:#111;}
+.fsub{width:100%;background:#fff;color:#000;border:none;padding:13px;border-radius:9px;font-family:inherit;font-size:.93rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.fsub:hover{background:#e5e5e5;}
+.fnote{font-size:.7rem;color:var(--subtle);text-align:center;margin-top:10px;line-height:1.6;}
+
+/* CTA */
+.cta-wrap{padding:60px 6%;}
+.cta-inner{border:1px solid var(--border2);border-radius:22px;padding:80px 50px;text-align:center;position:relative;overflow:hidden;background:var(--card);}
+.cta-inner::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;}
+.cta-inner h2{position:relative;font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:14px;line-height:1.1;}
+.cta-inner p{position:relative;color:var(--muted);max-width:460px;margin:0 auto 32px;line-height:1.88;font-size:.98rem;}
+.cta-btns{position:relative;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 6% 28px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.foot-logo-text{font-size:.84rem;color:var(--muted);line-height:1.82;margin:14px 0 18px;max-width:220px;}
+.foot-social{display:flex;gap:8px;}
+.fsoc{width:32px;height:32px;background:var(--card2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted);transition:all .18s;}
+.fsoc:hover{border-color:var(--border2);color:#fff;}
+.foot-col h4{font-size:.64rem;font-weight:700;color:var(--subtle);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;}
+.foot-col a{display:block;font-size:.83rem;color:var(--muted);margin-bottom:9px;transition:color .18s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px;}
+.foot-copy{font-size:.75rem;color:var(--subtle);}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+.foot-links a{font-size:.75rem;color:var(--subtle);transition:color .18s;}
+.foot-links a:hover{color:var(--muted);}
+
+/* COOKIE */
+#cookie{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);width:min(680px,90vw);background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:16px;z-index:600;transition:transform .5s cubic-bezier(.34,1.56,.64,1);box-shadow:0 8px 40px rgba(0,0,0,.8);}
+#cookie.show{transform:translateX(-50%) translateY(0);}
+.ck-text{flex:1;font-size:.8rem;color:var(--muted);line-height:1.65;}
+.ck-text a{color:#fff;text-decoration:underline;text-underline-offset:2px;}
+.ck-btns{display:flex;gap:8px;flex-shrink:0;}
+.ck-acc{background:#fff;color:#000;border:none;padding:8px 16px;border-radius:7px;font-family:inherit;font-size:.8rem;font-weight:700;cursor:pointer;}
+.ck-dec{background:transparent;color:var(--muted);border:1px solid var(--border2);padding:8px 14px;border-radius:7px;font-family:inherit;font-size:.8rem;cursor:pointer;}
+
+/* TOAST */
+#toast{position:fixed;bottom:26px;right:26px;background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-size:.84rem;z-index:700;transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);max-width:300px;box-shadow:0 6px 32px rgba(0,0,0,.8);}
+#toast.show{transform:translateY(0);opacity:1;}
+
+/* DIVIDER */
+.divider{width:40px;height:1px;background:var(--border2);margin:0 0 32px;}
+
+@media(max-width:900px){
+  .how-grid,.demo-wrap{grid-template-columns:1fr;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .tgrid,.pgrid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .nav-center,.nav-signin,.nav-demo{display:none;}
+  .hamburger{display:flex;}
+  .feat-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .cta-inner{padding:48px 22px;}
+  .foot-grid{grid-template-columns:1fr;}
+  .foot-bottom{flex-direction:column;text-align:center;}
+  .trust-strip{flex-direction:column;}
+  .tstat{border-right:none;border-bottom:1px solid var(--border);}
+  .tstat:last-child{border:none;}
+  #cookie{flex-direction:column;text-align:center;}
+  .ck-btns{width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div id="spb"></div>
+
+<nav>
+  <div class="logo" onclick="scrollTo(0,0)">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">Lisa Modeling Protection<small>AI LIKENESS DEFENSE</small></div>
+  </div>
+  <div class="nav-center">
+    <a href="#how">ทำงานยังไง</a>
+    <a href="#features">ฟีเจอร์</a>
+    <a href="#pricing">ราคา</a>
+    <a href="#faq">ถามตอบ</a>
+  </div>
+  <div class="nav-right">
+    <a href="#" class="nav-signin">เข้าสู่ระบบ</a>
+    <a href="#demo" class="nav-demo">นัดดูตัวอย่าง</a>
+  </div>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-nav" id="mobnav">
+  <a href="#how">ทำงานยังไง</a>
+  <a href="#features">ฟีเจอร์</a>
+  <a href="#pricing">ราคา</a>
+  <a href="#faq">ถามตอบ</a>
+  <a href="#demo">นัดดูตัวอย่างฟรี →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-pill"><div class="live-dot"></div>ดูแลนางแบบกว่า 50,000 คนทั่วโลกอยู่ตอนนี้</div>
+  <h1>รูปคุณ<br/>กฎ<span class="thin">ของ</span>คุณ<br/>ไม่มีใครแตะต้องได้</h1>
+  <p class="hero-p">Lisa สแกนทั่วอินเทอร์เน็ตทุกวัน เพื่อหาและลบรูปหน้า เสียง หรือแบรนด์ของคุณที่โดนนำไปใช้โดยไม่ได้รับอนุญาต รวมถึง Deepfake ก่อนที่มันจะแพร่ออกไป</p>
+  <div class="hero-actions">
+    <a href="#demo" class="btn-p">เริ่มได้เลย ฟรี →</a>
+    <a href="#how" class="btn-o">ดูว่าทำงานยังไง</a>
+  </div>
+  <div class="trust-strip">
+    <div class="tstat"><div class="tstat-n">10M+</div><div class="tstat-l">สแกนต่อวัน</div></div>
+    <div class="tstat"><div class="tstat-n">99.3%</div><div class="tstat-l">แม่นยำในการตรวจจับ</div></div>
+    <div class="tstat"><div class="tstat-n">&lt;24h</div><div class="tstat-l">ลบได้เฉลี่ยใน</div></div>
+    <div class="tstat"><div class="tstat-n">FREE</div><div class="tstat-l">เริ่มเลยไม่มีค่าใช้จ่าย</div></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="tick-item">จดจำใบหน้า</span><span class="tick-item">จับ Deepfake</span><span class="tick-item">ลายนิ้วมือเสียง</span>
+    <span class="tick-item">ลบอัตโนมัติ</span><span class="tick-item">ออกใบอนุญาต IP</span><span class="tick-item">เฝ้าระวัง 24/7</span>
+    <span class="tick-item">บังคับใช้ DMCA</span><span class="tick-item">สแกน Dark Web</span><span class="tick-item">จับเนื้อหา AI</span>
+    <span class="tick-item">ปกป้องแบรนด์</span><span class="tick-item">จดจำใบหน้า</span><span class="tick-item">จับ Deepfake</span>
+    <span class="tick-item">ลายนิ้วมือเสียง</span><span class="tick-item">ลบอัตโนมัติ</span><span class="tick-item">ออกใบอนุญาต IP</span>
+    <span class="tick-item">เฝ้าระวัง 24/7</span><span class="tick-item">บังคับใช้ DMCA</span><span class="tick-item">สแกน Dark Web</span>
+    <span class="tick-item">จับเนื้อหา AI</span><span class="tick-item">ปกป้องแบรนด์</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <div class="eyebrow">วิธีการทำงาน</div>
+  <div class="divider"></div>
+  <h2 class="sec-h">เราสแกน คุณตัดสิน<br/>แล้วเราจัดการให้เลย</h2>
+  <div class="how-grid">
+    <div class="steps">
+      <div class="step on" data-i="0">
+        <div class="step-n">01</div>
+        <div><div class="step-t">ลงทะเบียนภาพและเสียงของคุณ</div><div class="step-d">อัปโหลดรูปสักไม่กี่รูปกับคลิปเสียงสั้นๆ AI ของเราจะสร้าง "ลายเซ็น" เฉพาะตัวของคุณ เก็บข้อมูลด้วยการเข้ารหัสระดับธนาคาร ไม่มีแชร์ให้ใครทั้งนั้น</div></div>
+      </div>
+      <div class="step" data-i="1">
+        <div class="step-n">02</div>
+        <div><div class="step-t">เราสแกนอินเทอร์เน็ตไม่หยุดทั้งวันทั้งคืน</div><div class="step-d">เซิร์ฟเวอร์ทั่วโลกกวาดโซเชียล เว็บไซต์ต่างๆ และ Dark Web ตลอดเวลา เทียบทุกรูปและทุกเสียงกับลายเซ็นของคุณ</div></div>
+      </div>
+      <div class="step" data-i="2">
+        <div class="step-n">03</div>
+        <div><div class="step-t">ดูว่าพบอะไรบ้าง</div><div class="step-d">ได้รับแจ้งทันทีพร้อมรายละเอียดครบ ทั้งแพลตฟอร์ม ยอดเข้าถึง และว่าเนื้อหาสร้างจาก AI หรือเปล่า ทุกอย่างอยู่ในแดชบอร์ดเดียวสบายตา</div></div>
+      </div>
+      <div class="step" data-i="3">
+        <div class="step-n">04</div>
+        <div><div class="step-t">กดลบ แล้วปล่อยให้เราจัดการ</div><div class="step-d">กดอนุมัติแค่ครั้งเดียว เราส่ง DMCA แจ้งแพลตฟอร์ม ติดตามผลให้ครบ เนื้อหาส่วนใหญ่หายไปภายใน 24 ชั่วโมง</div></div>
+      </div>
+    </div>
+    <div class="how-panel" id="howPanel">
+      <div class="panel-hd"><span class="panel-title">SCAN OVERVIEW</span><span class="live-badge">กำลังสแกน</span></div>
+      <div class="sbar"><span class="sbar-l">Instagram</span><div class="sbar-t"><div class="sbar-f" style="width:88%"></div></div><span class="sbar-v">88%</span></div>
+      <div class="sbar"><span class="sbar-l">TikTok</span><div class="sbar-t"><div class="sbar-f" style="width:73%"></div></div><span class="sbar-v">73%</span></div>
+      <div class="sbar"><span class="sbar-l">X / Twitter</span><div class="sbar-t"><div class="sbar-f" style="width:95%"></div></div><span class="sbar-v">95%</span></div>
+      <div class="sbar"><span class="sbar-l">Reddit</span><div class="sbar-t"><div class="sbar-f" style="width:61%"></div></div><span class="sbar-v">61%</span></div>
+      <div class="sbar"><span class="sbar-l">Telegram</span><div class="sbar-t"><div class="sbar-f" style="width:44%"></div></div><span class="sbar-v">44%</span></div>
+      <div class="sbar"><span class="sbar-l">Dark Web</span><div class="sbar-t"><div class="sbar-f" style="width:29%"></div></div><span class="sbar-v">29%</span></div>
+      <div class="mini-cards">
+        <div class="mc"><div class="mc-l">สแกนวันนี้</div><div class="mc-v cv-w">2.8M</div></div>
+        <div class="mc"><div class="mc-l">ตรงกับข้อมูล</div><div class="mc-v cv-w">2,841</div></div>
+        <div class="mc"><div class="mc-l">ไม่ได้รับอนุญาต</div><div class="mc-v cv-r">17</div></div>
+        <div class="mc"><div class="mc-l">ลบแล้ว</div><div class="mc-v cv-g">14</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec sec-dark" id="features">
+  <div class="eyebrow">ฟีเจอร์ทั้งหมด</div>
+  <div class="divider"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;">
+    <h2 class="sec-h" style="max-width:380px;margin:0;">ครบทุกอย่าง<br/>ที่ต้องการ</h2>
+    <p class="sec-p" style="max-width:360px;">แพลตฟอร์มเดียวที่รวม AI จดจำภาพ ระบบลบอัตโนมัติ และแดชบอร์ดที่ใช้งานง่าย ออกแบบมาเพื่อนางแบบและครีเอเตอร์โดยเฉพาะ</p>
+  </div>
+  <div class="feat-grid">
+    <div class="fc"><div class="fc-ico">🔬</div><div class="fc-t">จดจำใบหน้าแม้ถูกบัง</div><div class="fc-d">ค้นพบรูปคุณได้แม้โดนครอป โดนฟิลเตอร์หนัก หรือถ่ายในแสงแย่ๆ ฝึกมาแล้วในหลายพันสภาวะแสงและมุมกล้อง</div><span class="fc-tag">เทคโนโลยีหลัก</span></div>
+    <div class="fc"><div class="fc-ico">🤖</div><div class="fc-t">จับ AI และ Deepfake</div><div class="fc-d">ตรวจพบรูปและวิดีโอที่สร้างจาก Midjourney, Stable Diffusion, Sora และ AI อื่นๆ ที่แอบเอารูปหน้าคุณไปใช้</div><span class="fc-tag">ป้องกัน AI</span></div>
+    <div class="fc"><div class="fc-ico">🎤</div><div class="fc-t">ป้องกันการลอกเสียง</div><div class="fc-d">เสียงคุณมีลายเซ็นเฉพาะตัว Lisa จับได้ทันทีถ้ามีใครโคลนเสียงหรือสร้าง AI เลียนแบบเสียงคุณ</div><span class="fc-tag">เสียง</span></div>
+    <div class="fc"><div class="fc-ico">⚡</div><div class="fc-t">ยิง DMCA อัตโนมัติ</div><div class="fc-d">กดอนุมัติครั้งเดียว แล้วปล่อยให้เราจัดการต่อ ทั้งแจ้ง DMCA รายงานแพลตฟอร์ม และติดตามจนเนื้อหาหาย</div><span class="fc-tag">บังคับใช้สิทธิ์</span></div>
+    <div class="fc"><div class="fc-ico">📜</div><div class="fc-t">ควบคุมการใช้ภาพลักษณ์</div><div class="fc-d">กำหนดเองได้ว่าใครจะใช้รูปคุณได้บ้าง ใช้ได้นานแค่ไหน เพิกถอนสิทธิ์ได้ทันทีจากแดชบอร์ด</div><span class="fc-tag">ควบคุม IP</span></div>
+    <div class="fc"><div class="fc-ico">📊</div><div class="fc-t">แดชบอร์ดรวมทุกอย่าง</div><div class="fc-d">เห็นภาพรวมหมดเลย ทั้งยอดตรวจพบ แพลตฟอร์มไหนเยอะสุด อัตราสำเร็จในการลบ และแนวโน้มใหม่ๆ</div><span class="fc-tag">ข้อมูลเชิงลึก</span></div>
+    <div class="fc"><div class="fc-ico">🌐</div><div class="fc-t">ดักจับใน Dark Web ด้วย</div><div class="fc-d">ไม่ได้สแกนแค่เว็บทั่วไป เราเข้าไปในฟอรัม Dark Web และกลุ่ม Telegram แบบปิดที่เนื้อหาขโมยมักหมุนเวียน</div><span class="fc-tag">ขั้นสูง</span></div>
+    <div class="fc"><div class="fc-ico">🔔</div><div class="fc-t">แจ้งเตือนแบบเรียลไทม์</div><div class="fc-d">พอพบเนื้อหาผิดปกติ คุณรู้ทันทีเลย ไม่ว่าจะผ่านอีเมล SMS หรือการแจ้งเตือนในมือถือ</div><span class="fc-tag">เฝ้าระวัง</span></div>
+    <div class="fc"><div class="fc-ico">🤝</div><div class="fc-t">พอร์ทัลสำหรับเอเจนซี่</div><div class="fc-d">ดูแลนางแบบทั้งสังกัดจากบัญชีเดียว กระจายงานแจ้งเตือน อนุมัติการลบแบบกลุ่ม และส่งรายงานให้ลูกค้า</div><span class="fc-tag">ทีม</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="proof">
+  <div class="eyebrow">เสียงจากผู้ใช้จริง</div>
+  <div class="divider"></div>
+  <h2 class="sec-h">นางแบบทั่วโลกไว้ใจเรา</h2>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <div class="tquote">สัปดาห์แรกที่ใช้ Lisa เจอรูปถ่ายของเราถูกเอาไปใช้โดยไม่ได้รับอนุญาตถึง 23 ครั้ง บนเว็บที่ไม่เคยได้ยินชื่อมาก่อนเลย ทุกอย่างถูกลบภายใน 48 ชั่วโมง ชีวิตเปลี่ยนเลยจริงๆ</div>
+      <div class="tauthor"><div class="tavatar">ส</div><div><div class="tname">โซเฟีย ร.</div><div class="trole">นางแบบแฟชั่น · 1.2M ผู้ติดตาม</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <div class="tquote">มีคนทำ Deepfake วิดีโอของเราแล้วมันกำลังแพร่ไปเรื่อยๆ Lisa แจ้งเตือนตอนตีสาม พอตื่นมาเนื้อหานั้นหายไปแล้ว ตอนนี้รู้สึกปลอดภัยบนโลกออนไลน์มากขึ้นเยอะมาก</div>
+      <div class="tauthor"><div class="tavatar">ม</div><div><div class="tname">เมีย ท.</div><div class="trole">Content Creator & นางแบบ</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="stars">★★★★★</div>
+      <div class="tquote">เราดูแลนางแบบในสังกัดกว่า 80 คน พอร์ทัลของเอเจนซี่ดีมากจริงๆ เห็นทุกอย่าง ลบอัตโนมัติ มีรายงานรายเดือนให้ทุกคน แทนที่เครื่องมือแยกกัน 3 ตัวที่เคยจ่ายอยู่</div>
+      <div class="tauthor"><div class="tavatar">จ</div><div><div class="tname">เจมส์ ล.</div><div class="trole">ผู้อำนวยการ Apex Talent Agency</div></div></div>
+    </div>
+  </div>
+  <div class="press-row">
+    <div class="press-item">Vogue</div>
+    <div class="press-item">Forbes</div>
+    <div class="press-item">Rolling Stone</div>
+    <div class="press-item">TechCrunch</div>
+    <div class="press-item">Hollywood Reporter</div>
+    <div class="press-item">Wired</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec sec-dark" id="pricing">
+  <div class="eyebrow">ราคา</div>
+  <div class="divider"></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+    <h2 class="sec-h" style="margin:0;">เริ่มต้นฟรี<br/>อัปเกรดตอนพร้อม</h2>
+    <p class="sec-p" style="max-width:320px;">ไม่มีสัญญาผูกมัด ไม่มีค่าปรับถ้าเลิกใช้ เลือกแผนที่เหมาะกับตัวเองได้เลย</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="p-tier">Starter</div>
+      <div class="p-name">สำหรับทุกคน</div>
+      <div class="p-price">ฟรี<span> ตลอดชีพ</span></div>
+      <div class="p-billing">ไม่ต้องใช้บัตรเครดิต</div>
+      <div class="p-desc">เริ่มต้นเฝ้าระวังภาพลักษณ์ของคุณบนอินเทอร์เน็ตได้เลยโดยไม่เสียสตางค์</div>
+      <ul class="p-ul">
+        <li class="y">เฝ้าระวังใบหน้าและเสียง</li>
+        <li class="y">รายงานการสแกนรายสัปดาห์</li>
+        <li class="y">แจ้งเตือนเมื่อพบเนื้อหาน่าสงสัย</li>
+        <li class="y">ขอลบด้วยตัวเองได้</li>
+        <li class="y">แดชบอร์ดส่วนตัว</li>
+        <li class="n">ลบ DMCA อัตโนมัติ</li>
+        <li class="n">จับ Deepfake และเนื้อหา AI</li>
+        <li class="n">สแกน Dark Web</li>
+      </ul>
+      <a href="#demo" class="p-btn line">เริ่มเลย ฟรี</a>
+    </div>
+    <div class="pcard hot">
+      <div class="hot-badge">⭐ ยอดนิยมที่สุด</div>
+      <div class="p-tier">Pro</div>
+      <div class="p-name">สำหรับนางแบบ</div>
+      <div class="p-price">฿1,750<span> / เดือน</span></div>
+      <div class="p-billing">รายเดือน · ยกเลิกเมื่อไหร่ก็ได้</div>
+      <div class="p-desc">เข้าถึง Watchtower แบบเต็ม พร้อมระบบลบอัตโนมัติและจับ Deepfake</div>
+      <ul class="p-ul">
+        <li class="y">ทุกอย่างในแผนฟรี</li>
+        <li class="y">สแกนแบบเรียลไทม์ แจ้งทันที</li>
+        <li class="y">ลบ DMCA อัตโนมัติ</li>
+        <li class="y">จับ Deepfake และเนื้อหา AI</li>
+        <li class="y">จับการโคลนเสียง</li>
+        <li class="y">สแกน Dark Web</li>
+        <li class="y">รายงานภัยคุกคามรายเดือน</li>
+        <li class="y">ทีมซัพพอร์ตลำดับความสำคัญสูง</li>
+      </ul>
+      <a href="#demo" class="p-btn solid">เริ่มใช้งาน</a>
+    </div>
+    <div class="pcard">
+      <div class="p-tier">Enterprise</div>
+      <div class="p-name">สำหรับเอเจนซี่</div>
+      <div class="p-price">ราคาพิเศษ</div>
+      <div class="p-billing">มีส่วนลดตามจำนวนในสังกัด</div>
+      <div class="p-desc">จัดการทุกคนในสังกัดจากแดชบอร์ดเดียว พร้อม API และซัพพอร์ตระดับพรีเมียม</div>
+      <ul class="p-ul">
+        <li class="y">ทุกอย่างในแผนโปร</li>
+        <li class="y">จัดการนักแสดงได้ไม่จำกัด</li>
+        <li class="y">เข้าถึง API สำหรับนักพัฒนา</li>
+        <li class="y">กำหนดขั้นตอนออกใบอนุญาตเอง</li>
+        <li class="y">รายงานแบบ White-label</li>
+        <li class="y">รับประกันการลบตาม SLA</li>
+        <li class="y">ผู้จัดการบัญชีเฉพาะของคุณ</li>
+        <li class="y">เข้าถึงทีมกฎหมาย</li>
+      </ul>
+      <a href="#demo" class="p-btn line">คุยกับทีมขาย</a>
+    </div>
+  </div>
+  <div class="ctable">
+    <table>
+      <thead><tr><th>ฟีเจอร์</th><th>ฟรี</th><th>โปร — ฿1,750/เดือน</th><th>องค์กร</th></tr></thead>
+      <tbody>
+        <tr><td>เฝ้าระวังใบหน้า</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>เฝ้าระวังเสียง</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>ความถี่ในการสแกน</td><td>รายสัปดาห์</td><td>เรียลไทม์</td><td>เรียลไทม์</td></tr>
+        <tr><td>ลบ DMCA อัตโนมัติ</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>จับ Deepfake และ AI</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>จับการโคลนเสียง</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>สแกน Dark Web</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>เครื่องมือออกใบอนุญาต</td><td class="n">—</td><td class="p">พื้นฐาน</td><td class="y">เต็มรูปแบบ</td></tr>
+        <tr><td>เข้าถึง API</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+        <tr><td>จัดการหลายคนพร้อมกัน</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div style="text-align:center;">
+    <div class="eyebrow">ถามตอบ</div>
+    <div style="display:flex;justify-content:center;"><div class="divider"></div></div>
+    <h2 class="sec-h">มีข้อสงสัยอะไร เราตอบได้หมด</h2>
+  </div>
+  <div class="faq-box">
+    <div class="fi open"><button class="fi-q">Lisa Modeling Protection คืออะไรกันแน่?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">Lisa คือแพลตฟอร์ม AI ที่ช่วยนางแบบ อินฟลูเอนเซอร์ และดาราปกป้องตัวเองในโลกดิจิทัล เราสแกนอินเทอร์เน็ตตลอดเวลาเพื่อหาและลบการนำรูปหน้า เสียง หรือแบรนด์ของคุณไปใช้โดยไม่ได้รับอนุญาต รวมถึง Deepfake และเนื้อหาที่สร้างด้วย AI</div></div></div>
+    <div class="fi"><button class="fi-q">เทคโนโลยีนี้ทำงานยังไง?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">Lisa ใช้เซิร์ฟเวอร์จำนวนมากทั่วโลกสแกนทุกอย่างที่ถูกอัปโหลดขึ้นอินเทอร์เน็ตในแต่ละวัน ระบบจะเทียบทุกรูปและทุกเสียงกับ "ลายเซ็น" ของคุณที่ลงทะเบียนไว้ ถ้าเจออะไรน่าสงสัยก็แจ้งทันที เราประมวลผลเนื้อหาทั้งหมดในหนึ่งวันภายใน 24 ชั่วโมง ไม่หยุดพัก 365 วัน</div></div></div>
+    <div class="fi"><button class="fi-q">ข้อมูลส่วนตัวและรูปหน้าของเราจะถูกนำไปใช้ทำอะไร?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">เราเอาข้อมูลไบโอเมตริกของคุณไปใช้แค่เพื่อค้นหาบนอินเทอร์เน็ตเท่านั้น ไม่แชร์ให้ใคร ไม่ขายข้อมูล ไม่มีโฆษณา และเราไม่เอารูปและเสียงของคุณไปฝึก AI เด็ดขาด</div></div></div>
+    <div class="fi"><button class="fi-q">จับ Deepfake ที่สร้างด้วย AI ได้จริงไหม?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">ได้เลย ระบบของเราฝึกมาโดยเฉพาะเพื่อจับเนื้อหา AI ทั้ง Deepfake การสลับหน้า การโคลนเสียง และสื่อที่ถูกดัดแปลงจาก Midjourney, Stable Diffusion, Sora และอื่นๆ เจออะไรก็แจ้งให้คุณดูและกดลบได้เลย</div></div></div>
+    <div class="fi"><button class="fi-q">ลบเนื้อหาได้เร็วแค่ไหน?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">พอคุณกดอนุมัติ เราเริ่มดำเนินการทันทีเลย แต่ละแพลตฟอร์มมีความเร็วต่างกัน แต่โดยเฉลี่ยแล้วไม่เกิน 24 ชั่วโมง เราติดตามทุกคำขอและส่งซ้ำอัตโนมัติ คุณจะได้รับยืนยันตอนที่เนื้อหาหายไปแล้วจริงๆ</div></div></div>
+    <div class="fi"><button class="fi-q">เว็บไซต์สำหรับผู้ใหญ่ก็ตรวจสอบด้วยไหม?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">ตรวจสอบด้วยครับ นี่เป็นหนึ่งในปัญหาที่นางแบบเจอบ่อยที่สุด Lisa สแกนเว็บผู้ใหญ่ บอร์ดภาพ และแพลตฟอร์มสมาชิกต่างๆ ด้วย แล้วดำเนินการลบทั้งผ่านช่องทางอัตโนมัติและช่องทางกฎหมาย</div></div></div>
+    <div class="fi"><button class="fi-q">ถ้าเป็นเอเจนซี่ จัดการนักแสดงหลายคนพร้อมกันได้ไหม?<span class="fi-ch">+</span></button><div class="fi-a"><div class="fi-ai">ได้เลยครับ แผนองค์กรของเราออกแบบมาเพื่อเอเจนซี่โดยเฉพาะ มีแดชบอร์ดรวมดูได้ทีเดียวทั้งสังกัด กำหนดการแจ้งเตือนแยกรายคน ทำรายงานแบบ White-label ได้ พร้อม API และผู้จัดการบัญชีเฉพาะคอยดูแล</div></div></div>
+  </div>
+</section>
+
+<!-- DEMO FORM -->
+<section class="sec sec-dark" id="demo">
+  <div class="eyebrow">เริ่มปกป้องตัวเอง</div>
+  <div class="divider"></div>
+  <h2 class="sec-h">นัดดูตัวอย่างแบบส่วนตัว</h2>
+  <div class="demo-wrap">
+    <div class="demo-pts">
+      <div class="dpt"><div class="dpt-ico">🎯</div><div><div class="dpt-t">ปรับให้เหมาะกับคุณโดยเฉพาะ</div><div class="dpt-d">เราจะแสดงให้เห็นว่า Lisa จะปกป้องคุณยังไงในแพลตฟอร์มที่คุณใช้อยู่ พร้อมบอกระดับความเสี่ยงของคุณตอนนี้</div></div></div>
+      <div class="dpt"><div class="dpt-ico">⚡</div><div><div class="dpt-t">เห็นผลสแกนจริงระหว่างคุยกัน</div><div class="dpt-d">เราจะรันการสแกนสดให้ดูเลยระหว่างการสาธิต ส่วนใหญ่คนที่มาดูมักประหลาดใจกับสิ่งที่เราพบ</div></div></div>
+      <div class="dpt"><div class="dpt-ico">🔒</div><div><div class="dpt-t">ไม่มีข้อผูกมัด ไม่มีแรงกดดัน</div><div class="dpt-d">ดูฟรีหมด ไม่ต้องใช้บัตรเครดิต ไม่ต้องเซ็นสัญญา อยากลองแผนฟรีต่อเลยหลังจากนั้นก็ได้</div></div></div>
+      <div class="dpt"><div class="dpt-ico">👥</div><div><div class="dpt-t">เอเจนซี่ก็มีการสาธิตเฉพาะ</div><div class="dpt-d">มีนักแสดงในสังกัดหลายคน? เรามีทีมเอเจนซี่พร้อมนัดพิเศษให้ พร้อมคุยเรื่องราคาแบบกลุ่มด้วย</div></div></div>
+    </div>
+    <div class="form-card">
+      <h3>ขอนัดดูตัวอย่างฟรี</h3>
+      <p class="sub">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงเพื่อนัดเวลาที่สะดวก</p>
+      <div class="frow">
+        <div class="field"><label>ชื่อ</label><input type="text" placeholder="สมหญิง"/></div>
+        <div class="field"><label>นามสกุล</label><input type="text" placeholder="ใจดี"/></div>
+      </div>
+      <div class="field"><label>อีเมล</label><input type="email" placeholder="somying@example.com"/></div>
+      <div class="field"><label>Instagram หรือโซเชียลของคุณ</label><input type="text" placeholder="@yourhandle"/></div>
+      <div class="field">
+        <label>คุณเป็น…</label>
+        <select>
+          <option>นางแบบหรือครีเอเตอร์อิสระ</option>
+          <option>ดาราหรือบุคคลสาธารณะ</option>
+          <option>เอเจนซี่หรือผู้จัดการ</option>
+          <option>แบรนด์หรือองค์กร</option>
+          <option>อื่นๆ</option>
+        </select>
+      </div>
+      <div class="field"><label>กังวลเรื่องอะไรมากที่สุด? (ไม่บังคับ)</label><textarea placeholder="เช่น Deepfake ใน Telegram รูปถ่ายในเว็บผู้ใหญ่ AI เอารูปไปใช้..."></textarea></div>
+      <button class="fsub" id="submitBtn">ขอนัดดูตัวอย่างฟรี →</button>
+      <p class="fnote">🔒 ข้อมูลของคุณจะไม่ถูกแชร์ให้ใครทั้งนั้น ไม่มีสแปม ยกเลิกได้ตลอดเวลา</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-inner">
+    <h2>ตัวตนของคุณ<br/>ต้องเป็นของคุณเสมอ</h2>
+    <p>ในยุค AI ที่ใครก็สร้างรูปและเสียงของคุณได้ Lisa คือเกราะที่คุณต้องมี เริ่มต้นได้เลยวันนี้ ฟรี ไม่มีเงื่อนไข</p>
+    <div class="cta-btns">
+      <a href="#demo" class="btn-p">สร้างบัญชีฟรี →</a>
+      <a href="#demo" class="btn-o">นัดดูตัวอย่างก่อน</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="logo"><div class="logo-mark">L</div><div class="logo-text">Lisa Modeling Protection<small>AI LIKENESS DEFENSE</small></div></div>
+      <p class="foot-logo-text">แพลตฟอร์ม AI ปกป้องภาพลักษณ์และทรัพย์สินทางปัญญาสำหรับนางแบบ ตรวจจับ จัดการ และลบการละเมิดทุกรูปแบบตลอด 24 ชั่วโมง</p>
+      <div class="foot-social">
+        <a class="fsoc" href="#" aria-label="Twitter">𝕏</a>
+        <a class="fsoc" href="#" aria-label="LinkedIn">in</a>
+        <a class="fsoc" href="#" aria-label="Instagram">◻</a>
+        <a class="fsoc" href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>บริการ</h4>
+      <a href="#">สำหรับทุกคน (ฟรี)</a>
+      <a href="#">สำหรับนางแบบและครีเอเตอร์</a>
+      <a href="#">สำหรับเอเจนซี่</a>
+      <a href="#">API และองค์กร</a>
+    </div>
+    <div class="foot-col">
+      <h4>แหล่งข้อมูล</h4>
+      <a href="#">บล็อก</a>
+      <a href="#">ข่าวสาร</a>
+      <a href="#">ถามตอบ</a>
+      <a href="#">เอกสาร API</a>
+      <a href="#">สถานะระบบ</a>
+    </div>
+    <div class="foot-col">
+      <h4>บริษัท</h4>
+      <a href="#">เกี่ยวกับเรา</a>
+      <a href="#">ร่วมงานกับเรา</a>
+      <a href="#">ติดต่อเรา</a>
+      <a href="#demo">นัดดูตัวอย่าง</a>
+      <a href="#">โปรแกรมพาร์ทเนอร์</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 Lisa Modeling Protection สงวนลิขสิทธิ์ทุกประการ</span>
+    <div class="foot-links">
+      <a href="#">นโยบายความเป็นส่วนตัว</a>
+      <a href="#">นโยบายข้อมูลไบโอเมตริก</a>
+      <a href="#">ข้อกำหนดการใช้งาน</a>
+      <a href="#">นโยบายการใช้งานที่ยอมรับได้</a>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie">
+  <div class="ck-text">เราใช้คุกกี้เพื่อทำให้ประสบการณ์ของคุณดีขึ้น กดยอมรับถือว่าคุณโอเคกับ <a href="#">นโยบายคุกกี้</a> และ <a href="#">นโยบายความเป็นส่วนตัว</a> ของเรา</div>
+  <div class="ck-btns">
+    <button class="ck-dec" id="ckDec">ไม่ยอมรับ</button>
+    <button class="ck-acc" id="ckAcc">ยอมรับทั้งหมด</button>
+  </div>
+</div>
+<div id="toast"><span>✅</span><span>ได้รับคำขอแล้ว! ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงนะคะ</span></div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('spb').style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';
+},{passive:true});
+const ham=document.getElementById('ham'),mob=document.getElementById('mobnav');
+ham.addEventListener('click',()=>mob.classList.toggle('open'));
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+
+const panels=[
+  `<div class="panel-hd"><span class="panel-title">SCAN OVERVIEW</span><span class="live-badge">กำลังสแกน</span></div>
+  <div class="sbar"><span class="sbar-l">Instagram</span><div class="sbar-t"><div class="sbar-f" style="width:88%"></div></div><span class="sbar-v">88%</span></div>
+  <div class="sbar"><span class="sbar-l">TikTok</span><div class="sbar-t"><div class="sbar-f" style="width:73%"></div></div><span class="sbar-v">73%</span></div>
+  <div class="sbar"><span class="sbar-l">X / Twitter</span><div class="sbar-t"><div class="sbar-f" style="width:95%"></div></div><span class="sbar-v">95%</span></div>
+  <div class="sbar"><span class="sbar-l">Reddit</span><div class="sbar-t"><div class="sbar-f" style="width:61%"></div></div><span class="sbar-v">61%</span></div>
+  <div class="sbar"><span class="sbar-l">Telegram</span><div class="sbar-t"><div class="sbar-f" style="width:44%"></div></div><span class="sbar-v">44%</span></div>
+  <div class="sbar"><span class="sbar-l">Dark Web</span><div class="sbar-t"><div class="sbar-f" style="width:29%"></div></div><span class="sbar-v">29%</span></div>
+  <div class="mini-cards">
+    <div class="mc"><div class="mc-l">สแกนวันนี้</div><div class="mc-v cv-w">2.8M</div></div>
+    <div class="mc"><div class="mc-l">ตรงกับข้อมูล</div><div class="mc-v cv-w">2,841</div></div>
+    <div class="mc"><div class="mc-l">ไม่ได้รับอนุญาต</div><div class="mc-v cv-r">17</div></div>
+    <div class="mc"><div class="mc-l">ลบแล้ว</div><div class="mc-v cv-g">14</div></div>
+  </div>`,
+  `<div class="panel-hd"><span class="panel-title">FLAGGED CONTENT</span><span class="live-badge">3 รายการใหม่</span></div>
+  <div class="alert-rows">
+    <div class="arow"><div class="adot" style="background:var(--red)"></div><div class="atext">วิดีโอ Deepfake — Telegram @leaks2026</div><div class="atime">2 นาทีที่แล้ว</div></div>
+    <div class="arow"><div class="adot" style="background:var(--yellow)"></div><div class="atext">รูปถ่ายไม่ได้รับอนุญาต — เว็บสำหรับผู้ใหญ่</div><div class="atime">18 นาทีที่แล้ว</div></div>
+    <div class="arow"><div class="adot" style="background:var(--red)"></div><div class="atext">รูป AI — Reddit r/deepfakes</div><div class="atime">1 ชม.ที่แล้ว</div></div>
+    <div class="arow"><div class="adot" style="background:var(--green)"></div><div class="atext">ใช้งานได้รับอนุญาต — แคมเปญแบรนด์</div><div class="atime">3 ชม.ที่แล้ว</div></div>
+    <div class="arow"><div class="adot" style="background:var(--green)"></div><div class="atext">รีโพสต์ที่ได้รับอนุญาต — บัญชีเอเจนซี่</div><div class="atime">5 ชม.ที่แล้ว</div></div>
+  </div>`,
+  `<div class="panel-hd"><span class="panel-title">CONTENT REVIEW</span><span class="live-badge">รอคุณตัดสิน</span></div>
+  <div class="review-box">
+    <div style="font-size:.72rem;color:var(--muted);margin-bottom:9px;font-weight:600;letter-spacing:1px;">DETECTED — DEEPFAKE VIDEO</div>
+    <div class="review-tags"><span class="rtag rtag-ai">AI GENERATED</span><span class="rtag rtag-risk">HIGH RISK</span><span class="rtag rtag-src">TELEGRAM</span></div>
+    <div class="review-meta">ช่อง: @leaks2026 · ยอดชม ~8,400<br/>แชร์: 312 ครั้ง · ความแม่นยำ 98.7%<br/>พบครั้งแรก: 2 นาทีที่แล้ว</div>
+  </div>
+  <div class="review-actions">
+    <div class="ract ract-remove">⚡ ขอลบออกเลย</div>
+    <div class="ract ract-safe">✓ โอเค ไม่เป็นไร</div>
+  </div>`,
+  `<div class="panel-hd"><span class="panel-title">TAKEDOWN TRACKER</span><span class="live-badge">3 รายการที่ดำเนินอยู่</span></div>
+  <div class="td-rows">
+    <div class="tdr"><div class="tdr-icon">🎬</div><div class="tdr-body"><div class="tdr-name">วิดีโอ Deepfake — Telegram</div><div class="tdr-plat">ส่งคำขอ 2 ชั่วโมงที่แล้ว</div></div><span class="badge b-sent">ส่งแล้ว</span></div>
+    <div class="tdr"><div class="tdr-icon">📸</div><div class="tdr-body"><div class="tdr-name">รูปถ่ายขโมย — เว็บผู้ใหญ่</div><div class="tdr-plat">ส่งคำขอ 18 ชั่วโมงที่แล้ว</div></div><span class="badge b-done">✓ ลบแล้ว</span></div>
+    <div class="tdr"><div class="tdr-icon">🖼️</div><div class="tdr-body"><div class="tdr-name">รูป AI — Reddit</div><div class="tdr-plat">ส่งคำขอ 1 ชั่วโมงที่แล้ว</div></div><span class="badge b-pend">รอดำเนินการ</span></div>
+    <div class="tdr"><div class="tdr-icon">🎤</div><div class="tdr-body"><div class="tdr-name">คลิปโคลนเสียง — TikTok</div><div class="tdr-plat">ส่งคำขอ 3 วันที่แล้ว</div></div><span class="badge b-done">✓ ลบแล้ว</span></div>
+  </div>
+  <div class="td-avg">⚡ เฉลี่ยลบเนื้อหาได้ภายใน 21 ชั่วโมง</div>`
+];
+
+const stepsEl=document.querySelectorAll('.step'),hp=document.getElementById('howPanel');
+function setStep(i){stepsEl.forEach(s=>s.classList.remove('on'));stepsEl[i].classList.add('on');hp.innerHTML=panels[i];}
+stepsEl.forEach(s=>s.addEventListener('click',()=>{clearInterval(auto);setStep(+s.dataset.i);}));
+let cur=0,auto=setInterval(()=>{cur=(cur+1)%4;setStep(cur);},4200);
+
+document.querySelectorAll('.fi').forEach(fi=>{
+  fi.querySelector('.fi-q').addEventListener('click',()=>{
+    const o=fi.classList.contains('open');
+    document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));
+    if(!o)fi.classList.add('open');
+  });
+});
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const t=document.getElementById('toast');t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4500);
+});
+setTimeout(()=>document.getElementById('cookie').classList.add('show'),1800);
+document.getElementById('ckAcc').addEventListener('click',()=>document.getElementById('cookie').style.display='none');
+document.getElementById('ckDec').addEventListener('click',()=>document.getElementById('cookie').style.display='none');
+</script>
+</body>
+</html>
