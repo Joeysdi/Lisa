@@ -37,27 +37,25 @@ export function HowItWorks() {
           </h2>
         </FadeUp>
 
-        {/* Steps */}
+        {/* Steps — number + title inline, description below */}
         <div className="mt-12">
           {steps.map((s, i) => (
-            <FadeUp key={s.num} delay={i * 0.08}>
-              <div className="border-t border-white/6 py-12 grid grid-cols-[64px_1fr] sm:grid-cols-[96px_1fr] gap-8 sm:gap-16">
-                {/* Step number */}
-                <span
-                  className="font-display font-light text-white/10 leading-none select-none"
-                  style={{ fontSize: "clamp(48px, 5vw, 72px)" }}
-                >
-                  {s.num}
-                </span>
-                {/* Content */}
-                <div className="pt-1">
-                  <h3 className="font-sans font-medium text-white text-xl mb-4 leading-snug">
+            <FadeUp key={s.num} delay={i * 0.07}>
+              <div className="border-t border-white/6 py-10">
+                <div className="flex items-baseline gap-5 mb-4">
+                  <span className="font-mono text-[10px] text-white/25 tabular-nums shrink-0">
+                    {s.num}
+                  </span>
+                  <h3
+                    className="font-display font-light text-white"
+                    style={{ fontSize: "clamp(22px, 2.5vw, 32px)" }}
+                  >
                     {s.title}
                   </h3>
-                  <p className="text-white/50 text-base font-sans leading-loose max-w-2xl">
-                    {s.desc}
-                  </p>
                 </div>
+                <p className="text-white/50 text-base font-sans leading-relaxed pl-10 max-w-2xl">
+                  {s.desc}
+                </p>
               </div>
             </FadeUp>
           ))}
