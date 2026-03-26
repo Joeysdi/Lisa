@@ -33,11 +33,11 @@ const entFeats = [
   {t:"Dedicated account manager",ok:true},{t:"Legal team access",ok:true},
 ];
 const tableRows = [
-  ["Face monitoring","✓","✓","✓"],["Voice monitoring","✓","✓","✓"],
-  ["Scan frequency","Weekly","Real-time","Real-time"],["Auto DMCA","—","✓","✓"],
-  ["Deepfake detection","—","✓","✓"],["Voice cloning","—","✓","✓"],
-  ["Dark Web","—","✓","✓"],["Licensing tools","—","Basic","Full"],
-  ["API access","—","—","✓"],["Multi-talent","—","—","✓"],
+  ["Scan frequency","Weekly","Real-time","Real-time"],
+  ["Auto DMCA","—","✓","✓"],
+  ["Deepfake detection","—","✓","✓"],
+  ["Dark Web","—","✓","✓"],
+  ["API access","—","—","✓"],
 ];
 
 export function Pricing() {
@@ -51,7 +51,7 @@ export function Pricing() {
         <FadeUp className="mb-12">
           {/* Section marker */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-black/15 text-xs">03</span>
+            <span className="font-mono text-black/15 text-xs">04</span>
             <div className="w-8 h-px bg-black/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-black/25 font-sans">PRICING</span>
           </div>
@@ -189,8 +189,11 @@ export function Pricing() {
 
         {/* Comparison table */}
         <FadeUp delay={0.1}>
+          <p className="font-mono text-[10px] text-black/25 mb-3">
+            Key differences only — all plans include face &amp; voice monitoring.
+          </p>
           <div className="overflow-x-auto border border-black/8">
-            <table className="w-full text-xs">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-black/8">
                   <th className="text-left px-5 py-3.5 text-black/30 font-mono text-[10px] tracking-wider uppercase w-1/2">Feature</th>
@@ -200,13 +203,13 @@ export function Pricing() {
                 </tr>
               </thead>
               <tbody>
-                {tableRows.map(([feat,f,p,e],i) => (
+                {tableRows.map(([feat,f,p,e]) => (
                   <tr key={feat}
                     className="border-b border-black/5 last:border-0 hover:bg-black/[0.02] transition-colors">
-                    <td className="px-5 py-3 text-black/40 font-sans">{feat}</td>
-                    <td className="px-4 py-3 text-center text-black/25 font-mono">{f}</td>
-                    <td className="px-4 py-3 text-center text-black font-mono font-semibold">{p}</td>
-                    <td className="px-4 py-3 text-center text-black/25 font-mono">{e}</td>
+                    <td className="px-5 py-4 text-black/40 font-sans">{feat}</td>
+                    <td className="px-4 py-4 text-center text-black/25 font-mono">{f}</td>
+                    <td className="px-4 py-4 text-center text-black font-mono font-semibold">{p}</td>
+                    <td className="px-4 py-4 text-center text-black/25 font-mono">{e}</td>
                   </tr>
                 ))}
               </tbody>

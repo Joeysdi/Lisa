@@ -1,3 +1,4 @@
+@config "./tailwind.config.ts";
 @import "tailwindcss";
 
 @theme inline {
@@ -6,6 +7,15 @@
   --font-sans: var(--font-instrument-sans);
   --font-display: var(--font-lora);
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+
+  /* Two intentional dark surfaces */
+  --color-surface-base:  #000000;   /* pure black: Hero, ThreatTicker, Footer */
+  --color-surface-dark:  #060606;   /* content dark: HowItWorks, Testimonials, FAQ, etc. */
+
+  /* Border tokens */
+  --color-border-subtle:  rgba(255,255,255,0.05);
+  --color-border-muted:   rgba(255,255,255,0.10);
+  --color-border-visible: rgba(255,255,255,0.18);
 }
 
 * {

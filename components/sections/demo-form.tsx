@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { FadeUp } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { Button } from "@/components/ui/button";
 
 const points = [
   { tKey:"demo_pt1_t" as const, dKey:"demo_pt1_d" as const },
@@ -68,10 +69,11 @@ export function DemoForm() {
   const inputClass = `w-full bg-white/[0.04] border border-white/10 rounded-2xl px-5 py-3.5
                       text-white text-sm placeholder:text-white/25
                       focus:outline-none focus:border-white/35 focus:bg-white/[0.06]
+                      focus-visible:ring-1 focus-visible:ring-white/30
                       transition-all duration-150`;
 
   return (
-    <section id="demo" className="bg-[#050505] py-32 flex flex-col items-center">
+    <section id="demo" className="bg-surface-dark py-32 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         {/* Eyebrow + value props strip */}
@@ -142,12 +144,10 @@ export function DemoForm() {
                   </p>
                 )}
 
-                <button type="submit" disabled={freeLoading}
-                  className="w-full bg-white text-black font-sans font-medium text-sm
-                             py-4 mt-2 rounded-full hover:bg-white/90 transition-colors
-                             disabled:opacity-40 disabled:cursor-not-allowed">
+                <Button variant="primary" type="submit" disabled={freeLoading}
+                  className="w-full justify-center py-4 mt-2">
                   {freeLoading ? "…" : t("demo_submit_free")}
-                </button>
+                </Button>
 
                 <p className="text-white/35 text-xs font-sans">{t("demo_split_sub1")}</p>
                 <p className="text-white/20 text-xs font-mono">{t("demo_social_proof")}</p>
@@ -244,12 +244,10 @@ export function DemoForm() {
                   </p>
                 )}
 
-                <button type="submit" disabled={loading}
-                  className="w-full border border-white/25 text-white/70 font-sans font-medium text-sm
-                             py-4 mt-2 rounded-full hover:border-white/50 hover:text-white hover:bg-white/5
-                             transition-all disabled:opacity-40 disabled:cursor-not-allowed">
+                <Button variant="outline" type="submit" disabled={loading}
+                  className="w-full justify-center py-4 mt-2">
                   {loading ? "…" : t("demo_submit")}
-                </button>
+                </Button>
 
                 <p className="text-white/25 text-xs text-center leading-relaxed font-sans">
                   {t("demo_note")}

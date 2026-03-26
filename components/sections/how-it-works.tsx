@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { dur, ease } from "@/lib/animation";
 
 const panels = [
   {
@@ -127,7 +128,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how" className="bg-[#050505] py-24 flex flex-col items-center">
+    <section id="how" className="bg-surface-dark py-24 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         <FadeUp className="mb-12">
@@ -185,7 +186,7 @@ export function HowItWorks() {
             <AnimatePresence mode="wait">
               <motion.div key={active}
                 initial={{ opacity:0, y:4 }} animate={{ opacity:1, y:0 }}
-                exit={{ opacity:0, y:-4 }} transition={{ duration:0.18 }}>
+                exit={{ opacity:0, y:-4 }} transition={{ duration: dur.instant, ease: ease.decelerate }}>
                 {panels[active].content}
               </motion.div>
             </AnimatePresence>

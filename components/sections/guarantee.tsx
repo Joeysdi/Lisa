@@ -2,6 +2,7 @@
 
 import { FadeUp } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { Button } from "@/components/ui/button";
 
 export function Guarantee() {
   const { t } = useLocale();
@@ -13,7 +14,7 @@ export function Guarantee() {
   ];
 
   return (
-    <section className="bg-[#050505] py-32 flex flex-col items-center">
+    <section className="bg-surface-dark py-32 flex flex-col items-center">
       <div className="w-full max-w-2xl px-8 text-center">
         <FadeUp>
           {/* Eyebrow */}
@@ -52,12 +53,9 @@ export function Guarantee() {
           </div>
 
           {/* CTA */}
-          <a href="#demo"
-             className="inline-flex items-center justify-center bg-white text-black
-                        font-sans font-medium text-sm px-10 py-3.5 rounded-full
-                        hover:bg-white/90 transition-colors">
+          <Button variant="primary" href="#demo">
             {t("guarantee_cta")}
-          </a>
+          </Button>
         </FadeUp>
       </div>
     </section>

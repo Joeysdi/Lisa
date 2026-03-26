@@ -2,8 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ReactNode } from "react";
-
-const ease = [0.25, 0.46, 0.45, 0.94] as const;
+import { dur, ease as anim, stagger } from "@/lib/animation";
 
 // ── FadeUp ────────────────────────────────────────────────────────────────────
 interface FadeUpProps {
@@ -17,7 +16,7 @@ export function FadeUp({ children, delay = 0, className }: FadeUpProps) {
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45, delay, ease }}
+      transition={{ duration: dur.enter, delay, ease: anim.standard }}
       className={className}
     >
       {children}
@@ -37,7 +36,7 @@ export function FadeIn({ children, delay = 0, className }: FadeInProps) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: dur.slow, delay }}
       className={className}
     >
       {children}
@@ -49,7 +48,7 @@ export function FadeIn({ children, delay = 0, className }: FadeInProps) {
 const staggerParentVariants: Variants = {
   hidden: {},
   visible: (delayChildren: number) => ({
-    transition: { staggerChildren: 0.07, delayChildren },
+    transition: { staggerChildren: stagger.base, delayChildren },
   }),
 };
 
@@ -76,7 +75,7 @@ export function StaggerParent({ children, className, delayChildren = 0 }: Stagge
 // ── StaggerChild ──────────────────────────────────────────────────────────────
 const childVariants: Variants = {
   hidden:  { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: dur.base, ease: anim.standard } },
 };
 
 interface StaggerChildProps {

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeUp } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { dur, ease } from "@/lib/animation";
 
 const faqData = [
   { q:{th:"Lisa Modeling Protection คืออะไร?",en:"What is Lisa Modeling Protection?"},
@@ -45,13 +46,13 @@ export function Faq() {
   const [open, setOpen] = useState<number|null>(0);
 
   return (
-    <section id="faq" className="bg-[#050505] py-24 flex flex-col items-center">
+    <section id="faq" className="bg-surface-dark py-24 flex flex-col items-center">
       <div className="w-full max-w-3xl px-8">
 
         <FadeUp className="mb-14">
           {/* Section marker */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-white/15 text-xs">04</span>
+            <span className="font-mono text-white/15 text-xs">05</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">FAQ</span>
           </div>
@@ -85,7 +86,7 @@ export function Faq() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+                    transition={{ duration: dur.fast, ease: ease.decelerate }}
                     style={{ overflow: "hidden" }}>
                     <div className="pb-6 text-white/50 text-base leading-relaxed font-sans">
                       {item.a[locale]}

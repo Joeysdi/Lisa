@@ -33,13 +33,13 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="proof" className="bg-[#050505] py-24 flex flex-col items-center">
+    <section id="proof" className="bg-surface-dark py-24 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         {/* Header */}
         <FadeUp className="mb-14">
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-white/15 text-xs">04</span>
+            <span className="font-mono text-white/15 text-xs">03</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">
               {t("proof_eyebrow")}

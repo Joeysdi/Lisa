@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { StaggerParent, StaggerChild } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { Button } from "@/components/ui/button";
 
 const aiTools = ["Midjourney", "Stable Diffusion", "Sora", "DALL·E", "Kling"];
 
@@ -132,17 +133,12 @@ export function Hero() {
           {/* CTAs */}
           <StaggerChild>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href="#demo"
-                 className="bg-white text-black font-sans font-medium text-sm
-                            px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors whitespace-nowrap">
+              <Button variant="primary" href="#demo" className="whitespace-nowrap">
                 {t("hero_cta1")}
-              </a>
-              <a href="#how"
-                 className="border border-white/25 text-white/65 font-sans text-sm
-                            px-8 py-3.5 rounded-full hover:border-white/55 hover:text-white
-                            transition-all whitespace-nowrap">
+              </Button>
+              <Button variant="outline" href="#how" className="whitespace-nowrap">
                 {t("hero_cta2")}
-              </a>
+              </Button>
             </div>
           </StaggerChild>
 
