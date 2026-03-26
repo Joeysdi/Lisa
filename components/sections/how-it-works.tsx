@@ -68,9 +68,9 @@ const panels = [
         </div>
         <div className="flex gap-2">
           <button className="flex-1 bg-white text-black text-xs font-semibold py-2.5
-                             hover:bg-white/88 transition-colors">Remove</button>
+                             hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">Remove</button>
           <button className="flex-1 border border-white/12 text-white/40 text-xs font-semibold
-                             py-2.5 hover:border-white/25 transition-colors">Allow</button>
+                             py-2.5 hover:border-white/25 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">Allow</button>
         </div>
       </div>
     ),
@@ -145,29 +145,29 @@ export function HowItWorks() {
           </h2>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start mt-16">
 
           {/* Steps */}
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
             {steps.map((s,i) => (
               <button key={i} onClick={() => { setActive(i); startTimer(); }}
                 className={`text-left transition-all duration-200
                   ${active===i
-                    ? "bg-white/[0.04] border-l-2 border-l-white pl-5 pr-5 py-5"
-                    : "border-l-2 border-l-white/8 pl-5 pr-5 py-4 hover:bg-white/[0.02]"
+                    ? "border-l-[3px] border-l-white/70 pl-6 pr-4 py-5"
+                    : "border-l border-l-white/10 pl-6 pr-4 py-4 hover:border-l-white/25"
                   }`}>
                 <div className="flex items-start gap-4">
-                  <span className={`font-mono text-[10px] shrink-0 mt-0.5 transition-colors
-                    ${active===i ? "text-white" : "text-white/20"}`}>{s.num}</span>
-                  <div className="text-left">
-                    <div className={`font-sans font-medium text-base mb-1 transition-colors
-                      ${active===i ? "text-white" : "text-white/45"}`}>{s.t}</div>
+                  <span className={`font-mono text-[10px] shrink-0 mt-1 transition-colors tabular-nums
+                    ${active===i ? "text-white/50" : "text-white/15"}`}>{s.num}</span>
+                  <div>
+                    <div className={`font-sans font-medium text-sm mb-1.5 transition-colors
+                      ${active===i ? "text-white" : "text-white/40"}`}>{s.t}</div>
                     <div className={`text-sm leading-relaxed transition-colors
-                      ${active===i ? "text-white/50" : "text-white/25"}`}>{s.d}</div>
+                      ${active===i ? "text-white/55" : "text-white/20"}`}>{s.d}</div>
                   </div>
                 </div>
                 {active===i && (
-                  <motion.div className="h-px bg-white/20 mt-3"
+                  <motion.div className="h-px bg-white/15 mt-4 ml-9"
                     initial={{ scaleX:0 }} animate={{ scaleX:1 }}
                     transition={{ duration:4.2 }} style={{ transformOrigin:"left" }} />
                 )}
@@ -176,20 +176,32 @@ export function HowItWorks() {
           </div>
 
           {/* Panel */}
-          <div className="bg-black border border-white/8 p-6">
-            <div className="flex items-center justify-between mb-5">
-              <span className="font-mono text-[10px] text-white/25 tracking-[.15em]">{panels[active].title}</span>
-              <span className="text-[10px] text-white/40 border border-white/8 px-2.5 py-1 font-mono">
+          <div className="bg-black border border-white/10 min-h-[420px] flex flex-col">
+            {/* Window chrome */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/6 shrink-0">
+              <div className="flex items-center gap-1.5">
+                {[0,1,2].map(d => (
+                  <div key={d} className="w-2 h-2 rounded-full bg-white/10" />
+                ))}
+              </div>
+              <span className="font-mono text-[10px] text-white/25 tracking-[.15em]">
+                {panels[active].title}
+              </span>
+              <span className="text-[10px] text-white/35 border border-white/8 px-2.5 py-1 font-mono">
                 {panels[active].badge}
               </span>
             </div>
-            <AnimatePresence mode="wait">
-              <motion.div key={active}
-                initial={{ opacity:0, y:4 }} animate={{ opacity:1, y:0 }}
-                exit={{ opacity:0, y:-4 }} transition={{ duration: dur.instant, ease: ease.decelerate }}>
-                {panels[active].content}
-              </motion.div>
-            </AnimatePresence>
+
+            {/* Content */}
+            <div className="p-7 flex-1">
+              <AnimatePresence mode="wait">
+                <motion.div key={active}
+                  initial={{ opacity:0, y:4 }} animate={{ opacity:1, y:0 }}
+                  exit={{ opacity:0, y:-4 }} transition={{ duration: dur.instant, ease: ease.decelerate }}>
+                  {panels[active].content}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
 
         </div>
