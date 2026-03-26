@@ -14,13 +14,30 @@ const navLinks = [
 
 export function Nav() {
   const { t, toggle } = useLocale();
-  const [open,     setOpen]     = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open,        setOpen]      = useState(false);
+  const [scrolled,    setScrolled]  = useState(false);
+  const [activeHref,  setActiveHref] = useState<string>("");
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    navLinks.forEach(({ href }) => {
+      const id = href.replace("#", "");
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveHref(href); },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach(o => o.disconnect());
   }, []);
 
   // Lock body scroll when mobile menu open
@@ -51,9 +68,9 @@ export function Nav() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href}
-                 className="text-white/50 hover:text-white text-xs tracking-[.12em] uppercase
-                            transition-colors duration-150 font-sans
-                            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
+                 className={`text-xs tracking-[.12em] uppercase transition-colors duration-150 font-sans
+                            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50
+                            ${activeHref === l.href ? "text-white/80" : "text-white/50 hover:text-white"}`}>
                 {t(l.labelKey)}
               </a>
             ))}

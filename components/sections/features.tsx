@@ -36,10 +36,10 @@ export function Features() {
   const { t } = useLocale();
 
   return (
-    <section id="features" className="bg-white py-24 flex flex-col items-center">
+    <section id="features" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
-        <FadeUp className="mb-14">
+        <FadeUp className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-black/15 text-xs">02</span>
             <div className="w-8 h-px bg-black/10" />
@@ -55,14 +55,14 @@ export function Features() {
         </FadeUp>
 
         {/* 3 Pillar cards */}
-        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/5 mb-px">
-          {pillars.map(p => (
+        <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-0 border-b border-black/8">
+          {pillars.map((p, idx) => (
             <StaggerChild key={p.tKey}>
-              <div className="bg-white p-8 flex flex-col gap-5 h-full">
+              <div className={`bg-white p-8 flex flex-col gap-5 h-full${idx < pillars.length - 1 ? " border-r border-black/8" : ""}`}>
                 <div>
                   <div
                     className="font-display font-light text-black mb-1"
-                    style={{ fontSize: "clamp(22px, 2.5vw, 30px)" }}
+                    style={{ fontSize: "clamp(26px, 3vw, 36px)" }}
                   >
                     {t(p.tKey)}
                   </div>
@@ -71,8 +71,8 @@ export function Features() {
                 <div className="flex flex-col gap-2.5 border-t border-black/6 pt-5 mt-auto">
                   {p.features.map(f => (
                     <div key={f.tKey} className="flex items-center gap-2.5">
-                      <span className="font-mono text-[10px] text-black/20 w-6 shrink-0">{f.num}</span>
-                      <span className="text-black/60 text-sm font-sans">{t(f.tKey)}</span>
+                      <span className="font-mono text-xs text-black/20 w-6 shrink-0">{f.num}</span>
+                      <span className="text-black/55 text-sm font-sans">{t(f.tKey)}</span>
                     </div>
                   ))}
                 </div>
@@ -83,7 +83,7 @@ export function Features() {
 
         {/* Enterprise card — full-width horizontal */}
         <FadeUp delay={0.1}>
-          <div className="bg-stone-50 border border-black/8 border-t-2 border-t-black/15
+          <div className="bg-stone-50 border border-black/10
                           p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="flex-1">
               <div className="text-[9px] tracking-[.3em] uppercase text-black/30 font-sans mb-2">
@@ -100,7 +100,7 @@ export function Features() {
               </div>
             </div>
             <a href="#demo"
-               className="shrink-0 border border-black/25 text-black/60 text-xs font-sans font-medium
+               className="shrink-0 border border-black/30 text-black/60 text-xs font-sans font-medium
                           px-6 py-3 rounded-full hover:border-black/50 hover:text-black
                           transition-colors whitespace-nowrap">
               {t("tier_ent_cta")}

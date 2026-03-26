@@ -8,10 +8,8 @@ export function CtaBottom() {
   const { t } = useLocale();
 
   return (
-    <section className="bg-surface-dark py-32 relative overflow-hidden flex flex-col items-center">
-      <div className="absolute top-0 left-0 right-0 h-px
-                      bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="w-full max-w-3xl px-6 sm:px-8 text-center">
+    <section className="bg-surface-dark py-32 border-t border-white/6 relative overflow-hidden flex flex-col items-center">
+      <div className="w-full max-w-4xl px-6 sm:px-8 text-center">
         <FadeUp>
           {/* Live indicator */}
           <div className="flex items-center justify-center gap-2 mb-10">

@@ -14,7 +14,7 @@ export function Statement() {
   const { t } = useLocale();
 
   return (
-    <section className="bg-white py-24 md:py-32 flex flex-col items-center">
+    <section className="bg-white py-32 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-4xl px-8 text-center">
 
         {/* Quote */}

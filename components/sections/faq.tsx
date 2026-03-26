@@ -46,10 +46,10 @@ export function Faq() {
   const [open, setOpen] = useState<number|null>(0);
 
   return (
-    <section id="faq" className="bg-surface-dark py-24 flex flex-col items-center">
+    <section id="faq" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
       <div className="w-full max-w-3xl px-8">
 
-        <FadeUp className="mb-14">
+        <FadeUp className="mb-16">
           {/* Section marker */}
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-white/15 text-xs">05</span>

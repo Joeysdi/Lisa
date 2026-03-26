@@ -51,6 +51,10 @@ export const translations = {
     how_stat1:       "2.8M สแกน / วัน",
     how_stat2:       "<24 ชม. เฉลี่ยในการลบ",
     how_stat3:       "99.2% อัตราสำเร็จ",
+    how_s1_chips:    "FACE RECOGNITION · VOICE PRINT · AI SIGNATURE",
+    how_s2_chips:    "2.8M DAILY SCANS · 50+ PLATFORMS · DARK WEB",
+    how_s3_chips:    "AUTO DMCA · AVG 21H REMOVAL · 99.2% SUCCESS",
+    how_s4_chips:    "EMAIL · SMS · PUSH · DASHBOARD",
 
     // Features
     feat_eyebrow:    "ฟีเจอร์ทั้งหมด",
@@ -263,6 +267,10 @@ export const translations = {
     how_stat1:       "2.8M SCANS / DAY",
     how_stat2:       "<24H AVG REMOVAL",
     how_stat3:       "99.2% SUCCESS",
+    how_s1_chips:    "FACE RECOGNITION · VOICE PRINT · AI SIGNATURE",
+    how_s2_chips:    "2.8M DAILY SCANS · 50+ PLATFORMS · DARK WEB",
+    how_s3_chips:    "AUTO DMCA · AVG 21H REMOVAL · 99.2% SUCCESS",
+    how_s4_chips:    "EMAIL · SMS · PUSH · DASHBOARD",
 
     feat_eyebrow:    "All features",
     feat_h2_1:       "Everything",

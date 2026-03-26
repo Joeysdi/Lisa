@@ -45,7 +45,7 @@ export function Pricing() {
   const [annual, setAnnual] = useState(false);
 
   return (
-    <section id="pricing" className="bg-white py-24 flex flex-col items-center">
+    <section id="pricing" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         <FadeUp className="mb-12">

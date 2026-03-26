@@ -73,7 +73,7 @@ export function DemoForm() {
                       transition-all duration-150`;
 
   return (
-    <section id="demo" className="bg-surface-dark py-32 flex flex-col items-center">
+    <section id="demo" className="bg-surface-dark py-32 border-t border-white/6 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         {/* Eyebrow + value props strip */}
@@ -117,7 +117,7 @@ export function DemoForm() {
             ) : (
               <form onSubmit={onFreeSubmit} className="flex flex-col gap-4 max-w-sm">
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_email")}
                   </label>
                   <input type="email" required value={freeForm.email} onChange={setFree("email")}
@@ -125,7 +125,7 @@ export function DemoForm() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_role")}
                   </label>
                   <select required value={freeForm.role} onChange={setFree("role")}
@@ -184,14 +184,14 @@ export function DemoForm() {
               <form onSubmit={onSubmit} className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                    <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                       {t("demo_fname")}
                     </label>
                     <input type="text" required value={form.firstName} onChange={set("firstName")}
                       placeholder="Jane" className={inputClass} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                    <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                       {t("demo_lname")}
                     </label>
                     <input type="text" required value={form.lastName} onChange={set("lastName")}
@@ -200,7 +200,7 @@ export function DemoForm() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_email")}
                   </label>
                   <input type="email" required value={form.email} onChange={set("email")}
@@ -208,7 +208,7 @@ export function DemoForm() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_social")}
                   </label>
                   <input type="text" required value={form.social} onChange={set("social")}
@@ -216,7 +216,7 @@ export function DemoForm() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_role")}
                   </label>
                   <select required value={form.role} onChange={set("role")}
@@ -230,7 +230,7 @@ export function DemoForm() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs tracking-[.15em] uppercase text-white/35 font-sans">
+                  <label className="text-xs tracking-[.15em] uppercase text-white/45 font-sans">
                     {t("demo_concern")}
                   </label>
                   <textarea rows={3} value={form.concern} onChange={set("concern")}
