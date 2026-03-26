@@ -37,12 +37,12 @@ export function DemoForm() {
                  transition-[border-color] duration-150`;
 
   return (
-    <section id="demo" className="bg-black py-28">
-      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8">
+    <section id="demo" className="bg-black py-28 flex flex-col items-center">
+      <div className="w-full max-w-4xl px-6 sm:px-8">
 
-        <FadeUp className="mb-14">
+        <FadeUp className="text-center mb-14">
           <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">{t("demo_eyebrow")}</p>
-          <h2 className="text-white font-extrabold text-[clamp(30px,5vw,52px)] leading-tight tracking-tight">
+          <h2 className="text-white font-extrabold text-[clamp(28px,5vw,48px)] leading-tight tracking-tight">
             {t("demo_h2")}
           </h2>
         </FadeUp>
@@ -117,7 +117,7 @@ export function DemoForm() {
                                     rounded-xl py-2.5">{error}</p>
                     )}
                     <button type="submit" disabled={loading}
-                      className="w-full bg-white text-black font-bold text-base py-4 rounded-xl
+                      className="w-full bg-white text-black font-semibold text-sm py-3.5 rounded-xl
                                  transition-all duration-200 hover:bg-white/88 hover:-translate-y-0.5
                                  disabled:opacity-40 disabled:cursor-not-allowed mt-2">
                       {loading ? "…" : t("demo_submit")}

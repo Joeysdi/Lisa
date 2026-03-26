@@ -6,8 +6,8 @@ export function Footer() {
   const { t } = useLocale();
 
   return (
-    <footer className="bg-black border-t border-white/5 py-16">
-      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8">
+    <footer className="bg-black border-t border-white/5 py-16 flex flex-col items-center">
+      <div className="w-full max-w-4xl px-6 sm:px-8">
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
