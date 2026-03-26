@@ -3,9 +3,6 @@
 @theme inline {
   --color-background: #000000;
   --color-foreground: #ffffff;
-  --color-green-400: #4ade80;
-  --color-red-400: #f87171;
-  --color-yellow-400: #fbbf24;
   --font-sans: var(--font-inter);
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 }
@@ -31,8 +28,8 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
 
 /* Reading progress bar */
 #progress-bar {
@@ -41,7 +38,7 @@ body {
   left: 0;
   height: 1px;
   width: 0%;
-  background: #4ade80;
+  background: #fff;
   z-index: 9999;
   transition: width 0.08s linear;
 }

@@ -10,13 +10,13 @@ interface LocaleCtx {
 }
 
 const Ctx = createContext<LocaleCtx>({
-  locale: "th",
-  t: (k) => translations.th[k],
+  locale: "en",
+  t: (k) => translations.en[k],
   toggle: () => {},
 });
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("th");
+  const [locale, setLocale] = useState<Locale>("en");
 
   const toggle = useCallback(() => {
     setLocale((l) => (l === "th" ? "en" : "th"));

@@ -27,38 +27,33 @@ export function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[6%] h-16
-                    transition-all duration-300
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between
+                    px-6 md:px-12 h-16 transition-all duration-300
                     ${scrolled
-                      ? "bg-black/95 backdrop-blur-2xl border-b border-white/8 shadow-[0_1px_0_rgba(255,255,255,0.04)]"
-                      : "bg-black/80 backdrop-blur-xl border-b border-white/5"
+                      ? "bg-black/98 backdrop-blur-2xl border-b border-white/6"
+                      : "bg-transparent"
                     }`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 select-none">
-          <div className="w-8 h-8 bg-white rounded-[7px] flex items-center justify-center
-                          text-black font-black text-[15px] flex-shrink-0">
+        <a href="#" className="flex items-center gap-3 select-none">
+          <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center
+                          text-black font-black text-[13px] flex-shrink-0">
             L
           </div>
-          <div className="leading-tight">
-            <div className="text-white font-extrabold text-[15px] tracking-[-0.2px]">
-              Lisa Modeling Protection
-            </div>
-            <div className="text-white/40 text-[9px] tracking-[0.5px] font-normal">
-              AI LIKENESS DEFENSE
-            </div>
-          </div>
+          <span className="text-white font-bold text-[15px] tracking-[-0.3px]">
+            Lisa
+            <span className="text-white/30 font-normal"> Modeling Protection</span>
+          </span>
         </a>
 
-        {/* Desktop center links */}
-        <div className="hidden md:flex items-center gap-0.5">
+        {/* Desktop center */}
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-white/50 hover:text-white text-[14px] font-medium
-                         px-3.5 py-[7px] rounded-[7px] transition-all duration-150
-                         hover:bg-white/6"
+              className="text-white/40 hover:text-white text-[14px] font-medium
+                         px-3.5 py-2 rounded-lg transition-colors duration-150"
             >
               {t(l.labelKey)}
             </a>
@@ -66,44 +61,41 @@ export function Nav() {
         </div>
 
         {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-2.5">
+        <div className="hidden md:flex items-center gap-2">
           <button
             onClick={toggle}
-            className="text-white/40 hover:text-white text-[12px] font-mono tracking-wider
-                       px-2.5 py-1 rounded-md border border-white/10 hover:border-white/25
-                       transition-all duration-150"
+            className="text-white/35 hover:text-white text-[12px] font-mono
+                       tracking-widest px-2.5 py-1.5 rounded-md border border-white/10
+                       hover:border-white/25 transition-all duration-150"
           >
             {t("lang_switch")}
           </button>
-          <a
-            href="#demo"
-            className="text-white/50 hover:text-white text-[14px] font-medium
-                       px-3 py-2 rounded-[7px] transition-all duration-150"
-          >
+          <a href="#demo"
+             className="text-white/40 hover:text-white text-[14px] px-3 py-2
+                        transition-colors duration-150">
             {t("nav_signin")}
           </a>
-          <a
-            href="#demo"
-            className="bg-white text-black text-[14px] font-bold px-5 py-[9px]
-                       rounded-lg transition-all duration-200 hover:bg-white/90
-                       hover:-translate-y-px"
-          >
+          <a href="#demo"
+             className="bg-white text-black text-[13px] font-bold px-5 py-2
+                        rounded-lg transition-all duration-200 hover:bg-white/88
+                        hover:-translate-y-px">
             {t("nav_demo")}
           </a>
         </div>
 
-        {/* Mobile hamburger */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile */}
+        <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggle}
-            className="text-white/40 hover:text-white text-[11px] font-mono
-                       px-2 py-1 rounded border border-white/10"
+            className="text-white/35 hover:text-white text-[11px] font-mono
+                       px-2 py-1.5 rounded border border-white/10 hover:border-white/25
+                       transition-all duration-150"
           >
             {t("lang_switch")}
           </button>
           <button
             onClick={() => setOpen((o) => !o)}
-            className="flex flex-col gap-[5px] p-1.5 cursor-pointer"
+            className="flex flex-col gap-[5px] p-1.5"
             aria-label="Menu"
           >
             {[0, 1, 2].map((i) => (
@@ -133,37 +125,26 @@ export function Nav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.22 }}
             className="fixed top-16 left-0 right-0 z-40 overflow-hidden
-                       bg-black/98 backdrop-blur-2xl border-b border-white/8"
+                       bg-black/99 border-b border-white/6"
           >
-            <div className="flex flex-col px-[6%] py-4 gap-0.5">
+            <div className="flex flex-col px-6 py-4 gap-0.5">
               {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={close}
-                  className="text-white/60 hover:text-white text-[15px] font-medium
-                             py-3 border-b border-white/5 last:border-0
-                             transition-colors duration-150"
-                >
+                <a key={l.href} href={l.href} onClick={close}
+                   className="text-white/55 hover:text-white text-[15px] font-medium
+                              py-3 border-b border-white/5 last:border-0
+                              transition-colors duration-150">
                   {t(l.labelKey)}
                 </a>
               ))}
               <div className="pt-4 flex flex-col gap-2">
-                <a
-                  href="#demo"
-                  onClick={close}
-                  className="text-white/50 hover:text-white text-[14px] py-2 text-center"
-                >
+                <a href="#demo" onClick={close}
+                   className="text-white/40 text-[14px] py-2 text-center">
                   {t("nav_signin")}
                 </a>
-                <a
-                  href="#demo"
-                  onClick={close}
-                  className="bg-white text-black text-[14px] font-bold
-                             py-3 rounded-lg text-center"
-                >
+                <a href="#demo" onClick={close}
+                   className="bg-white text-black text-[14px] font-bold py-3 rounded-lg text-center">
                   {t("nav_demo")}
                 </a>
               </div>

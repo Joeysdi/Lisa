@@ -17,14 +17,13 @@ export function DemoForm() {
     firstName: "", lastName: "", email: "",
     social: "", role: "", concern: "",
   });
-  const [loading,  setLoading]  = useState(false);
-  const [success,  setSuccess]  = useState(false);
-  const [error,    setError]    = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error,   setError]   = useState<string | null>(null);
 
-  const set = (k: keyof typeof form) => (
+  const set = (k: keyof typeof form) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-      setForm((f) => ({ ...f, [k]: e.target.value }))
-  );
+      setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -48,85 +47,81 @@ export function DemoForm() {
     }
   };
 
-  const inputCls = `w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-4 py-3
-                    text-white text-[14px] placeholder:text-white/25
-                    focus:outline-none focus:border-green-400/50 focus:bg-[#0a0a0a]
+  const inputCls = `w-full bg-black border border-white/8 rounded-xl px-4 py-3
+                    text-white text-[14px] placeholder:text-white/18
+                    focus:outline-none focus:border-white/25
                     transition-[border-color] duration-150`;
 
   return (
-    <section id="demo" className="py-24 px-[6%] bg-black">
+    <section id="demo" className="py-28 px-6 md:px-12 bg-black">
       <div className="max-w-6xl mx-auto">
 
-        <FadeUp className="text-center mb-14">
-          <div className="inline-block text-white/30 text-[11px] font-medium tracking-[.2em]
-                          uppercase mb-4 px-3 py-1 rounded-full border border-white/8">
+        <FadeUp className="mb-14">
+          <p className="text-white/25 text-[11px] font-mono tracking-[.2em] uppercase mb-4">
             {t("demo_eyebrow")}
-          </div>
-          <h2 className="text-white font-extrabold text-[clamp(28px,5vw,44px)] leading-tight">
+          </p>
+          <h2 className="text-white font-extrabold text-[clamp(28px,5vw,48px)]
+                         leading-tight tracking-[-1px]">
             {t("demo_h2")}
           </h2>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* Points */}
-          <FadeUp delay={0.1}>
-            <div className="flex flex-col gap-6">
-              {points.map((p) => (
-                <div key={p.tKey} className="flex gap-4">
-                  <div className="text-[24px] flex-shrink-0 mt-0.5">{p.icon}</div>
-                  <div>
-                    <div className="text-white font-semibold text-[15px] mb-1">{t(p.tKey)}</div>
-                    <div className="text-white/40 text-[13px] leading-relaxed">{t(p.dKey)}</div>
-                  </div>
+          {/* Value points */}
+          <FadeUp delay={0.1} className="flex flex-col gap-8">
+            {points.map((p) => (
+              <div key={p.tKey} className="flex gap-4">
+                <div className="text-[22px] flex-shrink-0">{p.icon}</div>
+                <div>
+                  <div className="text-white font-semibold text-[15px] mb-1.5">{t(p.tKey)}</div>
+                  <div className="text-white/35 text-[13px] leading-relaxed">{t(p.dKey)}</div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </FadeUp>
 
-          {/* Form card */}
-          <FadeUp delay={0.15}>
-            <div className="bg-[#0f0f0f] border border-white/10 rounded-2xl p-8
-                             shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+          {/* Form */}
+          <FadeUp delay={0.12}>
+            <div className="rounded-2xl border border-white/8 p-8 bg-[#0a0a0a]">
               {success ? (
-                <div className="text-center py-8">
-                  <div className="text-[48px] mb-4">✅</div>
+                <div className="text-center py-10">
+                  <div className="text-[40px] mb-5">✓</div>
                   <p className="text-white font-semibold text-[17px] mb-2">{t("demo_success")}</p>
-                  <p className="text-white/40 text-[13px]">{t("demo_note")}</p>
+                  <p className="text-white/30 text-[13px]">{t("demo_note")}</p>
                 </div>
               ) : (
                 <>
-                  <h3 className="text-white font-bold text-[19px] mb-1">{t("demo_form_h")}</h3>
-                  <p className="text-white/40 text-[13px] mb-6">{t("demo_form_sub")}</p>
+                  <h3 className="text-white font-bold text-[20px] mb-1.5 tracking-[-0.3px]">
+                    {t("demo_form_h")}
+                  </h3>
+                  <p className="text-white/30 text-[13px] mb-7">{t("demo_form_sub")}</p>
 
                   <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-white/50 text-[12px] font-medium">{t("demo_fname")}</label>
+                        <label className="text-white/35 text-[12px] font-mono">{t("demo_fname")}</label>
                         <input type="text" required value={form.firstName} onChange={set("firstName")}
-                          placeholder="สมหญิง / Jane" className={inputCls} />
+                          placeholder="Jane" className={inputCls} />
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-white/50 text-[12px] font-medium">{t("demo_lname")}</label>
+                        <label className="text-white/35 text-[12px] font-mono">{t("demo_lname")}</label>
                         <input type="text" required value={form.lastName} onChange={set("lastName")}
-                          placeholder="ใจดี / Smith" className={inputCls} />
+                          placeholder="Smith" className={inputCls} />
                       </div>
                     </div>
-
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-white/50 text-[12px] font-medium">{t("demo_email")}</label>
+                      <label className="text-white/35 text-[12px] font-mono">{t("demo_email")}</label>
                       <input type="email" required value={form.email} onChange={set("email")}
                         placeholder="you@example.com" className={inputCls} />
                     </div>
-
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-white/50 text-[12px] font-medium">{t("demo_social")}</label>
+                      <label className="text-white/35 text-[12px] font-mono">{t("demo_social")}</label>
                       <input type="text" required value={form.social} onChange={set("social")}
                         placeholder="@yourhandle" className={inputCls} />
                     </div>
-
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-white/50 text-[12px] font-medium">{t("demo_role")}</label>
+                      <label className="text-white/35 text-[12px] font-mono">{t("demo_role")}</label>
                       <select required value={form.role} onChange={set("role")}
                         className={inputCls + " cursor-pointer"}>
                         <option value="" disabled>—</option>
@@ -135,29 +130,27 @@ export function DemoForm() {
                         ))}
                       </select>
                     </div>
-
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-white/50 text-[12px] font-medium">{t("demo_concern")}</label>
+                      <label className="text-white/35 text-[12px] font-mono">{t("demo_concern")}</label>
                       <textarea rows={3} value={form.concern} onChange={set("concern")}
                         placeholder={t("demo_concern_ph")}
                         className={inputCls + " resize-none"} />
                     </div>
 
                     {error && (
-                      <p className="text-red-400 text-[12px] text-center">{error}</p>
+                      <p className="text-white/60 text-[12px] text-center border border-white/10
+                                    rounded-lg py-2">{error}</p>
                     )}
 
                     <button type="submit" disabled={loading}
-                      className="w-full bg-green-400 text-black font-bold text-[15px]
+                      className="w-full bg-white text-black font-bold text-[14px]
                                  py-3.5 rounded-xl transition-all duration-200
-                                 hover:bg-green-300 hover:-translate-y-0.5
-                                 hover:shadow-[0_8px_24px_rgba(74,222,128,0.3)]
-                                 disabled:opacity-50 disabled:cursor-not-allowed
+                                 hover:bg-white/88 hover:-translate-y-0.5
+                                 disabled:opacity-40 disabled:cursor-not-allowed
                                  disabled:hover:transform-none">
                       {loading ? "…" : t("demo_submit")}
                     </button>
-
-                    <p className="text-white/25 text-[11px] text-center leading-relaxed">
+                    <p className="text-white/18 text-[11px] text-center leading-relaxed">
                       {t("demo_note")}
                     </p>
                   </form>
