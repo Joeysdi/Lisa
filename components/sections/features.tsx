@@ -20,35 +20,34 @@ export function Features() {
   const { t } = useLocale();
 
   return (
-    <section id="features" className="bg-black py-28">
-      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8">
+    <section id="features" className="bg-black py-28 flex flex-col items-center">
+      <div className="w-full max-w-4xl px-6 sm:px-8">
 
-        <FadeUp className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-14">
-          <div>
-            <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">
-              {t("feat_eyebrow")}
-            </p>
-            <h2 className="text-white font-extrabold text-[clamp(30px,5vw,52px)]
-                           leading-tight tracking-tight">
-              {t("feat_h2_1")}{" "}
-              <span className="text-white/30">{t("feat_h2_2")}</span>
-            </h2>
-          </div>
-          <p className="text-white/30 text-base leading-relaxed max-w-sm">{t("feat_sub")}</p>
+        <FadeUp className="text-center mb-14">
+          <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">
+            {t("feat_eyebrow")}
+          </p>
+          <h2 className="text-white font-extrabold text-[clamp(28px,5vw,48px)] leading-tight tracking-tight">
+            {t("feat_h2_1")}{" "}
+            <span className="text-white/30">{t("feat_h2_2")}</span>
+          </h2>
+          <p className="text-white/30 text-sm sm:text-base mt-3 max-w-md mx-auto leading-relaxed">
+            {t("feat_sub")}
+          </p>
         </FadeUp>
 
         <StaggerParent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px
                                    bg-white/5 rounded-2xl overflow-hidden border border-white/5">
-          {features.map((f) => (
+          {features.map(f => (
             <StaggerChild key={f.tKey}>
               <motion.div whileHover={{ backgroundColor:"rgba(255,255,255,0.04)" }}
                 transition={{ duration:0.15 }}
-                className="bg-black p-7 flex flex-col gap-3 h-full">
-                <div className="text-3xl mb-1">{f.icon}</div>
-                <div className="font-semibold text-white text-base">{t(f.tKey)}</div>
-                <div className="text-white/35 text-sm leading-relaxed flex-1">{t(f.dKey)}</div>
-                <span className="inline-block text-xs font-mono tracking-wider
-                                  text-white/30 border border-white/8 px-3 py-1 rounded-lg
+                className="bg-black p-6 flex flex-col gap-3 h-full text-left">
+                <div className="text-2xl mb-1">{f.icon}</div>
+                <div className="font-semibold text-white text-sm">{t(f.tKey)}</div>
+                <div className="text-white/35 text-xs leading-relaxed flex-1">{t(f.dKey)}</div>
+                <span className="inline-block text-[10px] font-mono tracking-wider
+                                  text-white/30 border border-white/8 px-2.5 py-1 rounded-md
                                   self-start mt-1">
                   {t(f.tagKey)}
                 </span>
