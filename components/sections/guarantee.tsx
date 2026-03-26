@@ -37,7 +37,7 @@ export function Guarantee() {
           </h2>
 
           {/* Body */}
-          <p className="text-white/55 text-base leading-relaxed font-sans max-w-lg mx-auto mb-10">
+          <p className="text-white/55 text-base leading-relaxed font-sans mb-10">
             {t("guarantee_sub")}
           </p>
 
