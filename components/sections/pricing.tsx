@@ -109,9 +109,9 @@ export function Pricing() {
                 ))}
               </ul>
               <a href="#demo"
-                className="block text-center border border-black/15 text-black/50 text-[10px]
-                           tracking-[.15em] uppercase px-5 py-3 w-full
-                           hover:border-black/40 transition-colors font-sans">
+                className="block text-center border border-black/20 text-black/60 text-sm
+                           px-5 py-3 w-full rounded-full hover:border-black/50 hover:text-black
+                           transition-colors font-sans font-medium">
                 {t("tier_free_cta")}
               </a>
             </div>
@@ -141,8 +141,8 @@ export function Pricing() {
                 ))}
               </ul>
               <a href="#demo"
-                className="block text-center bg-white text-black text-[10px] tracking-[.15em]
-                           uppercase px-5 py-3 w-full hover:bg-white/88 transition-colors font-sans">
+                className="block text-center bg-white text-black text-sm font-medium
+                           px-5 py-3 w-full rounded-full hover:bg-white/90 transition-colors font-sans">
                 {t("tier_pro_cta")}
               </a>
             </div>
@@ -167,9 +167,9 @@ export function Pricing() {
                 ))}
               </ul>
               <a href="#demo"
-                className="block text-center border border-black/15 text-black/50 text-[10px]
-                           tracking-[.15em] uppercase px-5 py-3 w-full
-                           hover:border-black/40 transition-colors font-sans">
+                className="block text-center border border-black/20 text-black/60 text-sm
+                           px-5 py-3 w-full rounded-full hover:border-black/50 hover:text-black
+                           transition-colors font-sans font-medium">
                 {t("tier_ent_cta")}
               </a>
             </div>

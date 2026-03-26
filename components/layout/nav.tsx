@@ -68,9 +68,9 @@ export function Nav() {
               {t("nav_signin")}
             </a>
             <a href="#demo"
-               className="border border-white text-white uppercase text-[10px] tracking-[.15em]
-                          px-7 py-3.5 hover:bg-white hover:text-black transition-all whitespace-nowrap">
-              BOOK A DEMO
+               className="bg-white text-black font-sans font-medium text-xs
+                          px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors whitespace-nowrap">
+              Book a demo
             </a>
           </div>
 
@@ -125,9 +125,9 @@ export function Nav() {
                 {t("nav_signin")}
               </a>
               <a href="#demo" onClick={() => setOpen(false)}
-                 className="border border-white text-white uppercase text-[10px] tracking-[.15em]
-                            px-7 py-4 text-center hover:bg-white hover:text-black transition-all">
-                BOOK A DEMO
+                 className="bg-white text-black font-sans font-medium text-sm
+                            px-7 py-4 text-center rounded-full hover:bg-white/90 transition-colors">
+                Book a demo
               </a>
             </div>
           </motion.div>
