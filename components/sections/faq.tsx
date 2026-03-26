@@ -34,37 +34,51 @@ export function Faq() {
   const [open, setOpen] = useState<number|null>(0);
 
   return (
-    <section id="faq" className="bg-[#050505] py-28 flex flex-col items-center">
-      <div className="w-full max-w-2xl px-6 sm:px-8">
+    <section id="faq" className="bg-[#050505] py-24 flex flex-col items-center">
+      <div className="w-full max-w-3xl px-8">
 
-        <FadeUp className="text-center mb-12">
-          <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">{t("faq_eyebrow")}</p>
-          <h2 className="text-white font-extrabold text-[clamp(28px,5vw,48px)] leading-tight tracking-tight">
+        <FadeUp className="mb-14">
+          {/* Section marker */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-mono text-white/15 text-xs">04</span>
+            <div className="w-8 h-px bg-white/10" />
+            <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">FAQ</span>
+          </div>
+          <h2
+            className="font-display font-light text-white"
+            style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+          >
             {t("faq_h2")}
           </h2>
         </FadeUp>
 
-        <div className="rounded-2xl border border-white/8 overflow-hidden bg-black divide-y divide-white/5">
-          {faqData.map((item,i) => (
+        <div className="divide-y divide-white/6">
+          {faqData.map((item, i) => (
             <div key={i}>
-              <button onClick={() => setOpen(open===i?null:i)}
-                className="w-full flex items-start justify-between gap-5 px-6 py-5
-                           text-left hover:bg-white/[0.02] transition-colors">
-                <span className={`font-medium text-sm leading-snug transition-colors
-                  ${open===i?"text-white":"text-white/50"}`}>
+              <button onClick={() => setOpen(open === i ? null : i)}
+                className="w-full flex justify-between items-start py-6 text-left gap-6">
+                <span className={`font-sans font-medium text-sm leading-snug transition-colors
+                  ${open === i ? "text-white" : "text-white/50"}`}>
                   {item.q[locale]}
                 </span>
-                <motion.span animate={{ rotate:open===i?45:0 }} transition={{ duration:0.18 }}
-                  className="text-white/25 text-xl leading-none shrink-0 mt-0.5">+</motion.span>
+                <motion.span
+                  animate={{ rotate: open === i ? 45 : 0 }}
+                  transition={{ duration: 0.18 }}
+                  className="text-white/25 text-xl leading-none shrink-0 mt-0.5 font-light">
+                  +
+                </motion.span>
               </button>
               <AnimatePresence initial={false}>
-                {open===i && (
+                {open === i && (
                   <motion.div key="c"
-                    initial={{ height:0, opacity:0 }} animate={{ height:"auto", opacity:1 }}
-                    exit={{ height:0, opacity:0 }}
-                    transition={{ duration:0.22, ease:[0.4,0,0.2,1] }}
-                    style={{ overflow:"hidden" }}>
-                    <div className="px-6 pb-5 text-white/35 text-sm leading-relaxed">{item.a[locale]}</div>
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+                    style={{ overflow: "hidden" }}>
+                    <div className="pb-6 text-white/30 text-sm leading-relaxed font-sans">
+                      {item.a[locale]}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

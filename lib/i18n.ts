@@ -160,6 +160,9 @@ export const translations = {
     foot_terms:      "ข้อกำหนดการใช้งาน",
     foot_aup:        "นโยบายการใช้งานที่ยอมรับได้",
 
+    // Statement
+    stmt_quote:      "ในยุคที่ AI สามารถสร้างภาพลักษณ์ของคุณได้ในชั่วพริบตา — Lisa คือเกราะป้องกันที่มั่นคง",
+
     // Cookie
     cookie_text:     "เราใช้คุกกี้เพื่อทำให้ประสบการณ์ของคุณดีขึ้น",
     cookie_accept:   "ยอมรับทั้งหมด",
@@ -316,6 +319,9 @@ export const translations = {
     foot_biometric:  "Biometric Data Policy",
     foot_terms:      "Terms of Service",
     foot_aup:        "Acceptable Use Policy",
+
+    // Statement
+    stmt_quote:      "In an era where AI can replicate your likeness in seconds, Lisa ensures they cannot.",
 
     cookie_text:     "We use cookies to improve your experience.",
     cookie_accept:   "Accept all",

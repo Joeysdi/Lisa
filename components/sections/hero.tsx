@@ -6,90 +6,135 @@ import { useLocale } from "@/lib/locale-context";
 
 const aiTools = ["Midjourney", "Stable Diffusion", "Sora", "DALL·E", "Kling"];
 
+function ScanGraphic() {
+  const rings = [360, 280, 200, 120, 50];
+  const opacities = [0.04, 0.05, 0.07, 0.1, 0.15];
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {/* Concentric rings */}
+      {rings.map((size, i) => (
+        <div
+          key={size}
+          className="absolute rounded-full border border-white"
+          style={{
+            width: size,
+            height: size,
+            opacity: opacities[i],
+          }}
+        />
+      ))}
+
+      {/* Crosshair lines */}
+      <div className="absolute w-full h-px bg-white/8" />
+      <div className="absolute w-px h-full bg-white/8" />
+
+      {/* Rotating scanner arm */}
+      <div className="absolute" style={{ width: 180, height: 180 }}>
+        <motion.div
+          className="absolute top-1/2 left-1/2 h-px bg-gradient-to-r from-white/25 to-transparent"
+          style={{
+            width: 180,
+            transformOrigin: "left center",
+            marginTop: -0.5,
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      {/* Center dot */}
+      <div className="relative w-1.5 h-1.5 rounded-full bg-white/40" />
+    </div>
+  );
+}
+
 export function Hero() {
   const { t } = useLocale();
 
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden pt-24 pb-24
-                        flex flex-col items-center justify-center">
-      {/* Grid bg */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage:"linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px)",
-        backgroundSize:"80px 80px",
-      }} />
-      <div className="absolute inset-0 pointer-events-none
-                      bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,transparent_20%,#000_100%)]" />
+    <section className="min-h-screen bg-black flex flex-col overflow-hidden">
 
-      <div className="relative z-10 w-full max-w-4xl px-6 sm:px-8 text-center">
-        <StaggerParent className="flex flex-col items-center gap-7">
+      {/* Main content */}
+      <div className="flex-1 flex items-center max-w-7xl mx-auto w-full px-8 pt-24 pb-20">
+        <div className="flex w-full items-center gap-16">
 
-          <StaggerChild>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                            border border-white/10 bg-white/[0.04]">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
-              </span>
-              <span className="text-white/50 text-xs">{t("hero_live")}</span>
-            </div>
-          </StaggerChild>
+          {/* Left */}
+          <StaggerParent className="flex flex-col lg:w-[55%]">
 
-          <StaggerChild>
-            <h1 className="font-extrabold text-[clamp(40px,8vw,80px)] leading-[1.02]
-                           tracking-tight text-white">
-              {t("hero_h1_1")}{" "}
-              <span className="text-white/35">{t("hero_h1_2")}</span>
-            </h1>
-          </StaggerChild>
-
-          <StaggerChild>
-            <p className="text-white/40 text-base sm:text-lg leading-relaxed max-w-lg mx-auto">
-              {t("hero_sub")}
-            </p>
-          </StaggerChild>
-
-          <StaggerChild>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href="#demo"
-                 className="inline-flex items-center justify-center bg-white text-black
-                            font-semibold text-sm px-7 py-3 rounded-xl w-full sm:w-auto
-                            transition-all duration-200 hover:bg-white/88 hover:-translate-y-px
-                            hover:shadow-[0_6px_20px_rgba(255,255,255,0.12)]">
-                {t("hero_cta1")}
-              </a>
-              <a href="#how"
-                 className="inline-flex items-center justify-center text-white/45 hover:text-white
-                            font-medium text-sm px-7 py-3 rounded-xl w-full sm:w-auto
-                            border border-white/10 hover:border-white/25 transition-all duration-200">
-                {t("hero_cta2")} →
-              </a>
-            </div>
-          </StaggerChild>
-
-          <StaggerChild>
-            <div className="flex flex-col items-center gap-3 mt-2">
-              <p className="text-white/20 text-[10px] font-mono tracking-[.25em] uppercase">
-                {t("hero_trust")}
-              </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {aiTools.map(tool => (
-                  <span key={tool}
-                    className="px-3 py-1.5 rounded-lg border border-white/6
-                               text-white/25 text-xs">
-                    {tool}
-                  </span>
-                ))}
+            {/* Eyebrow */}
+            <StaggerChild>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-px bg-white/20" />
+                <span className="text-[10px] tracking-[.3em] uppercase font-sans text-white/30">
+                  MODELING PROTECTION
+                </span>
               </div>
-            </div>
-          </StaggerChild>
+            </StaggerChild>
 
-        </StaggerParent>
+            {/* H1 */}
+            <StaggerChild>
+              <h1
+                className="font-display font-light leading-[0.92] tracking-[-0.02em] mb-6"
+                style={{ fontSize: "clamp(56px, 9vw, 120px)" }}
+              >
+                <span className="block text-white">{t("hero_h1_1")}</span>
+                <span className="block italic text-white/40">{t("hero_h1_2")}</span>
+              </h1>
+            </StaggerChild>
+
+            {/* Sub */}
+            <StaggerChild>
+              <p className="text-white/40 text-base max-w-sm font-sans mt-2 mb-10 leading-relaxed">
+                {t("hero_sub")}
+              </p>
+            </StaggerChild>
+
+            {/* CTAs */}
+            <StaggerChild>
+              <div className="flex flex-col sm:flex-row items-start gap-3">
+                <a href="#demo"
+                   className="border border-white text-white uppercase text-[10px] tracking-[.15em]
+                              px-7 py-3.5 hover:bg-white hover:text-black transition-all whitespace-nowrap">
+                  {t("hero_cta1")}
+                </a>
+                <a href="#how"
+                   className="border border-white/20 text-white/50 uppercase text-[10px] tracking-[.15em]
+                              px-7 py-3.5 hover:border-white/50 hover:text-white transition-all whitespace-nowrap">
+                  {t("hero_cta2")}
+                </a>
+              </div>
+            </StaggerChild>
+
+          </StaggerParent>
+
+          {/* Right — scan graphic */}
+          <div className="hidden lg:block lg:w-[45%] lg:h-[480px] relative">
+            <ScanGraphic />
+          </div>
+        </div>
       </div>
 
-      <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        animate={{ y:[0,6,0] }} transition={{ duration:2, repeat:Infinity }}>
-        <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
-      </motion.div>
+      {/* Bottom strip */}
+      <div className="border-t border-white/6 w-full">
+        <div className="max-w-7xl mx-auto w-full px-8 py-5 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white/60" />
+            </span>
+            <span className="text-white/25 text-[11px] font-sans">{t("hero_live")}</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-6">
+            {aiTools.map(tool => (
+              <span key={tool} className="text-white/15 text-[11px] tracking-[.08em] font-sans">
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }
