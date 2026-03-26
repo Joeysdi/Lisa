@@ -21,7 +21,7 @@ export function Features() {
 
   return (
     <section id="features" className="bg-black py-28 flex flex-col items-center">
-      <div className="w-full max-w-4xl px-6 sm:px-8">
+      <div className="w-full max-w-6xl px-6 sm:px-8">
 
         <FadeUp className="text-center mb-14">
           <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">
@@ -31,7 +31,7 @@ export function Features() {
             {t("feat_h2_1")}{" "}
             <span className="text-white/30">{t("feat_h2_2")}</span>
           </h2>
-          <p className="text-white/30 text-sm sm:text-base mt-3 max-w-md mx-auto leading-relaxed">
+          <p className="text-white/30 text-sm sm:text-base mt-3 max-w-md mx-auto leading-relaxed text-center">
             {t("feat_sub")}
           </p>
         </FadeUp>

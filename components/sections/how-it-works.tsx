@@ -122,7 +122,7 @@ export function HowItWorks() {
 
   return (
     <section id="how" className="bg-[#050505] py-28 flex flex-col items-center">
-      <div className="w-full max-w-4xl px-6 sm:px-8">
+      <div className="w-full max-w-5xl px-6 sm:px-8">
 
         <FadeUp className="text-center mb-14">
           <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">{t("how_eyebrow")}</p>

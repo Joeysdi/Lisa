@@ -43,7 +43,7 @@ export function Pricing() {
 
   return (
     <section id="pricing" className="bg-black py-28 flex flex-col items-center">
-      <div className="w-full max-w-4xl px-6 sm:px-8">
+      <div className="w-full max-w-6xl px-6 sm:px-8">
 
         <FadeUp className="text-center mb-12">
           <p className="text-white/25 text-xs font-mono tracking-[.2em] uppercase mb-3">{t("pricing_eyebrow")}</p>
@@ -51,7 +51,7 @@ export function Pricing() {
             {t("pricing_h2_1")}{" "}
             <span className="text-white/30">{t("pricing_h2_2")}</span>
           </h2>
-          <p className="text-white/30 text-sm mt-3 max-w-sm mx-auto">{t("pricing_sub")}</p>
+          <p className="text-white/30 text-sm mt-3 max-w-sm mx-auto text-center">{t("pricing_sub")}</p>
         </FadeUp>
 
         {/* Toggle */}

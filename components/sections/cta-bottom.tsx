@@ -17,7 +17,7 @@ export function CtaBottom() {
             {t("cta_h2_1")}{" "}
             <span className="text-white/30">{t("cta_h2_2")}</span>
           </h2>
-          <p className="text-white/35 text-lg leading-relaxed max-w-lg mx-auto mb-10">
+          <p className="text-white/35 text-lg leading-relaxed max-w-lg mx-auto mb-10 text-center">
             {t("cta_sub")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

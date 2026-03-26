@@ -27,7 +27,7 @@ export function Nav() {
       <nav className={`fixed top-0 left-0 right-0 z-50 flex flex-col items-center
                        transition-all duration-300
                        ${scrolled ? "bg-black/98 backdrop-blur-2xl border-b border-white/6" : "bg-transparent"}`}>
-        <div className="w-full max-w-4xl px-6 sm:px-8 h-16 flex items-center justify-between">
+        <div className="w-full max-w-6xl px-6 sm:px-8 h-16 flex items-center justify-between">
 
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 select-none shrink-0">
@@ -39,7 +39,7 @@ export function Nav() {
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href}
                  className="text-white/40 hover:text-white text-xs font-medium
@@ -50,7 +50,7 @@ export function Nav() {
           </div>
 
           {/* Right */}
-          <div className="hidden md:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
             <button onClick={toggle}
               className="text-white/30 hover:text-white text-[11px] font-mono tracking-widest
                          px-2.5 py-1.5 rounded-lg border border-white/10 hover:border-white/25
@@ -70,7 +70,7 @@ export function Nav() {
           </div>
 
           {/* Mobile */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button onClick={toggle}
               className="text-white/30 text-[10px] font-mono px-2 py-1.5 rounded-md
                          border border-white/10 transition-all duration-150">
@@ -98,7 +98,7 @@ export function Nav() {
             transition={{ duration:0.2 }}
             className="fixed top-16 left-0 right-0 z-40 overflow-hidden
                        bg-black/99 border-b border-white/6 flex flex-col items-center">
-            <div className="w-full max-w-4xl px-6 py-4 flex flex-col gap-0.5">
+            <div className="w-full max-w-6xl px-6 py-4 flex flex-col gap-0.5">
               {navLinks.map(l => (
                 <a key={l.href} href={l.href} onClick={() => setOpen(false)}
                    className="text-white/50 hover:text-white text-sm font-medium
@@ -110,7 +110,7 @@ export function Nav() {
                 <a href="#demo" onClick={() => setOpen(false)}
                    className="text-white/35 text-xs py-2 text-center">{t("nav_signin")}</a>
                 <a href="#demo" onClick={() => setOpen(false)}
-                   className="bg-white text-black text-xs font-semibold py-3 rounded-xl text-center">
+                   className="w-full bg-white text-black text-sm font-semibold px-5 py-3 rounded-xl text-center">
                   {t("nav_demo")}
                 </a>
               </div>
