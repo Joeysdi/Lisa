@@ -7,30 +7,10 @@ export function HowItWorks() {
   const { t } = useLocale();
 
   const steps = [
-    {
-      num: "01",
-      title: t("how_s1_t"),
-      desc:  t("how_s1_d"),
-      chips: t("how_s1_chips").split(" · "),
-    },
-    {
-      num: "02",
-      title: t("how_s2_t"),
-      desc:  t("how_s2_d"),
-      chips: t("how_s2_chips").split(" · "),
-    },
-    {
-      num: "03",
-      title: t("how_s3_t"),
-      desc:  t("how_s3_d"),
-      chips: t("how_s3_chips").split(" · "),
-    },
-    {
-      num: "04",
-      title: t("how_s4_t"),
-      desc:  t("how_s4_d"),
-      chips: t("how_s4_chips").split(" · "),
-    },
+    { num: "01", title: t("how_s1_t"), desc: t("how_s1_d") },
+    { num: "02", title: t("how_s2_t"), desc: t("how_s2_d") },
+    { num: "03", title: t("how_s3_t"), desc: t("how_s3_d") },
+    { num: "04", title: t("how_s4_t"), desc: t("how_s4_d") },
   ];
 
   const stats = [
@@ -57,28 +37,26 @@ export function HowItWorks() {
           </h2>
         </FadeUp>
 
-        {/* Full-width steps */}
+        {/* Steps */}
         <div className="mt-12">
           {steps.map((s, i) => (
             <FadeUp key={s.num} delay={i * 0.08}>
-              <div className="border-t border-white/6 py-8">
-                {/* Title row */}
-                <div className="flex items-center gap-4 mb-5">
-                  <span className="font-mono text-[10px] text-white/20 shrink-0 tabular-nums">{s.num}</span>
-                  <div className="w-5 h-px bg-white/15 shrink-0" />
-                  <h3 className="font-sans font-medium text-white text-base shrink-0">{s.title}</h3>
-                  <div className="flex-1 h-px bg-white/8" />
-                </div>
-                {/* Body */}
-                <div className="pl-12">
-                  <p className="text-white/45 text-sm font-sans leading-relaxed mb-5">{s.desc}</p>
-                  <div className="flex flex-wrap gap-6">
-                    {s.chips.map(c => (
-                      <span key={c} className="font-mono text-[10px] text-white/25 tracking-[.15em] uppercase">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
+              <div className="border-t border-white/6 py-12 grid grid-cols-[64px_1fr] sm:grid-cols-[96px_1fr] gap-8 sm:gap-16">
+                {/* Step number */}
+                <span
+                  className="font-display font-light text-white/10 leading-none select-none"
+                  style={{ fontSize: "clamp(48px, 5vw, 72px)" }}
+                >
+                  {s.num}
+                </span>
+                {/* Content */}
+                <div className="pt-1">
+                  <h3 className="font-sans font-medium text-white text-xl mb-4 leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-white/50 text-base font-sans leading-loose max-w-2xl">
+                    {s.desc}
+                  </p>
                 </div>
               </div>
             </FadeUp>

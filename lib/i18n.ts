@@ -238,7 +238,7 @@ export const translations = {
     hero_trust:      "Detects content from",
 
     // Threat Ticker
-    ticker_row1:     "DEEPFAKE VIDEO — TELEGRAM · 8,400 VIEWS · AI IMAGE — REDDIT · 312 REPOSTS · VOICE CLONE — TIKTOK · 22K PLAYS · FACE SWAP — ADULT SITE · 5.1K VIEWS · AI IMAGE — INSTAGRAM · 890 SAVES ·",
+    ticker_row1:     "DEEPFAKE VIDEO — TELEGRAM · AI IMAGE — REDDIT · VOICE CLONE — TIKTOK · FACE SWAP — ADULT SITE · AI IMAGE — INSTAGRAM · UNAUTHORIZED USE — YOUTUBE · LIKENESS CLONING — DARK WEB · FACE SWAP — ONLYFANS ·",
     ticker_row2:     "DMCA FILED · REMOVAL IN 18H · CONTENT REMOVED · 14 VIOLATIONS THIS WEEK · 99.2% SUCCESS RATE · 2.8M SCANS TODAY · TAKEDOWN COMPLETE · VIOLATION DETECTED ·",
 
     // Problem Agitation
@@ -256,14 +256,14 @@ export const translations = {
     how_eyebrow:     "How it works",
     how_h2:          "Automated protection, 24/7.",
     how_sub:         "Upload once. Lisa handles the rest.",
-    how_s1_t:        "Upload your photos",
-    how_s1_d:        "We build a digital fingerprint from your images.",
-    how_s2_t:        "AI scans the internet",
-    how_s2_d:        "Real-time scanning across the web — including Dark Web and private channels.",
-    how_s3_t:        "Instant alerts",
-    how_s3_d:        "Instant alert with evidence the moment we find something.",
-    how_s4_t:        "Automatic removal",
-    how_s4_d:        "Approve once. We send the DMCA and track it until it's gone.",
+    how_s1_t:        "Identity on Record",
+    how_s1_d:        "We record your face, voice, and digital likeness on day one. This becomes your protected file — the record against which every future match is verified.",
+    how_s2_t:        "Continuous Surveillance",
+    how_s2_d:        "50+ platforms monitored around the clock, including the Dark Web and private channels where violations spread before anyone notices.",
+    how_s3_t:        "Automated Enforcement",
+    how_s3_d:        "The moment a match is confirmed, a DMCA takedown is filed. We handle the submission, the follow-up, and escalation if needed. Average removal: 21 hours.",
+    how_s4_t:        "You Stay Informed",
+    how_s4_d:        "Every detection, every filing, every removal is documented and sent to you as it happens — by email, SMS, or push notification. Nothing is actioned without your knowledge.",
     how_stat1:       "2.8M SCANS / DAY",
     how_stat2:       "<24H AVG REMOVAL",
     how_stat3:       "99.2% SUCCESS",
