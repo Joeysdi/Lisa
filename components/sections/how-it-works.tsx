@@ -120,12 +120,17 @@ export function HowItWorks() {
     { num:"04", t:t("how_s4_t"), d:t("how_s4_d") },
   ];
 
+  const stats = [
+    { key: "how_stat1" as const },
+    { key: "how_stat2" as const },
+    { key: "how_stat3" as const },
+  ];
+
   return (
     <section id="how" className="bg-[#050505] py-24 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
         <FadeUp className="mb-12">
-          {/* Section marker */}
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-white/15 text-xs">01</span>
             <div className="w-8 h-px bg-white/10" />
@@ -187,6 +192,17 @@ export function HowItWorks() {
           </div>
 
         </div>
+
+        {/* Stats strip */}
+        <FadeUp delay={0.1} className="mt-14 pt-10 border-t border-white/6">
+          <div className="flex flex-wrap gap-8 justify-start">
+            {stats.map(s => (
+              <span key={s.key} className="font-mono text-[10px] text-white/35 tracking-[.15em]">
+                {t(s.key)}
+              </span>
+            ))}
+          </div>
+        </FadeUp>
 
       </div>
     </section>

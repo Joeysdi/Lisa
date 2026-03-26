@@ -12,12 +12,23 @@ export function CtaBottom() {
                       bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="w-full max-w-3xl px-6 sm:px-8 text-center">
         <FadeUp>
-          <h2 className="text-white font-extrabold text-[clamp(38px,7vw,68px)]
-                         leading-[1.02] tracking-tight mb-6">
+          {/* Live indicator */}
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white/60" />
+            </span>
+            <span className="text-white/35 text-xs font-sans">{t("hero_live")}</span>
+          </div>
+
+          <h2
+            className="font-display font-light text-white leading-tight mb-6"
+            style={{ fontSize: "clamp(38px, 7vw, 68px)" }}
+          >
             {t("cta_h2_1")}{" "}
             <span className="text-white/30">{t("cta_h2_2")}</span>
           </h2>
-          <p className="text-white/55 text-xl leading-relaxed max-w-lg mx-auto mb-10 text-center">
+          <p className="text-white/55 text-lg leading-relaxed max-w-lg mx-auto mb-10 text-center font-sans">
             {t("cta_sub")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

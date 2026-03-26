@@ -65,8 +65,13 @@ export function Pricing() {
           <p className="text-black/35 text-sm mt-3 max-w-sm font-sans">{t("pricing_sub")}</p>
         </FadeUp>
 
+        {/* Guarantee note */}
+        <FadeUp delay={0.02}>
+          <p className="text-black/35 text-xs font-mono mt-2 mb-2">{t("pricing_guarantee_note")}</p>
+        </FadeUp>
+
         {/* Toggle */}
-        <FadeUp delay={0.05} className="flex justify-start mb-10 mt-8">
+        <FadeUp delay={0.05} className="flex justify-start mb-10 mt-6">
           <div className="inline-flex border border-black/12 p-0.5">
             {[false, true].map(isA => (
               <button key={String(isA)} onClick={() => setAnnual(isA)}
@@ -121,7 +126,12 @@ export function Pricing() {
           <StaggerChild>
             <div className="flex flex-col gap-4 p-7 bg-black text-white h-full">
               <div>
-                <p className="text-[9px] tracking-[.3em] uppercase text-white/40 font-sans mb-2">{t("tier_pro_name")}</p>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-[9px] tracking-[.3em] uppercase text-white/40 font-sans">{t("tier_pro_name")}</p>
+                  <span className="text-[10px] font-sans text-white/55 border border-white/15 px-2 py-0.5">
+                    {t("tier_pro_badge")}
+                  </span>
+                </div>
                 <p className="text-white font-sans font-medium text-sm mb-3">{t("tier_pro_for")}</p>
                 <p className="font-display font-light text-5xl text-white leading-none mb-1">
                   ${annual ? PRO_A : PRO_M}

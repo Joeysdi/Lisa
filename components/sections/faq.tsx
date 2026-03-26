@@ -27,6 +27,17 @@ const faqData = [
   { q:{th:"เอเจนซี่จัดการนักแสดงหลายคนได้ไหม?",en:"Can agencies manage multiple talent?"},
     a:{th:"ได้ แผน Enterprise มีแดชบอร์ดรวม รายงาน White-label API และผู้จัดการบัญชีเฉพาะ",
        en:"Yes. Enterprise includes a unified dashboard, white-label reporting, API access, and a dedicated account manager."} },
+  // ⚠️ Q8: Needs legal review before publishing — GDPR / biometric data policy
+  { q:{th:"ข้อมูลของฉัน GDPR compliant ไหม?",en:"Is my data GDPR compliant?"},
+    a:{th:"ใช่ เราประมวลผลข้อมูลไบโอเมตริกภายใต้ความยินยอมโดยชัดแจ้งตามมาตรา 9 GDPR ข้อมูลถูกเข้ารหัสและสามารถลบได้ภายใน 72 ชั่วโมงตามคำขอ",
+       en:"Yes. We process biometric data under explicit consent per GDPR Article 9. Your data is encrypted at rest, never sold or shared, and can be permanently deleted within 72 hours upon request."} },
+  // ⚠️ Q9: Needs policy confirmation — escalation / guarantee triggers
+  { q:{th:"ถ้าลบไม่ได้จะทำอย่างไร?",en:"What if you can't remove it?"},
+    a:{th:"เราพยายามซ้ำ 3 ครั้งผ่านช่องทางที่แตกต่างกัน หากยังล้มเหลว เราส่งต่อให้ทีมกฎหมายและการรับประกัน Pro ของคุณจะถูกเรียกใช้โดยอัตโนมัติ",
+       en:"We make three removal attempts through different channels. If all fail, the case is escalated to our legal team and your Pro guarantee automatically triggers — you won't be charged for that month."} },
+  { q:{th:"เริ่มใช้งานได้เร็วแค่ไหน?",en:"How fast can I get started?"},
+    a:{th:"สร้างบัญชีฟรีได้ใน 2 นาที สแกนครั้งแรกเสร็จภายใน 1 ชั่วโมง การดูตัวอย่างเป็นทางเลือก ไม่บังคับ",
+       en:"Free account takes 2 minutes to create. Your first scan runs within 1 hour of uploading photos. The demo is completely optional — you can start protecting yourself right now without speaking to anyone."} },
 ];
 
 export function Faq() {
