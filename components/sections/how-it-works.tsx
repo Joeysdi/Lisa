@@ -154,9 +154,10 @@ export function HowItWorks() {
                   <span className={`font-mono text-[10px] shrink-0 mt-0.5 transition-colors
                     ${active===i ? "text-white" : "text-white/20"}`}>{s.num}</span>
                   <div className="text-left">
-                    <div className={`font-sans font-medium text-sm mb-1 transition-colors
-                      ${active===i ? "text-white" : "text-white/35"}`}>{s.t}</div>
-                    <div className="text-white/20 text-xs leading-relaxed">{s.d}</div>
+                    <div className={`font-sans font-medium text-base mb-1 transition-colors
+                      ${active===i ? "text-white" : "text-white/45"}`}>{s.t}</div>
+                    <div className={`text-sm leading-relaxed transition-colors
+                      ${active===i ? "text-white/50" : "text-white/25"}`}>{s.d}</div>
                   </div>
                 </div>
                 {active===i && (

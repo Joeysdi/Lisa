@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Instrument_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/locale-context";
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+  variable: "--font-instrument-sans",
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const lora = Lora({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="th" className={`${instrumentSans.variable} ${lora.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>

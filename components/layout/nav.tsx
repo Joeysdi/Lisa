@@ -49,7 +49,7 @@ export function Nav() {
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href}
-                 className="text-white/40 hover:text-white text-[11px] tracking-[.12em] uppercase
+                 className="text-white/50 hover:text-white text-xs tracking-[.12em] uppercase
                             transition-colors duration-150 font-sans">
                 {t(l.labelKey)}
               </a>

@@ -102,9 +102,9 @@ export function Pricing() {
               <p className="text-black/30 text-xs leading-relaxed pt-3 border-t border-black/6 font-sans">{t("tier_free_desc")}</p>
               <ul className="flex flex-col gap-2.5 flex-1">
                 {freeFeats.map(f => (
-                  <li key={f.t} className="flex items-center gap-2.5 text-xs text-left font-sans">
+                  <li key={f.t} className="flex items-center gap-2.5 text-sm text-left font-sans">
                     <Check ok={f.ok} />
-                    <span className={f.ok ? "text-black/60" : "text-black/18"}>{f.t}</span>
+                    <span className={f.ok ? "text-black/70" : "text-black/25"}>{f.t}</span>
                   </li>
                 ))}
               </ul>
@@ -134,9 +134,9 @@ export function Pricing() {
               <p className="text-white/35 text-xs leading-relaxed pt-3 border-t border-white/8 font-sans">{t("tier_pro_desc")}</p>
               <ul className="flex flex-col gap-2.5 flex-1">
                 {proFeats.map(f => (
-                  <li key={f.t} className="flex items-center gap-2.5 text-xs text-left font-sans">
+                  <li key={f.t} className="flex items-center gap-2.5 text-sm text-left font-sans">
                     <Check ok={f.ok} dark />
-                    <span className="text-white/70">{f.t}</span>
+                    <span className="text-white/80">{f.t}</span>
                   </li>
                 ))}
               </ul>
@@ -160,9 +160,9 @@ export function Pricing() {
               <p className="text-black/30 text-xs leading-relaxed pt-3 border-t border-black/6 font-sans">{t("tier_ent_desc")}</p>
               <ul className="flex flex-col gap-2.5 flex-1">
                 {entFeats.map(f => (
-                  <li key={f.t} className="flex items-center gap-2.5 text-xs text-left font-sans">
+                  <li key={f.t} className="flex items-center gap-2.5 text-sm text-left font-sans">
                     <Check ok={f.ok} />
-                    <span className="text-black/60">{f.t}</span>
+                    <span className="text-black/70">{f.t}</span>
                   </li>
                 ))}
               </ul>

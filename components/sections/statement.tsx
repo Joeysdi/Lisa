@@ -48,7 +48,7 @@ export function Statement() {
                 >
                   {s.n}
                 </div>
-                <div className="text-[10px] tracking-[.2em] uppercase text-black/35 font-sans mt-1">
+                <div className="text-xs tracking-[.15em] uppercase text-black/50 font-sans mt-2">
                   {s.l}
                 </div>
               </div>

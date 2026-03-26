@@ -47,8 +47,8 @@ export function Features() {
                 transition={{ duration: 0.15 }}
                 className="bg-white p-8 flex flex-col gap-4 h-full">
                 <div className="font-mono text-[10px] text-black/20 tracking-wider">{f.num}</div>
-                <div className="font-sans font-semibold text-sm text-black">{t(f.tKey)}</div>
-                <div className="text-black/40 text-xs leading-relaxed flex-1">{t(f.dKey)}</div>
+                <div className="font-sans font-semibold text-base text-black">{t(f.tKey)}</div>
+                <div className="text-black/55 text-sm leading-relaxed flex-1">{t(f.dKey)}</div>
                 <div className="text-[9px] tracking-[.2em] uppercase text-black/25 border-t border-black/6 pt-4 mt-auto font-sans">
                   {t(f.tagKey)}
                 </div>

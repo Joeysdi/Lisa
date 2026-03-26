@@ -85,7 +85,7 @@ export function Hero() {
 
             {/* Sub */}
             <StaggerChild>
-              <p className="text-white/40 text-base max-w-sm font-sans mt-2 mb-10 leading-relaxed">
+              <p className="text-white/65 text-lg max-w-sm font-sans mt-2 mb-10 leading-relaxed">
                 {t("hero_sub")}
               </p>
             </StaggerChild>

@@ -67,8 +67,8 @@ export function DemoForm() {
             <div className="mt-12 flex flex-col">
               {points.map((p, i) => (
                 <div key={p.tKey} className={`border-t border-white/8 pt-4 ${i === 0 ? "" : "mt-8"}`}>
-                  <div className="text-white font-sans text-sm font-medium">{t(p.tKey)}</div>
-                  <div className="text-white/30 text-xs leading-relaxed mt-1 font-sans">{t(p.dKey)}</div>
+                  <div className="text-white font-sans text-base font-medium">{t(p.tKey)}</div>
+                  <div className="text-white/50 text-sm leading-relaxed mt-1 font-sans">{t(p.dKey)}</div>
                 </div>
               ))}
             </div>

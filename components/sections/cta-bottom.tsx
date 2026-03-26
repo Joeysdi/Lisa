@@ -17,21 +17,21 @@ export function CtaBottom() {
             {t("cta_h2_1")}{" "}
             <span className="text-white/30">{t("cta_h2_2")}</span>
           </h2>
-          <p className="text-white/35 text-lg leading-relaxed max-w-lg mx-auto mb-10 text-center">
+          <p className="text-white/55 text-xl leading-relaxed max-w-lg mx-auto mb-10 text-center">
             {t("cta_sub")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#demo"
                className="inline-flex items-center justify-center bg-white text-black font-semibold
-                          text-sm px-8 py-3 rounded-xl w-full sm:w-auto transition-all duration-200
-                          hover:bg-white/88 hover:-translate-y-0.5
-                          hover:shadow-[0_8px_32px_rgba(255,255,255,0.10)]">
+                          text-sm px-8 py-3.5 w-full sm:w-auto transition-colors duration-200
+                          hover:bg-white/88 uppercase tracking-[.1em]">
               {t("cta_btn1")}
             </a>
             <a href="#demo"
-               className="inline-flex items-center justify-center text-white/35 hover:text-white/70
-                          font-medium text-sm px-7 py-3 rounded-xl w-full sm:w-auto
-                          border border-white/8 hover:border-white/20 transition-all duration-200">
+               className="inline-flex items-center justify-center text-white/45 hover:text-white
+                          font-medium text-sm px-7 py-3.5 w-full sm:w-auto
+                          border border-white/15 hover:border-white/40 transition-all duration-200
+                          uppercase tracking-[.1em]">
               {t("cta_btn2")}
             </a>
           </div>

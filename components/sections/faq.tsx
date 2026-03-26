@@ -6,27 +6,27 @@ import { FadeUp } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
 
 const faqData = [
-  { q:{th:"Lisa Modeling Protection คืออะไรกันแน่?",en:"What exactly is Lisa Modeling Protection?"},
-    a:{th:"Lisa คือแพลตฟอร์ม AI ที่ช่วยนางแบบ อินฟลูเอนเซอร์ และดาราปกป้องตัวเองในโลกดิจิทัล เราสแกนอินเทอร์เน็ตตลอดเวลาเพื่อหาและลบการนำรูปหน้า เสียง หรือแบรนด์ของคุณไปใช้โดยไม่ได้รับอนุญาต รวมถึง Deepfake และเนื้อหาที่สร้างด้วย AI",
-       en:"Lisa is an AI platform that helps models, influencers, and public figures protect themselves online. We continuously scan the internet to find and remove unauthorized use of your face, voice, or brand — including deepfakes and AI-generated content."} },
+  { q:{th:"Lisa Modeling Protection คืออะไร?",en:"What is Lisa Modeling Protection?"},
+    a:{th:"Lisa สแกนอินเทอร์เน็ตตลอด 24 ชั่วโมงเพื่อหาและลบการนำรูปหน้า เสียง หรือแบรนด์ของคุณไปใช้โดยไม่ได้รับอนุญาต รวมถึง Deepfake และเนื้อหาที่สร้างด้วย AI",
+       en:"Lisa scans the internet 24/7 to find and remove unauthorized use of your face, voice, or brand — including deepfakes and AI-generated content."} },
   { q:{th:"เทคโนโลยีนี้ทำงานยังไง?",en:"How does the technology work?"},
-    a:{th:"Lisa ใช้เซิร์ฟเวอร์จำนวนมากทั่วโลกสแกนทุกอย่างที่ถูกอัปโหลดขึ้นอินเทอร์เน็ตในแต่ละวัน ระบบจะเทียบทุกรูปและทุกเสียงกับ \"ลายเซ็น\" ของคุณที่ลงทะเบียนไว้ เราประมวลผลเนื้อหาทั้งหมดใน 24 ชั่วโมง ไม่หยุดพัก 365 วัน",
-       en:"Lisa uses distributed servers worldwide to scan everything uploaded to the internet daily. Every image and audio clip is compared against your registered digital signature. We process content 24/7, 365 days a year."} },
-  { q:{th:"ข้อมูลส่วนตัวของเราจะถูกนำไปใช้ทำอะไร?",en:"How is my personal and biometric data used?"},
-    a:{th:"เราเอาข้อมูลไบโอเมตริกของคุณไปใช้แค่เพื่อค้นหาบนอินเทอร์เน็ตเท่านั้น ไม่แชร์ให้ใคร ไม่ขายข้อมูล และเราไม่เอารูปและเสียงของคุณไปฝึก AI เด็ดขาด",
-       en:"Your biometric data is used exclusively to search the internet on your behalf. We never share or sell it, and we do not use your face or voice to train AI models."} },
-  { q:{th:"จับ Deepfake ที่สร้างด้วย AI ได้จริงไหม?",en:"Can you really detect AI-generated deepfakes?"},
-    a:{th:"ได้เลย ระบบของเราฝึกมาโดยเฉพาะเพื่อจับเนื้อหา AI ทั้ง Deepfake การสลับหน้า การโคลนเสียง และสื่อที่ถูกดัดแปลงจาก Midjourney, Stable Diffusion, Sora และอื่นๆ",
-       en:"Yes. Our system is trained specifically to detect AI content — deepfakes, face swaps, voice clones, and manipulated media from Midjourney, Stable Diffusion, Sora, and others."} },
+    a:{th:"เราเทียบทุกรูปและเสียงที่ถูกอัปโหลดบนอินเทอร์เน็ตกับลายเซ็นดิจิทัลของคุณ ตลอด 24 ชั่วโมง 365 วัน",
+       en:"We compare everything uploaded online against your digital signature — images, audio, and video — continuously, 24/7."} },
+  { q:{th:"ข้อมูลส่วนตัวของฉันจะถูกนำไปใช้ทำอะไร?",en:"How is my biometric data used?"},
+    a:{th:"ข้อมูลไบโอเมตริกของคุณใช้แค่เพื่อค้นหาบนอินเทอร์เน็ตเท่านั้น เราไม่แชร์ ไม่ขาย และไม่นำไปฝึก AI",
+       en:"Your biometric data is used exclusively to search the internet on your behalf. We never share or sell it, and we never use it to train AI models."} },
+  { q:{th:"จับ Deepfake ที่สร้างด้วย AI ได้จริงไหม?",en:"Can you detect AI-generated deepfakes?"},
+    a:{th:"ได้ ระบบของเราฝึกมาเพื่อจับ Deepfake การสลับหน้า การโคลนเสียง และสื่อที่ดัดแปลงจาก Midjourney, Stable Diffusion, Sora และอื่นๆ",
+       en:"Yes. Our system detects deepfakes, face swaps, voice clones, and AI-manipulated media from Midjourney, Stable Diffusion, Sora, and others."} },
   { q:{th:"ลบเนื้อหาได้เร็วแค่ไหน?",en:"How quickly can content be removed?"},
-    a:{th:"พอคุณกดอนุมัติ เราเริ่มดำเนินการทันทีเลย แต่โดยเฉลี่ยแล้วไม่เกิน 24 ชั่วโมง เราติดตามทุกคำขอและส่งซ้ำอัตโนมัติ",
-       en:"The moment you approve, we act immediately. Average removal is under 24 hours. We track every request and automatically re-submit if needed."} },
-  { q:{th:"เว็บไซต์สำหรับผู้ใหญ่ก็ตรวจสอบด้วยไหม?",en:"Do you scan adult content sites?"},
-    a:{th:"ตรวจสอบด้วยครับ Lisa สแกนเว็บผู้ใหญ่ บอร์ดภาพ และแพลตฟอร์มสมาชิกต่างๆ ด้วย",
-       en:"Yes. Lisa scans adult websites, image boards, and subscription platforms, acting through both automated and legal channels."} },
-  { q:{th:"เอเจนซี่จัดการนักแสดงหลายคนพร้อมกันได้ไหม?",en:"Can agencies manage multiple talent?"},
-    a:{th:"ได้เลยครับ แผนองค์กรของเราออกแบบมาเพื่อเอเจนซี่โดยเฉพาะ มีแดชบอร์ดรวม ทำรายงาน White-label ได้ พร้อม API และผู้จัดการบัญชีเฉพาะ",
-       en:"Absolutely. Our Enterprise plan includes a unified dashboard, white-label reporting, API access, and a dedicated account manager."} },
+    a:{th:"พอคุณกดอนุมัติ เราเริ่มดำเนินการทันที โดยเฉลี่ยไม่เกิน 24 ชั่วโมง เราติดตามทุกคำขอและส่งซ้ำอัตโนมัติ",
+       en:"The moment you approve, we act. Average removal is under 24 hours. We track every request and re-submit automatically if needed."} },
+  { q:{th:"เว็บไซต์สำหรับผู้ใหญ่ก็สแกนด้วยไหม?",en:"Do you scan adult content sites?"},
+    a:{th:"ใช่ Lisa สแกนเว็บผู้ใหญ่ บอร์ดภาพ และแพลตฟอร์มสมาชิกต่างๆ ด้วย",
+       en:"Yes. Lisa scans adult websites, image boards, and subscription platforms through both automated and legal channels."} },
+  { q:{th:"เอเจนซี่จัดการนักแสดงหลายคนได้ไหม?",en:"Can agencies manage multiple talent?"},
+    a:{th:"ได้ แผน Enterprise มีแดชบอร์ดรวม รายงาน White-label API และผู้จัดการบัญชีเฉพาะ",
+       en:"Yes. Enterprise includes a unified dashboard, white-label reporting, API access, and a dedicated account manager."} },
 ];
 
 export function Faq() {
@@ -57,8 +57,8 @@ export function Faq() {
             <div key={i}>
               <button onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex justify-between items-start py-6 text-left gap-6">
-                <span className={`font-sans font-medium text-sm leading-snug transition-colors
-                  ${open === i ? "text-white" : "text-white/50"}`}>
+                <span className={`font-sans font-medium text-base leading-snug transition-colors
+                  ${open === i ? "text-white" : "text-white/60"}`}>
                   {item.q[locale]}
                 </span>
                 <motion.span
@@ -76,7 +76,7 @@ export function Faq() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
                     style={{ overflow: "hidden" }}>
-                    <div className="pb-6 text-white/30 text-sm leading-relaxed font-sans">
+                    <div className="pb-6 text-white/50 text-base leading-relaxed font-sans">
                       {item.a[locale]}
                     </div>
                   </motion.div>

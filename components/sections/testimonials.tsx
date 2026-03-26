@@ -50,10 +50,10 @@ export function Testimonials() {
               <div className="border border-white/6 bg-black p-7 flex flex-col gap-5 h-full">
                 <div className="flex gap-0.5">
                   {Array.from({length:5}).map((_,i) => (
-                    <span key={i} className="text-white/15 text-xs">★</span>
+                    <span key={i} className="text-white/45 text-xs">★</span>
                   ))}
                 </div>
-                <p className="font-display italic text-white/45 text-sm leading-relaxed flex-1">
+                <p className="font-display italic text-white/65 text-base leading-relaxed flex-1">
                   &ldquo;{t(c.q)}&rdquo;
                 </p>
                 <div className="border-t border-white/5" />
@@ -63,8 +63,8 @@ export function Testimonials() {
                     {c.av}
                   </div>
                   <div>
-                    <div className="text-white font-sans font-medium text-xs">{t(c.n)}</div>
-                    <div className="text-white/25 text-[10px] font-mono mt-0.5">{t(c.r)}</div>
+                    <div className="text-white font-sans font-medium text-sm">{t(c.n)}</div>
+                    <div className="text-white/40 text-xs font-mono mt-0.5">{t(c.r)}</div>
                   </div>
                 </div>
               </div>
