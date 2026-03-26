@@ -10,23 +10,23 @@ const panels = [
   {
     title: "SCAN OVERVIEW", badge: "Live",
     content: (
-      <div className="space-y-4">
+      <div className="space-y-3">
         {[["Instagram",88],["TikTok",73],["X / Twitter",95],["Reddit",61],["Telegram",44],["Dark Web",29]].map(([l,w]) => (
-          <div key={String(l)} className="flex items-center gap-4">
-            <span className="text-white/30 text-xs font-mono w-20 shrink-0">{l}</span>
-            <div className="flex-1 h-px bg-white/6 overflow-hidden">
-              <motion.div className="h-full bg-white/60"
+          <div key={String(l)} className="flex items-center gap-3">
+            <span className="text-white/35 text-xs font-mono w-20 shrink-0">{l}</span>
+            <div className="flex-1 h-px bg-white/8 overflow-hidden">
+              <motion.div className="h-full bg-white"
                 initial={{ width:0 }} animate={{ width:`${w}%` }}
-                transition={{ duration:1.4, ease:[0.4,0,0.2,1], delay:0.1 }} />
+                transition={{ duration:1.2, ease:[0.4,0,0.2,1], delay:0.2 }} />
             </div>
-            <span className="text-white/25 text-xs font-mono w-8 text-right">{w}%</span>
+            <span className="text-white/35 text-xs font-mono w-8 text-right">{w}%</span>
           </div>
         ))}
-        <div className="flex gap-10 pt-4 border-t border-white/6 flex-wrap">
-          {[["2.8M","Scanned"],["2,841","Matches"],["17","Violations"],["14","Removed"]].map(([v,l]) => (
-            <div key={String(l)}>
-              <div className="font-mono font-semibold text-2xl text-white leading-none">{v}</div>
-              <div className="text-white/25 text-[10px] font-mono uppercase tracking-wider mt-1.5">{l}</div>
+        <div className="grid grid-cols-2 gap-2 mt-4">
+          {[["Scanned","2.8M"],["Matches","2,841"],["Violations","17"],["Removed","14"]].map(([l,v]) => (
+            <div key={String(l)} className="border border-white/6 p-3">
+              <div className="text-white/25 text-[10px] font-mono uppercase tracking-wider mb-1">{l}</div>
+              <div className="font-mono font-bold text-xl text-white">{v}</div>
             </div>
           ))}
         </div>
@@ -44,9 +44,9 @@ const panels = [
           ["bg-white/20","Licensed use — brand campaign","3h ago"],
           ["bg-white/20","Authorized repost — agency account","5h ago"],
         ].map(([dot,text,time]) => (
-          <div key={String(text)} className="flex items-center gap-4 py-3.5">
+          <div key={String(text)} className="flex items-center gap-3 py-3">
             <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${dot}`} />
-            <span className="text-white/55 text-sm flex-1 leading-tight font-sans">{text}</span>
+            <span className="text-white/60 text-sm flex-1 leading-tight">{text}</span>
             <span className="text-white/20 text-xs font-mono shrink-0">{time}</span>
           </div>
         ))}
@@ -56,27 +56,21 @@ const panels = [
   {
     title: "CONTENT REVIEW", badge: "Awaiting approval",
     content: (
-      <div className="space-y-5">
-        <div className="text-white/20 text-[10px] font-mono tracking-[.2em]">DETECTED — DEEPFAKE VIDEO</div>
-        <div className="flex gap-2 flex-wrap">
-          {[["AI GENERATED","text-white/50"],["HIGH RISK","text-white/50"],["TELEGRAM","text-white/25"]].map(([l,c]) => (
-            <span key={String(l)} className={`text-[10px] font-mono tracking-wider ${c} after:content-['·'] after:ml-2 after:text-white/10 last:after:content-none`}>{l}</span>
+      <div>
+        <div className="text-white/20 text-[10px] font-mono tracking-[.15em] mb-3">DETECTED — DEEPFAKE VIDEO</div>
+        <div className="flex gap-1.5 flex-wrap mb-4">
+          {[["AI GENERATED","border-white/15 text-white/45"],["HIGH RISK","border-white/15 text-white/45"],["TELEGRAM","border-white/8 text-white/25"]].map(([l,s]) => (
+            <span key={String(l)} className={`text-[10px] font-bold tracking-wider px-2 py-0.5 border ${s}`}>{l}</span>
           ))}
         </div>
-        <div className="space-y-1 text-white/30 text-sm font-mono leading-relaxed">
-          <div>Channel: @leaks2026 · ~8,400 views</div>
-          <div>Shares: 312 · Accuracy: 98.7%</div>
-          <div>Detected: 2 min ago</div>
+        <div className="text-white/30 text-sm leading-loose mb-5 font-mono">
+          Channel: @leaks2026 · ~8,400 views<br/>Shares: 312 · Accuracy: 98.7%<br/>Detected: 2 min ago
         </div>
-        <div className="flex gap-3 pt-2">
-          <button className="flex-1 bg-white text-black text-xs font-semibold py-2.5 rounded-full
-                             hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
-            Remove
-          </button>
-          <button className="flex-1 border border-white/15 text-white/40 text-xs font-semibold py-2.5 rounded-full
-                             hover:border-white/30 hover:text-white/60 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
-            Allow
-          </button>
+        <div className="flex gap-2">
+          <button className="flex-1 bg-white text-black text-xs font-semibold py-2.5
+                             hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">Remove</button>
+          <button className="flex-1 border border-white/12 text-white/40 text-xs font-semibold
+                             py-2.5 hover:border-white/25 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">Allow</button>
         </div>
       </div>
     ),
@@ -84,24 +78,24 @@ const panels = [
   {
     title: "TAKEDOWN TRACKER", badge: "3 Active",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4">
         {[
-          ["Vid","Deepfake video — Telegram","2h ago","Sent","text-white/40"],
-          ["Img","Stolen photo — adult site","18h ago","Done","text-white/65"],
-          ["AI","AI image — Reddit","1h ago","Pending","text-white/25"],
-          ["Aud","Voice clone — TikTok","3d ago","Done","text-white/65"],
-        ].map(([icon,name,time,badge,bc]) => (
-          <div key={String(name)} className="flex items-center gap-4">
-            <span className="text-[10px] font-mono text-white/15 w-6 shrink-0">{icon}</span>
+          ["Vid","Deepfake video — Telegram","2h ago","Sent","border-white/12 text-white/40"],
+          ["Img","Stolen photo — adult site","18h ago","Done","border-white/15 text-white/70"],
+          ["AI","AI image — Reddit","1h ago","Pending","border-white/8 text-white/25"],
+          ["Aud","Voice clone — TikTok","3d ago","Done","border-white/15 text-white/70"],
+        ].map(([icon,name,time,badge,bs]) => (
+          <div key={String(name)} className="flex items-center gap-3">
+            <span className="text-[10px] font-mono text-white/20 w-6 shrink-0">{icon}</span>
             <div className="flex-1 min-w-0">
-              <div className="text-white/55 text-sm font-sans truncate">{name}</div>
-              <div className="text-white/20 text-xs font-mono mt-0.5">{time}</div>
+              <div className="text-white/60 text-sm font-medium truncate">{name}</div>
+              <div className="text-white/20 text-xs font-mono">{time}</div>
             </div>
-            <span className={`text-[10px] font-mono shrink-0 ${bc}`}>{badge}</span>
+            <span className={`text-[10px] font-semibold px-2 py-1 border shrink-0 ${bs}`}>{badge}</span>
           </div>
         ))}
-        <div className="pt-3 border-t border-white/6 text-white/20 text-xs font-mono">
-          Avg removal: <span className="text-white/45">21 hours</span>
+        <div className="pt-2 border-t border-white/6 text-white/25 text-xs font-mono">
+          Avg removal: <span className="text-white/50">21 hours</span>
         </div>
       </div>
     ),
@@ -151,29 +145,29 @@ export function HowItWorks() {
           </h2>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-0 items-start mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start mt-16">
 
           {/* Steps */}
-          <div className="flex flex-col lg:pr-14">
+          <div className="flex flex-col gap-1">
             {steps.map((s,i) => (
               <button key={i} onClick={() => { setActive(i); startTimer(); }}
                 className={`text-left transition-all duration-200
                   ${active===i
-                    ? "border-l-2 border-l-white/60 pl-6 pr-4 py-5"
-                    : "border-l border-l-white/8 pl-6 pr-4 py-4 hover:border-l-white/20"
+                    ? "border-l-[3px] border-l-white/70 pl-6 pr-4 py-5"
+                    : "border-l border-l-white/10 pl-6 pr-4 py-4 hover:border-l-white/25"
                   }`}>
                 <div className="flex items-start gap-4">
                   <span className={`font-mono text-[10px] shrink-0 mt-1 transition-colors tabular-nums
-                    ${active===i ? "text-white/40" : "text-white/12"}`}>{s.num}</span>
+                    ${active===i ? "text-white/50" : "text-white/15"}`}>{s.num}</span>
                   <div>
                     <div className={`font-sans font-medium text-sm mb-1.5 transition-colors
-                      ${active===i ? "text-white" : "text-white/35"}`}>{s.t}</div>
-                    <div className={`text-sm leading-relaxed transition-colors font-sans
-                      ${active===i ? "text-white/50" : "text-white/18"}`}>{s.d}</div>
+                      ${active===i ? "text-white" : "text-white/40"}`}>{s.t}</div>
+                    <div className={`text-sm leading-relaxed transition-colors
+                      ${active===i ? "text-white/55" : "text-white/20"}`}>{s.d}</div>
                   </div>
                 </div>
                 {active===i && (
-                  <motion.div className="h-px bg-white/12 mt-4 ml-9"
+                  <motion.div className="h-px bg-white/15 mt-4 ml-9"
                     initial={{ scaleX:0 }} animate={{ scaleX:1 }}
                     transition={{ duration:4.2 }} style={{ transformOrigin:"left" }} />
                 )}
@@ -181,27 +175,35 @@ export function HowItWorks() {
             ))}
           </div>
 
-          {/* Data panel — open, no container */}
-          <div className="mt-8 lg:mt-0 lg:border-l lg:border-white/8 lg:pl-14 pt-1">
-
-            {/* Panel label */}
-            <div className="flex items-center justify-between mb-7 pb-4 border-b border-white/6">
-              <span className="font-mono text-[10px] text-white/25 tracking-[.2em] uppercase">
+          {/* Panel */}
+          <div className="bg-black border border-white/10 min-h-[420px] flex flex-col">
+            {/* Window chrome */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/6 shrink-0">
+              <div className="flex items-center gap-1.5">
+                {[0,1,2].map(d => (
+                  <div key={d} className="w-2 h-2 rounded-full bg-white/10" />
+                ))}
+              </div>
+              <span className="font-mono text-[10px] text-white/25 tracking-[.15em]">
                 {panels[active].title}
               </span>
-              <span className="font-mono text-[10px] text-white/25">{panels[active].badge}</span>
+              <span className="text-[10px] text-white/35 border border-white/8 px-2.5 py-1 font-mono">
+                {panels[active].badge}
+              </span>
             </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div key={active}
-                initial={{ opacity:0, y:6 }} animate={{ opacity:1, y:0 }}
-                exit={{ opacity:0, y:-6 }}
-                transition={{ duration: dur.fast, ease: ease.decelerate }}>
-                {panels[active].content}
-              </motion.div>
-            </AnimatePresence>
-
+            {/* Content */}
+            <div className="p-7 flex-1">
+              <AnimatePresence mode="wait">
+                <motion.div key={active}
+                  initial={{ opacity:0, y:4 }} animate={{ opacity:1, y:0 }}
+                  exit={{ opacity:0, y:-4 }} transition={{ duration: dur.instant, ease: ease.decelerate }}>
+                  {panels[active].content}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
+
         </div>
 
         {/* Stats strip */}
