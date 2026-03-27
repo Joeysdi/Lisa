@@ -23,10 +23,10 @@ export function Hero() {
 
           {/* H1 */}
           <StaggerChild>
-            <div className="flex flex-col gap-3 mb-16 tracking-[-0.02em]"
+            <div className="flex flex-col gap-3 mb-8 tracking-[-0.02em]"
                  style={{ fontSize: "clamp(52px, 7vw, 96px)" }}>
               <span className="font-display font-light leading-none text-white">{t("hero_h1_1")}</span>
-              <span className="font-display font-light leading-none italic text-white/40">{t("hero_h1_2")}</span>
+              <span className="font-display font-light leading-snug italic text-white/40">{t("hero_h1_2")}</span>
             </div>
           </StaggerChild>
 
