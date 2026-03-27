@@ -160,7 +160,7 @@ export function FaceDemo() {
             >
               {t("face_h2")}
             </h2>
-            <p className="text-white/50 text-sm font-sans leading-relaxed max-w-md mx-auto">
+            <p className="text-white/50 text-sm font-sans leading-relaxed max-w-xl mx-auto text-center">
               {t("face_sub")}
             </p>
           </div>
@@ -179,11 +179,11 @@ export function FaceDemo() {
               }}
               onClick={() => fileInputRef.current?.click()}
               className={[
-                "border-2 border-dashed cursor-pointer transition-all duration-200",
-                "flex flex-col items-center justify-center gap-4 py-20 px-8",
+                "cursor-pointer transition-all duration-200 border border-dashed",
+                "flex flex-col items-center justify-center gap-6 py-16 px-8",
                 isDragging
                   ? "border-white/40 bg-white/5"
-                  : "border-white/15 hover:border-white/30 hover:bg-white/[0.025]",
+                  : "border-white/12 hover:border-white/25 hover:bg-white/[0.025]",
               ].join(" ")}
             >
               <input
@@ -193,10 +193,18 @@ export function FaceDemo() {
                 className="hidden"
                 onChange={(e) => handleFiles(e.target.files)}
               />
-              <CameraIcon />
-              <div className="text-center">
-                <p className="text-white/60 text-sm font-sans">{t("face_drop")}</p>
-                <p className="text-white/25 text-[11px] font-mono mt-2 tracking-wider">{t("face_hint")}</p>
+
+              {/* Icon in a subtle circle */}
+              <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">
+                <CameraIcon />
+              </div>
+
+              {/* Primary label styled like a soft button */}
+              <div className="text-center flex flex-col items-center gap-3">
+                <span className="inline-flex items-center gap-2 border border-white/20 px-5 py-2.5 text-white/70 text-[11px] font-sans tracking-[.08em] uppercase hover:border-white/35 hover:text-white/90 transition-colors">
+                  {t("face_drop")}
+                </span>
+                <p className="text-white/22 text-[10px] font-mono tracking-wider">{t("face_hint")}</p>
               </div>
             </div>
           </FadeUp>
