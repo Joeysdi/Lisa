@@ -58,7 +58,6 @@ export function Pricing() {
             {t("pricing_h2_1")}{" "}
             <span className="text-black/35">{t("pricing_h2_2")}</span>
           </h2>
-          <p className="text-black/35 text-sm mt-3 max-w-sm font-sans">{t("pricing_sub")}</p>
         </FadeUp>
 
         {/* Toggle */}
