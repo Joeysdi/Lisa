@@ -14,7 +14,7 @@ type ButtonProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 " +
+  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 rounded-sm " +
   "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50 " +
   "disabled:opacity-40 disabled:cursor-not-allowed";
 

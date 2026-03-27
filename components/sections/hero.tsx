@@ -23,13 +23,11 @@ export function Hero() {
 
           {/* H1 */}
           <StaggerChild>
-            <h1
-              className="font-display font-light tracking-[-0.02em] mb-8"
-              style={{ fontSize: "clamp(52px, 7vw, 96px)", lineHeight: "1.1" }}
-            >
-              <span className="block text-white">{t("hero_h1_1")}</span>
-              <span className="block italic text-white/40">{t("hero_h1_2")}</span>
-            </h1>
+            <div className="flex flex-col gap-3 mb-8 tracking-[-0.02em]"
+                 style={{ fontSize: "clamp(52px, 7vw, 96px)" }}>
+              <span className="font-display font-light leading-none text-white">{t("hero_h1_1")}</span>
+              <span className="font-display font-light leading-none italic text-white/40">{t("hero_h1_2")}</span>
+            </div>
           </StaggerChild>
 
           {/* Sub */}
@@ -41,7 +39,7 @@ export function Hero() {
 
           {/* CTA */}
           <StaggerChild>
-            <Button variant="primary" href="#get-started">{t("hero_cta1")}</Button>
+            <Button variant="primary" href="#get-started" className="px-10 py-3.5">{t("hero_cta1")}</Button>
           </StaggerChild>
 
         </StaggerParent>
