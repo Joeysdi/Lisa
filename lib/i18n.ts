@@ -233,9 +233,9 @@ export const translations = {
     lang_switch:     "EN",
 
     // Face Analysis
-    face_eyebrow:    "วิเคราะห์ฟรี",
-    face_h2:         "ดูว่า AI สกัดข้อมูลอะไรจากรูปคุณ",
-    face_sub:        "อัปโหลดรูปภาพ แล้วดูว่าระบบ AI สามารถระบุอะไรเกี่ยวกับคุณได้ภายในไม่กี่วินาที",
+    face_eyebrow:    "ทดลองฟรี",
+    face_h2:         "การจดจำใบหน้าระดับโลก ฟรีทันที",
+    face_sub:        "เทคโนโลยีเดียวกับที่ปกป้องครีเอเตอร์กว่า 50,000 ราย — วิเคราะห์ภาพของคุณในเบราว์เซอร์ ไม่มีบัญชี ไม่มีค่าใช้จ่าย",
     face_drop:       "วางรูปภาพหรือคลิกเพื่ออัปโหลด",
     face_hint:       "JPG, PNG, WEBP · สูงสุด 4MB · ประมวลผลในเครื่อง — ข้อมูลไม่ออกจากอุปกรณ์",
     face_loading:    "กำลังโหลดโมเดล AI...",
@@ -484,8 +484,8 @@ export const translations = {
 
     // Face Analysis
     face_eyebrow:    "FREE ANALYSIS",
-    face_h2:         "See what AI extracts from your photo.",
-    face_sub:        "Upload any photo. See exactly what AI systems can determine about you in seconds — processed locally, never uploaded.",
+    face_h2:         "World-class face recognition. Free, instant, private.",
+    face_sub:        "The same engine that monitors 50+ platforms for 50,000+ creators. Upload any photo — Lisa analyzes it in your browser in seconds. No account. No upload. Nothing leaves your device.",
     face_drop:       "Drop a photo or click to upload",
     face_hint:       "JPG, PNG, WEBP · Max 4MB · Processed locally — never leaves your device",
     face_loading:    "Loading AI models...",

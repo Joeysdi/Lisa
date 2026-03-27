@@ -145,8 +145,8 @@ export function FaceDemo() {
   // ── Render ─────────────────────────────────────────────────────────────────
 
   return (
-    <section className="bg-black border-t border-white/6 py-24 px-8">
-      <div className="max-w-2xl mx-auto">
+    <section className="bg-black border-t border-white/6 py-24 flex justify-center">
+      <div className="max-w-2xl w-full px-8">
 
         {/* Header */}
         <FadeUp>
