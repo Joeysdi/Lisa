@@ -3,7 +3,7 @@
 import React from "react";
 
 type ButtonProps = {
-  variant?: "primary" | "outline" | "outline-dark" | "ghost" | "accent";
+  variant?: "primary" | "outline" | "outline-dark" | "ghost";
   size?: "sm" | "md";
   href?: string;
   onClick?: () => void;
@@ -14,7 +14,7 @@ type ButtonProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 rounded-full " +
+  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 " +
   "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50 " +
   "disabled:opacity-40 disabled:cursor-not-allowed";
 
@@ -25,7 +25,6 @@ const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   "outline-dark":
     "border border-black/20 text-black/60 hover:border-black/50 hover:text-black hover:bg-black/5",
   ghost: "text-white/50 hover:text-white",
-  accent: "bg-blue-600 text-white hover:bg-blue-700",
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {

@@ -49,10 +49,10 @@ export function Faq() {
     <section id="faq" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
       <div className="w-full max-w-3xl px-8">
 
-        <FadeUp className="mb-16">
+        <FadeUp className="mb-16 text-center">
           {/* Section marker */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-white/15 text-xs">06</span>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="font-mono text-white/15 text-xs">05</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">FAQ</span>
           </div>

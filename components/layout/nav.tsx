@@ -89,7 +89,7 @@ export function Nav() {
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("nav_signin")}
             </a>
-            <Button variant="accent" size="sm" href="#demo">
+            <Button variant="primary" size="sm" href="#demo">
               Book a demo
             </Button>
           </div>
@@ -147,7 +147,7 @@ export function Nav() {
                             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
                 {t("nav_signin")}
               </a>
-              <Button variant="accent" href="#demo" className="w-full justify-center py-4 text-sm"
+              <Button variant="primary" href="#demo" className="w-full justify-center py-4 text-sm"
                 onClick={() => setOpen(false)}>
                 Book a demo
               </Button>
