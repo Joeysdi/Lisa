@@ -24,8 +24,8 @@ export function Hero() {
           {/* H1 */}
           <StaggerChild>
             <h1
-              className="font-display font-light leading-[1.05] tracking-[-0.02em] mb-8"
-              style={{ fontSize: "clamp(52px, 7vw, 96px)" }}
+              className="font-display font-light tracking-[-0.02em] mb-8"
+              style={{ fontSize: "clamp(52px, 7vw, 96px)", lineHeight: "1.1" }}
             >
               <span className="block text-white">{t("hero_h1_1")}</span>
               <span className="block italic text-white/40">{t("hero_h1_2")}</span>
