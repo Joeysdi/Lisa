@@ -63,13 +63,13 @@ export function Pricing() {
 
         {/* Toggle */}
         <FadeUp delay={0.05} className="flex justify-center mb-10">
-          <div className="inline-flex border border-black/12 p-0.5">
+          <div className="inline-flex bg-black/5 rounded-full p-1 gap-1">
             {[false, true].map(isA => (
               <button key={String(isA)} onClick={() => setAnnual(isA)}
-                className={`relative px-5 py-2 text-xs font-sans transition-all duration-200
-                  ${annual === isA ? "text-white" : "text-black/40 hover:text-black/70"}`}>
+                className={`relative px-6 py-2.5 text-sm font-sans rounded-full transition-all duration-200
+                  ${annual === isA ? "text-white" : "text-black/45 hover:text-black/70"}`}>
                 {annual === isA && (
-                  <motion.div layoutId="pill" className="absolute inset-0 bg-black"
+                  <motion.div layoutId="pill" className="absolute inset-0 bg-black rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }} />
                 )}
                 <span className="relative">

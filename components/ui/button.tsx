@@ -14,22 +14,22 @@ type ButtonProps = {
 };
 
 const base =
-  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 rounded-sm " +
-  "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50 " +
+  "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 " +
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 " +
   "disabled:opacity-40 disabled:cursor-not-allowed";
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary: "bg-white text-black hover:bg-white/90",
+  primary: "bg-white text-black hover:bg-white/90 rounded-full",
   outline:
-    "border border-white/30 text-white/70 hover:border-white/50 hover:text-white hover:bg-white/5",
+    "border border-white/30 text-white/70 hover:border-white/50 hover:text-white hover:bg-white/5 rounded-sm",
   "outline-dark":
-    "border border-black/20 text-black/60 hover:border-black/50 hover:text-black hover:bg-black/5",
+    "border border-black/20 text-black/60 hover:border-black/50 hover:text-black hover:bg-black/5 rounded-sm",
   ghost: "text-white/50 hover:text-white",
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "px-5 py-2.5 text-xs",
-  md: "px-7 py-3 text-sm",
+  sm: "px-5 py-2 text-xs",
+  md: "px-8 py-3.5 text-sm",
 };
 
 export function Button({
