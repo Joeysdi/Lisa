@@ -10,6 +10,7 @@ type ButtonProps = {
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
   className?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
 };
 
@@ -40,6 +41,7 @@ export function Button({
   disabled,
   type = "button",
   className,
+  style,
   children,
 }: ButtonProps) {
   const cls = [base, variants[variant], sizes[size], className]
@@ -48,14 +50,14 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={cls}>
+      <a href={href} className={cls} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={cls}>
+    <button type={type} onClick={onClick} disabled={disabled} className={cls} style={style}>
       {children}
     </button>
   );

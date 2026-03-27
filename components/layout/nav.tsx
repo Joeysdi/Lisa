@@ -89,7 +89,8 @@ export function Nav() {
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("nav_signin")}
             </a>
-            <Button variant="primary" size="sm" href="#get-started">
+            <Button variant="primary" size="sm" href="#get-started"
+              style={{ padding: "10px 28px", fontSize: "11px", letterSpacing: "0.06em" }}>
               {t("nav_cta")}
             </Button>
           </div>

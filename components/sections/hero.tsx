@@ -40,7 +40,10 @@ export function Hero() {
 
           {/* CTA */}
           <StaggerChild>
-            <Button variant="primary" href="#get-started">{t("hero_cta1")}</Button>
+            <Button variant="primary" href="#get-started"
+              style={{ padding: "18px 72px", fontSize: "11px", letterSpacing: "0.08em" }}>
+              {t("hero_cta1")}
+            </Button>
           </StaggerChild>
 
         </StaggerParent>

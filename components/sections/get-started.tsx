@@ -82,6 +82,7 @@ export function GetStarted() {
                 type="submit"
                 disabled={status === "loading"}
                 className="w-full justify-center"
+                style={{ paddingTop: "18px", paddingBottom: "18px", fontSize: "11px", letterSpacing: "0.08em" }}
               >
                 {status === "loading" ? "…" : t("gs_submit")}
               </Button>
