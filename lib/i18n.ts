@@ -191,6 +191,49 @@ export const translations = {
     demo_note:       "🔒 ข้อมูลของคุณจะไม่ถูกแชร์ให้ใครทั้งนั้น",
     demo_success:    "ได้รับคำขอแล้ว! ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง",
 
+    // Intro block
+    intro_eyebrow:   "เกี่ยวกับ",
+    intro_h2:        "การปกป้องภาพลักษณ์คืออะไร?",
+    intro_p1:        "การปกป้องภาพลักษณ์คือกรอบทางกฎหมายและเทคนิคที่ปกป้องใบหน้า เสียง และตัวตนของคุณจากการนำไปใช้โดยไม่ได้รับอนุญาต เมื่อเครื่องมือ AI ทำให้การสร้างภาพที่สมจริงจากรูปสาธารณะเป็นเรื่องง่าย ความจำเป็นในการติดตามเชิงรุกจึงสูงขึ้นกว่าที่เคย",
+    intro_p2:        "สำหรับนางแบบและครีเอเตอร์ ภาพลักษณ์ของคุณคือแหล่งรายได้ Deepfake หรือการใช้งานโดยไม่ได้รับอนุญาตเพียงครั้งเดียวอาจสร้างความเสียหายต่อพันธมิตรแบรนด์ หลอกลวงผู้ชม และสร้างรายได้ให้คนอื่น — โดยที่คุณไม่รู้ตัว",
+    intro_cta:       "เริ่มฟรี →",
+
+    // Challenges
+    chal_eyebrow:    "ภัยคุกคาม",
+    chal_h2:         "สิ่งที่คุณกำลังเผชิญ",
+    threat_1_t:      "Deepfake และเนื้อหา AI",
+    threat_1_d:      "เครื่องมือ AI สร้างภาพและวิดีโอที่สมจริงจากรูปสาธารณะเพียงใบเดียวได้โดยไม่ต้องขอความยินยอม",
+    threat_2_t:      "การใช้ภาพลักษณ์โดยไม่ได้รับอนุญาต",
+    threat_2_d:      "รูปของคุณอาจถูกนำไปใช้เชิงพาณิชย์บนโซเชียลมีเดีย โฆษณา หรือแพลตฟอร์มสมาชิกโดยไม่ได้รับอนุญาต",
+    threat_3_t:      "การโคลนเสียง",
+    threat_3_d:      "เสียงเพียงไม่กี่วินาทีก็เพียงพอสำหรับ AI ในการโคลนเสียงของคุณ เพื่อใช้ในการหลอกลวงหรือเนื้อหาที่ไม่เหมาะสม",
+    threat_4_t:      "Dark Web และช่องทางส่วนตัว",
+    threat_4_d:      "เนื้อหากระจายผ่านกลุ่ม Telegram ฟอรัมส่วนตัว และ Dark Web ก่อนที่เครื่องมือตรวจจับทั่วไปจะพบ",
+    threat_5_t:      "การขายสิทธิ์และสร้างรายได้โดยไม่ได้รับอนุญาต",
+    threat_5_d:      "บุคคลที่สามสร้างบัญชีชำระเงินโดยใช้ภาพลักษณ์ของคุณ รับผลกำไรจากตัวตนของคุณโดยตรง",
+
+    // Features subsections
+    feat_sub1_t:     "ตรวจจับ",
+    feat_sub1_intro: "เราพบเนื้อหาก่อนที่คุณจะรู้",
+    feat_sub2_t:     "บังคับใช้สิทธิ์",
+    feat_sub2_intro: "คลิกเดียว เราจัดการที่เหลือ",
+    feat_sub3_t:     "เฝ้าระวัง",
+    feat_sub3_intro: "รู้ทันทีเมื่อมีอะไรเปลี่ยนแปลง",
+    feat_sub4_t:     "พอร์ทัลเอเจนซี่",
+    feat_sub4_intro: "บัญชีเดียวสำหรับทุกคนในสังกัด",
+    feat_sub4_b1:    "อนุมัติแบบกลุ่ม แจ้งเตือนรายคน",
+    feat_sub4_b2:    "รายงาน White-label สำหรับลูกค้า",
+    feat_sub4_b3:    "การเข้าถึง API",
+
+    // Hero stats
+    hero_stat1:      "50k+ นางแบบ",
+    hero_stat2:      "สแกน 2.8M / วัน",
+    hero_stat3:      "ลบภายใน <24ชม.",
+    hero_stat4:      "สำเร็จ 99.2%",
+
+    // Demo accent
+    demo_submit_accent: "ปกป้องฉันเลย →",
+
     // CTA bottom
     cta_h2_1:        "ทุกวันที่ไม่มีการปกป้อง",
     cta_h2_2:        "คือวันที่คนอื่นครอบครองหน้าของคุณ",
@@ -403,6 +446,49 @@ export const translations = {
     demo_submit:     "Book free demo →",
     demo_note:       "🔒 Your information will never be shared.",
     demo_success:    "Request received. We'll follow up within 24 hours.",
+
+    // Intro block
+    intro_eyebrow:   "ABOUT",
+    intro_h2:        "What is likeness protection?",
+    intro_p1:        "Likeness protection is a legal and technical framework that safeguards your face, voice, and identity from unauthorized use. As AI tools make it trivial to generate convincing images and audio from a single public photo, the need for proactive monitoring and enforcement has never been greater.",
+    intro_p2:        "For models and creators, your likeness is your livelihood. A single deepfake or unauthorized use can damage brand partnerships, mislead your audience, and generate revenue for someone else — without your knowledge or consent.",
+    intro_cta:       "Start free →",
+
+    // Challenges
+    chal_eyebrow:    "THREATS",
+    chal_h2:         "What you're up against",
+    threat_1_t:      "Deepfakes & AI-generated content",
+    threat_1_d:      "AI tools can generate photorealistic images and videos of your face from a single public photo — without your consent.",
+    threat_2_t:      "Unauthorized likeness use",
+    threat_2_d:      "Your image may be used commercially across social media, advertising, or subscription platforms without permission or payment.",
+    threat_3_t:      "Voice cloning",
+    threat_3_d:      "A few seconds of audio is enough for AI to clone your voice — used in scams, fake endorsements, or explicit audio content.",
+    threat_4_t:      "Dark Web & private channel distribution",
+    threat_4_d:      "Content spreads through Telegram groups, private forums, and Dark Web marketplaces before traditional detection tools find it.",
+    threat_5_t:      "Unauthorized licensing & content monetization",
+    threat_5_d:      "Third parties create paid accounts and subscription content using your likeness — profiting directly from your identity.",
+
+    // Features subsections
+    feat_sub1_t:     "Detection",
+    feat_sub1_intro: "We find content before you do.",
+    feat_sub2_t:     "Enforcement",
+    feat_sub2_intro: "One click. We handle the rest.",
+    feat_sub3_t:     "Monitoring",
+    feat_sub3_intro: "Know the moment something changes.",
+    feat_sub4_t:     "Agency Portal",
+    feat_sub4_intro: "One account for your entire roster.",
+    feat_sub4_b1:    "Bulk actions & individual alerts",
+    feat_sub4_b2:    "White-label client reporting",
+    feat_sub4_b3:    "Developer API access",
+
+    // Hero stats
+    hero_stat1:      "50k+ Models",
+    hero_stat2:      "2.8M Scans / day",
+    hero_stat3:      "<24h Removal",
+    hero_stat4:      "99.2% Success",
+
+    // Demo accent
+    demo_submit_accent: "Protect me now →",
 
     cta_h2_1:        "Every day without protection",
     cta_h2_2:        "is a day someone else owns your face.",

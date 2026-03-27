@@ -49,10 +49,10 @@ export function Pricing() {
     <section id="pricing" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
-        <FadeUp className="mb-12 text-center">
+        <FadeUp className="mb-12">
           {/* Section marker */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="font-mono text-black/15 text-xs">04</span>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-mono text-black/15 text-xs">05</span>
             <div className="w-8 h-px bg-black/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-black/25 font-sans">PRICING</span>
           </div>
@@ -64,11 +64,6 @@ export function Pricing() {
             <span className="text-black/35">{t("pricing_h2_2")}</span>
           </h2>
           <p className="text-black/35 text-sm mt-3 max-w-sm font-sans">{t("pricing_sub")}</p>
-        </FadeUp>
-
-        {/* Guarantee note */}
-        <FadeUp delay={0.02}>
-          <p className="text-black/35 text-xs font-mono mt-2 mb-2">{t("pricing_guarantee_note")}</p>
         </FadeUp>
 
         {/* Toggle */}
@@ -179,6 +174,10 @@ export function Pricing() {
           </StaggerChild>
 
         </StaggerParent>
+
+        <p className="text-black/35 text-xs font-mono mt-8 mb-4 text-center">
+          {t("pricing_guarantee_note")}
+        </p>
 
         {/* Comparison table */}
         <FadeUp delay={0.1}>

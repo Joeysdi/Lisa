@@ -36,6 +36,10 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --accent: #2563eb;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }

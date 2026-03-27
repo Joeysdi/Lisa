@@ -3,7 +3,7 @@
 import React from "react";
 
 type ButtonProps = {
-  variant?: "primary" | "outline" | "outline-dark" | "ghost";
+  variant?: "primary" | "outline" | "outline-dark" | "ghost" | "accent";
   size?: "sm" | "md";
   href?: string;
   onClick?: () => void;
@@ -25,6 +25,7 @@ const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   "outline-dark":
     "border border-black/20 text-black/60 hover:border-black/50 hover:text-black hover:bg-black/5",
   ghost: "text-white/50 hover:text-white",
+  accent: "bg-blue-600 text-white hover:bg-blue-700",
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {

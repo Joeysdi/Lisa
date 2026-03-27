@@ -21,12 +21,6 @@ export function Testimonials() {
       r: "proof_r2" as const,
       platform: "ADULT SITES",
     },
-    {
-      q: "proof_q3" as const,
-      n: "proof_n3" as const,
-      r: "proof_r3" as const,
-      platform: "AGENCY",
-    },
   ];
 
   return (
@@ -34,9 +28,9 @@ export function Testimonials() {
       <div className="w-full max-w-6xl px-8">
 
         {/* Header */}
-        <FadeUp className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="font-mono text-white/15 text-xs">03</span>
+        <FadeUp className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-mono text-white/15 text-xs">04</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">
               {t("proof_eyebrow")}
@@ -51,7 +45,7 @@ export function Testimonials() {
         </FadeUp>
 
         {/* Pull-quote stack */}
-        <div className="max-w-3xl divide-y divide-white/6">
+        <div className="divide-y divide-white/6">
           {quotes.map((c, i) => (
             <FadeUp key={c.n} delay={i * 0.07}>
               <div className="py-10">
