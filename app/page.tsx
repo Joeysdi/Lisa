@@ -8,6 +8,7 @@ import { Testimonials }     from "@/components/sections/testimonials";
 import { Pricing }          from "@/components/sections/pricing";
 import { Faq }              from "@/components/sections/faq";
 import { GetStarted }       from "@/components/sections/get-started";
+import { FaceDemo }         from "@/components/sections/face-demo";
 import { ProgressBar }      from "@/components/ui/progress-bar";
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
+        <FaceDemo />
         <ProblemAgitation />
         <HowItWorks />
         <Features />
