@@ -10,44 +10,40 @@ export function Hero() {
   return (
     <section className="min-h-screen bg-black flex flex-col overflow-hidden relative">
 
-      {/* Main content — left-aligned editorial */}
-      <div className="relative z-10 flex-1 flex items-end w-full px-8 sm:px-16 pt-40 pb-20">
-        <StaggerParent className="flex flex-col items-start max-w-6xl w-full">
+      {/* Main content — vertically centered */}
+      <div className="relative z-10 flex-1 flex items-center justify-center px-8 pt-24 pb-16">
+        <StaggerParent className="flex flex-col items-center text-center max-w-4xl w-full mx-auto">
 
           {/* Eyebrow */}
           <StaggerChild>
-            <div className="mb-8">
-              <span className="text-[10px] tracking-[.35em] uppercase font-sans text-white/30">
-                MODELING PROTECTION
-              </span>
-            </div>
+            <span className="text-[10px] tracking-[.35em] uppercase font-sans text-white/35 mb-8 block">
+              MODELING PROTECTION
+            </span>
           </StaggerChild>
 
           {/* H1 */}
           <StaggerChild>
             <h1
-              className="font-display font-light leading-[0.88] tracking-[-0.02em] mb-10"
-              style={{ fontSize: "clamp(72px, 11vw, 160px)" }}
+              className="font-display font-light leading-[0.9] tracking-[-0.02em] mb-8"
+              style={{ fontSize: "clamp(52px, 7vw, 96px)" }}
             >
               <span className="block text-white">{t("hero_h1_1")}</span>
-              <span className="block italic text-white/30">{t("hero_h1_2")}</span>
+              <span className="block italic text-white/40">{t("hero_h1_2")}</span>
             </h1>
           </StaggerChild>
 
-          {/* Sub + CTAs — side by side on larger screens */}
+          {/* Sub */}
           <StaggerChild>
-            <div className="flex flex-col sm:flex-row sm:items-end gap-8 sm:gap-16">
-              <p className="text-white/50 text-base max-w-xs font-sans leading-relaxed">
-                {t("hero_sub")}
-              </p>
-              <div className="flex items-center gap-3 shrink-0">
-                <Button variant="primary" href="#demo" className="whitespace-nowrap">
-                  {t("hero_cta1")}
-                </Button>
-                <Button variant="outline" href="#how" className="whitespace-nowrap">
-                  {t("hero_cta2")}
-                </Button>
-              </div>
+            <p className="text-white/55 text-base max-w-md font-sans leading-relaxed mb-10">
+              {t("hero_sub")}
+            </p>
+          </StaggerChild>
+
+          {/* CTAs */}
+          <StaggerChild>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <Button variant="primary" href="#demo">{t("hero_cta1")}</Button>
+              <Button variant="outline" href="#how">{t("hero_cta2")}</Button>
             </div>
           </StaggerChild>
 
@@ -56,7 +52,7 @@ export function Hero() {
 
       {/* Bottom strip */}
       <div className="relative z-10 border-t border-white/6 w-full">
-        <div className="max-w-7xl mx-auto w-full px-8 sm:px-16 py-5 flex items-center gap-2">
+        <div className="max-w-6xl mx-auto w-full px-8 py-5 flex items-center gap-2">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white/60" />

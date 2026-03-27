@@ -23,8 +23,8 @@ export function HowItWorks() {
     <section id="how" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
-        <FadeUp className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
+        <FadeUp className="mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="font-mono text-white/15 text-xs">01</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">PROCESS</span>
@@ -53,7 +53,7 @@ export function HowItWorks() {
                     {s.title}
                   </h3>
                 </div>
-                <p className="text-white/50 text-base font-sans leading-relaxed pl-10 max-w-2xl">
+                <p className="text-white/55 text-base font-sans leading-relaxed pl-10 max-w-2xl">
                   {s.desc}
                 </p>
               </div>

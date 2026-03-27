@@ -15,7 +15,7 @@ export function Guarantee() {
 
   return (
     <section className="bg-surface-dark py-32 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-2xl px-8 text-center">
+      <div className="w-full max-w-3xl px-8 text-center">
         <FadeUp>
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-12">

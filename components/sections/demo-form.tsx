@@ -145,7 +145,7 @@ export function DemoForm() {
                 )}
 
                 <Button variant="primary" type="submit" disabled={freeLoading}
-                  className="w-full justify-center py-4 mt-2">
+                  className="w-full justify-center mt-2">
                   {freeLoading ? "…" : t("demo_submit_free")}
                 </Button>
 
@@ -245,7 +245,7 @@ export function DemoForm() {
                 )}
 
                 <Button variant="outline" type="submit" disabled={loading}
-                  className="w-full justify-center py-4 mt-2">
+                  className="w-full justify-center mt-2">
                   {loading ? "…" : t("demo_submit")}
                 </Button>
 

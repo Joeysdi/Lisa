@@ -34,8 +34,8 @@ export function Testimonials() {
       <div className="w-full max-w-6xl px-8">
 
         {/* Header */}
-        <FadeUp className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
+        <FadeUp className="mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="font-mono text-white/15 text-xs">03</span>
             <div className="w-8 h-px bg-white/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-white/25 font-sans">

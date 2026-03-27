@@ -3,7 +3,7 @@
 import React from "react";
 
 type ButtonProps = {
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "outline-dark" | "ghost";
   size?: "sm" | "md";
   href?: string;
   onClick?: () => void;
@@ -19,15 +19,17 @@ const base =
   "disabled:opacity-40 disabled:cursor-not-allowed";
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary: "bg-white text-black rounded-full hover:bg-white/90",
+  primary: "bg-white text-black hover:bg-white/90",
   outline:
-    "border border-white/25 text-white/70 rounded-full hover:border-white/50 hover:text-white hover:bg-white/5",
+    "border border-white/30 text-white/70 hover:border-white/50 hover:text-white hover:bg-white/5",
+  "outline-dark":
+    "border border-black/20 text-black/60 hover:border-black/50 hover:text-black hover:bg-black/5",
   ghost: "text-white/50 hover:text-white",
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "px-6 py-2.5 text-xs",
-  md: "px-8 py-3.5 text-sm",
+  sm: "px-5 py-2.5 text-xs",
+  md: "px-7 py-3 text-sm",
 };
 
 export function Button({

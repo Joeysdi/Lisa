@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FadeUp, StaggerParent, StaggerChild } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { Button } from "@/components/ui/button";
 
 const PRO_M = 49, PRO_A = 39;
 
@@ -48,9 +49,9 @@ export function Pricing() {
     <section id="pricing" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
-        <FadeUp className="mb-12">
+        <FadeUp className="mb-12 text-center">
           {/* Section marker */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="font-mono text-black/15 text-xs">04</span>
             <div className="w-8 h-px bg-black/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-black/25 font-sans">PRICING</span>
@@ -113,12 +114,9 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#demo"
-                className="block text-center border border-black/20 text-black/60 text-sm
-                           px-5 py-3 w-full rounded-full hover:border-black/50 hover:text-black
-                           transition-colors font-sans font-medium">
+              <Button variant="outline-dark" href="#demo" className="w-full justify-center">
                 {t("tier_free_cta")}
-              </a>
+              </Button>
             </div>
           </StaggerChild>
 
@@ -150,11 +148,9 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#demo"
-                className="block text-center bg-white text-black text-sm font-medium
-                           px-5 py-3 w-full rounded-full hover:bg-white/90 transition-colors font-sans">
+              <Button variant="primary" href="#demo" className="w-full justify-center">
                 {t("tier_pro_cta")}
-              </a>
+              </Button>
             </div>
           </StaggerChild>
 
@@ -176,12 +172,9 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#demo"
-                className="block text-center border border-black/20 text-black/60 text-sm
-                           px-5 py-3 w-full rounded-full hover:border-black/50 hover:text-black
-                           transition-colors font-sans font-medium">
+              <Button variant="outline-dark" href="#demo" className="w-full justify-center">
                 {t("tier_ent_cta")}
-              </a>
+              </Button>
             </div>
           </StaggerChild>
 

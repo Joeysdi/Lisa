@@ -2,6 +2,7 @@
 
 import { FadeUp, StaggerParent, StaggerChild } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
+import { Button } from "@/components/ui/button";
 
 const pillars = [
   {
@@ -39,8 +40,8 @@ export function Features() {
     <section id="features" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
       <div className="w-full max-w-6xl px-8">
 
-        <FadeUp className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
+        <FadeUp className="mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="font-mono text-black/15 text-xs">02</span>
             <div className="w-8 h-px bg-black/10" />
             <span className="text-[10px] tracking-[.3em] uppercase text-black/25 font-sans">CAPABILITIES</span>
@@ -99,12 +100,9 @@ export function Features() {
                 {t("feat_enterprise_d")}
               </div>
             </div>
-            <a href="#demo"
-               className="shrink-0 border border-black/30 text-black/60 text-xs font-sans font-medium
-                          px-6 py-3 rounded-full hover:border-black/50 hover:text-black
-                          transition-colors whitespace-nowrap">
+            <Button variant="outline-dark" href="#demo" size="sm" className="shrink-0 whitespace-nowrap">
               {t("tier_ent_cta")}
-            </a>
+            </Button>
           </div>
         </FadeUp>
 
