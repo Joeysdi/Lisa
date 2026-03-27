@@ -66,7 +66,8 @@ export function Pricing() {
           <div className="inline-flex bg-black/5 rounded-full p-1 gap-1">
             {[false, true].map(isA => (
               <button key={String(isA)} onClick={() => setAnnual(isA)}
-                className={`relative px-14 py-5 text-[12px] tracking-[.06em] font-sans rounded-full transition-all duration-200
+                style={{ padding: "14px 32px", fontSize: "12px", letterSpacing: "0.06em" }}
+                className={`relative font-sans rounded-full transition-all duration-200
                   ${annual === isA ? "text-white" : "text-black/45 hover:text-black/70"}`}>
                 {annual === isA && (
                   <motion.div layoutId="pill" className="absolute inset-0 bg-black rounded-full"
