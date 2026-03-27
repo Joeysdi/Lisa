@@ -28,8 +28,8 @@ const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
 };
 
 const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "px-7 py-3 text-sm",
-  md: "px-12 py-5 text-base",
+  sm: "px-7 py-3 text-xs",
+  md: "px-12 py-5 text-sm",
 };
 
 export function Button({
