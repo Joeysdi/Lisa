@@ -90,7 +90,7 @@ export function Nav() {
               {t("nav_signin")}
             </a>
             <Button variant="primary" size="sm" href="#get-started"
-              style={{ padding: "10px 28px", fontSize: "11px", letterSpacing: "0.06em" }}>
+              style={{ padding: "9px 20px", fontSize: "11px", letterSpacing: "0.06em" }}>
               {t("nav_cta")}
             </Button>
           </div>

@@ -41,7 +41,7 @@ export function Hero() {
           {/* CTA */}
           <StaggerChild>
             <Button variant="primary" href="#get-started"
-              style={{ padding: "14px 40px", fontSize: "11px", letterSpacing: "0.08em" }}>
+              style={{ padding: "12px 28px", fontSize: "11px", letterSpacing: "0.08em" }}>
               {t("hero_cta1")}
             </Button>
           </StaggerChild>
