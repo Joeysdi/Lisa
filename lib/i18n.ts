@@ -12,29 +12,31 @@ export const translations = {
     nav_demo:        "นัดดูตัวอย่าง",
 
     // Hero
-    hero_live:       "50,000+ นางแบบทั่วโลกได้รับการปกป้อง",
     hero_h1_1:       "รูปคุณ กฎของคุณ",
     hero_h1_2:       "ไม่มีใครแตะต้องได้",
-    hero_sub:        "ตอนนี้ อาจมีคนกำลังใช้หน้าของคุณอยู่ Lisa ค้นหาพวกเขา ยื่น DMCA และลบออก — ก่อนที่ชื่อเสียงของคุณจะเสียหาย",
+    hero_sub:        "Lisa ตรวจสอบเว็บเพื่อหาการใช้ใบหน้าและเสียงของคุณโดยไม่ได้รับอนุญาต — บน 50+ แพลตฟอร์ม Dark Web และช่องทางส่วนตัว การละเมิดจะถูกตรวจจับ รายงาน และลบออกอัตโนมัติ",
     hero_cta1:       "เริ่มเลย — ฟรี",
-    hero_cta2:       "ดูวิธีทำงาน",
     hero_trust:      "ตรวจจับจาก",
+    hero_stat1:      "50,000+ นางแบบได้รับการปกป้อง",
+    hero_stat2:      "2.8M สแกนต่อวัน",
+    hero_stat3:      "<24 ชม. เฉลี่ยในการลบ",
+    hero_stat4:      "99.2% อัตราสำเร็จ",
 
     // Threat Ticker
     ticker_row1:     "DEEPFAKE VIDEO — TELEGRAM · 8,400 VIEWS · AI IMAGE — REDDIT · 312 REPOSTS · VOICE CLONE — TIKTOK · 22K PLAYS · FACE SWAP — ADULT SITE · 5.1K VIEWS · AI IMAGE — INSTAGRAM · 890 SAVES ·",
     ticker_row2:     "DMCA FILED · REMOVAL IN 18H · CONTENT REMOVED · 14 VIOLATIONS THIS WEEK · 99.2% SUCCESS RATE · 2.8M SCANS TODAY · TAKEDOWN COMPLETE · VIOLATION DETECTED ·",
 
     // Problem Agitation
-    prob_h2_line1:   "ใบหน้าของคุณถูกนำไปใช้",
-    prob_h2_line2:   "โดยไม่ได้รับอนุญาต",
-    prob_h2_line3:   "— นับร้อยครั้งในเดือนนี้",
-    prob_sub:        "เครื่องมือ AI ในปัจจุบันสามารถสร้างภาพเหมือนของคุณได้จากรูปถ่ายสาธารณะเพียงใบเดียว เหยื่อส่วนใหญ่รู้ตัวหลังหลายสัปดาห์ — หรือไม่รู้เลย",
-    prob_1_t:        "ผลกระทบทางการเงิน",
-    prob_1_d:        "บัญชี Deepfake นำหน้าคุณไปสร้างรายได้บน OnlyFans, Telegram และ Patreon — บ่อยครั้งนานหลายเดือนก่อนถูกรายงาน",
-    prob_2_t:        "ชื่อเสียงพัง",
-    prob_2_d:        "แม้ลบออกแล้ว เนื้อหา AI ยังหมุนเวียนในช่องทางส่วนตัว Deepfake ที่ไวรัลเพียงครั้งเดียวอาจตามคุณไปอีกหลายปี",
-    prob_3_t:        "ความช่วยเหลือไม่ถึง",
-    prob_3_d:        "การยื่น DMCA ด้วยตนเองใช้เวลา 30–90 วัน ตอนนั้นเนื้อหาถูกแชร์ไปนับพันครั้งแล้ว",
+    prob_h2_line1:   "AI ทำให้การละเมิด",
+    prob_h2_line2:   "ภาพลักษณ์",
+    prob_h2_line3:   "เกิดขึ้นทุกวัน",
+    prob_sub:        "รูปถ่ายสาธารณะเพียงใบเดียวก็เพียงพอให้ AI สร้างภาพเหมือนของคุณได้ ครีเอเตอร์ส่วนใหญ่พบการละเมิดหลายสัปดาห์ต่อมา — มักผ่านแฟนคลับ ไม่ใช่ระบบตรวจสอบ",
+    prob_1_t:        "รายได้สูญเสีย",
+    prob_1_d:        "บุคคลที่สามนำภาพลักษณ์ของคุณไปสร้างรายได้บนแพลตฟอร์มแบบสมาชิก การละเมิดโดยเฉลี่ยไม่ถูกตรวจพบนาน 6–8 สัปดาห์",
+    prob_2_t:        "ชื่อเสียงเสียหาย",
+    prob_2_d:        "เนื้อหาที่สร้างด้วย AI ลบออกได้ยากเมื่อแพร่กระจายไปแล้ว การตรวจพบตั้งแต่เนิ่นๆ คือวิธีป้องกันที่เชื่อถือได้เพียงอย่างเดียว",
+    prob_3_t:        "การบังคับใช้ล่าช้า",
+    prob_3_d:        "การยื่น DMCA ด้วยตนเองใช้เวลา 30–90 วันต่อการละเมิดหนึ่งครั้ง Lisa ยื่นและติดตามภายในไม่กี่ชั่วโมง",
 
     // How it works
     how_eyebrow:     "วิธีการทำงาน",
@@ -156,6 +158,16 @@ export const translations = {
     faq_eyebrow:     "ถามตอบ",
     faq_h2:          "มีข้อสงสัยอะไร เราตอบได้หมด",
 
+    // Nav CTA
+    nav_cta:         "เริ่มเลย",
+
+    // GetStarted
+    gs_eyebrow:      "GET STARTED",
+    gs_h2:           "ปกป้องภาพลักษณ์ของคุณ ฟรี",
+    gs_sub:          "ใช้เวลา 2 นาที ไม่ต้องใช้บัตรเครดิต",
+    gs_submit:       "เริ่มเลย ฟรี →",
+    gs_privacy:      "🔒 ข้อมูลของคุณจะไม่ถูกแชร์ให้ใครทั้งนั้น",
+
     // Demo
     demo_eyebrow:    "เริ่มปกป้องตัวเอง",
     demo_h2:         "นัดดูตัวอย่างแบบส่วนตัว",
@@ -229,29 +241,31 @@ export const translations = {
     nav_signin:      "Sign in",
     nav_demo:        "Book a demo",
 
-    hero_live:       "50,000+ models protected worldwide",
     hero_h1_1:       "Your image, your rules.",
     hero_h1_2:       "Nobody touches it.",
-    hero_sub:        "Right now, someone may be using your face. Lisa finds them, files the DMCA, and removes it — before your reputation pays the price.",
+    hero_sub:        "Lisa monitors the web for unauthorized use of your face and voice — across 50+ platforms, the Dark Web, and private channels. Violations are detected, reported, and removed automatically.",
     hero_cta1:       "Start free",
-    hero_cta2:       "See how it works",
     hero_trust:      "Detects content from",
+    hero_stat1:      "50,000+ Models protected",
+    hero_stat2:      "2.8M Daily scans",
+    hero_stat3:      "<24h Avg. removal",
+    hero_stat4:      "99.2% Success rate",
 
     // Threat Ticker
     ticker_row1:     "DEEPFAKE VIDEO — TELEGRAM · AI IMAGE — REDDIT · VOICE CLONE — TIKTOK · FACE SWAP — ADULT SITE · AI IMAGE — INSTAGRAM · UNAUTHORIZED USE — YOUTUBE · LIKENESS CLONING — DARK WEB · FACE SWAP — ONLYFANS ·",
     ticker_row2:     "DMCA FILED · REMOVAL IN 18H · CONTENT REMOVED · 14 VIOLATIONS THIS WEEK · 99.2% SUCCESS RATE · 2.8M SCANS TODAY · TAKEDOWN COMPLETE · VIOLATION DETECTED ·",
 
     // Problem Agitation
-    prob_h2_line1:   "Your face was used",
-    prob_h2_line2:   "without your permission",
-    prob_h2_line3:   "— hundreds of times this month.",
-    prob_sub:        "AI tools today can recreate your exact likeness from a single public photo. Most victims find out weeks later — or never.",
-    prob_1_t:        "Financial",
-    prob_1_d:        "Deepfake accounts monetize your face on OnlyFans, Telegram, and Patreon — often for months before being reported.",
-    prob_2_t:        "Reputational",
-    prob_2_d:        "Even after removal, AI-generated content circulates privately. One viral deepfake can follow you for years.",
-    prob_3_t:        "Powerlessness",
-    prob_3_d:        "Manual DMCA requests take 30–90 days. By then the content has been shared thousands of times.",
+    prob_h2_line1:   "AI has made",
+    prob_h2_line2:   "likeness violations",
+    prob_h2_line3:   "a daily reality.",
+    prob_sub:        "A single public photo is enough for AI to generate convincing images of you. Most creators discover violations weeks after they happen — often through a fan, not a monitoring system.",
+    prob_1_t:        "Lost revenue",
+    prob_1_d:        "Third parties monetize your likeness on subscription platforms. The average violation runs undetected for 6–8 weeks.",
+    prob_2_t:        "Reputational damage",
+    prob_2_d:        "AI-generated content is difficult to remove once it circulates. Early detection is the only reliable defense.",
+    prob_3_t:        "Slow enforcement",
+    prob_3_d:        "A manual DMCA request takes 30–90 days per violation. Lisa files and tracks them in hours.",
 
     how_eyebrow:     "How it works",
     how_h2:          "Automated protection, 24/7.",
@@ -369,6 +383,16 @@ export const translations = {
 
     faq_eyebrow:     "FAQ",
     faq_h2:          "Questions? We have answers.",
+
+    // Nav CTA
+    nav_cta:         "Start free",
+
+    // GetStarted
+    gs_eyebrow:      "GET STARTED",
+    gs_h2:           "Protect your likeness. Free.",
+    gs_sub:          "Takes 2 minutes. No credit card.",
+    gs_submit:       "Start free →",
+    gs_privacy:      "🔒 Your data is never shared.",
 
     demo_eyebrow:    "Get started",
     demo_h2:         "Book a private demo",

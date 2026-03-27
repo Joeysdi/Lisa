@@ -89,8 +89,8 @@ export function Nav() {
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("nav_signin")}
             </a>
-            <Button variant="primary" size="sm" href="#demo">
-              Book a demo
+            <Button variant="primary" size="sm" href="#get-started">
+              {t("nav_cta")}
             </Button>
           </div>
 
@@ -147,9 +147,9 @@ export function Nav() {
                             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
                 {t("nav_signin")}
               </a>
-              <Button variant="primary" href="#demo" className="w-full justify-center py-4 text-sm"
+              <Button variant="primary" href="#get-started" className="w-full justify-center py-4 text-sm"
                 onClick={() => setOpen(false)}>
-                Book a demo
+                {t("nav_cta")}
               </Button>
             </div>
           </motion.div>

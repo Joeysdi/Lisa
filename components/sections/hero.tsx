@@ -39,25 +39,20 @@ export function Hero() {
             </p>
           </StaggerChild>
 
-          {/* CTAs */}
+          {/* CTA */}
           <StaggerChild>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <Button variant="primary" href="#demo">{t("hero_cta1")}</Button>
-              <Button variant="outline" href="#how">{t("hero_cta2")}</Button>
-            </div>
+            <Button variant="primary" href="#get-started">{t("hero_cta1")}</Button>
           </StaggerChild>
 
         </StaggerParent>
       </div>
 
-      {/* Bottom strip */}
+      {/* Bottom strip — 4 static stats */}
       <div className="relative z-10 border-t border-white/6 w-full">
-        <div className="max-w-6xl mx-auto w-full px-8 py-5 flex items-center gap-2">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white/60" />
-          </span>
-          <span className="text-white/30 text-xs font-sans">{t("hero_live")}</span>
+        <div className="max-w-6xl mx-auto w-full px-8 py-5 flex flex-wrap gap-x-8 gap-y-2">
+          {([t("hero_stat1"), t("hero_stat2"), t("hero_stat3"), t("hero_stat4")] as string[]).map(s => (
+            <span key={s} className="font-mono text-[10px] text-white/30 tracking-[.15em]">{s}</span>
+          ))}
         </div>
       </div>
 
