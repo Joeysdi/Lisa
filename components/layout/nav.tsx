@@ -52,7 +52,7 @@ export function Nav() {
       <nav className={`fixed top-0 left-0 right-0 z-nav flex flex-col items-center
                        transition-all duration-300
                        ${scrolled ? "bg-black/85 backdrop-blur-md border-b border-white/8" : "bg-transparent"}`}>
-        <div className="w-full max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
 
           {/* Wordmark */}
           <a href="#"
@@ -139,8 +139,8 @@ export function Nav() {
             <nav className="flex flex-col">
               {navLinks.map((l) => (
                 <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-                   className="font-display font-light text-5xl text-white/80 hover:text-white
-                              border-b border-white/8 py-6 transition-colors
+                   className="font-display font-light text-4xl sm:text-5xl text-white/80 hover:text-white
+                              border-b border-white/8 py-5 sm:py-6 transition-colors
                               focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
                   {t(l.labelKey)}
                 </a>

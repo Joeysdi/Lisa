@@ -31,7 +31,7 @@ export default async function DashboardPage({
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Nav strip */}
-      <header className="border-b border-white/8 px-8 h-16 flex items-center justify-between max-w-7xl mx-auto">
+      <header className="border-b border-white/8 px-5 sm:px-8 h-16 flex items-center justify-between max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-3 select-none">
           <span className="text-white font-bold text-xs tracking-[.4em] uppercase">LISA</span>
           <span className="w-px h-4 bg-white/15" />
@@ -42,7 +42,7 @@ export default async function DashboardPage({
         <span className="text-white/30 text-xs font-mono">{email}</span>
       </header>
 
-      <div className="max-w-3xl mx-auto px-8 py-16 flex flex-col gap-8">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 py-10 sm:py-16 flex flex-col gap-8">
 
         {justUpgraded && (
           <div className="border border-white/15 bg-white/5 px-6 py-4 font-sans text-sm text-white/80">

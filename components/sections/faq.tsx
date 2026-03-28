@@ -47,8 +47,8 @@ export function Faq() {
   const [open, setOpen] = useState<number|null>(0);
 
   return (
-    <section id="faq" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-3xl px-8">
+    <section id="faq" className="bg-surface-dark py-16 sm:py-24 border-t border-white/6 flex flex-col items-center">
+      <div className="w-full max-w-3xl px-5 sm:px-8">
 
         <FadeUp className="mb-16 text-center">
           {/* Section marker */}

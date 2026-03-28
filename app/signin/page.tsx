@@ -31,7 +31,7 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-8">
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-5 sm:px-8">
       <div className="w-full max-w-sm">
         {/* Wordmark */}
         <div className="mb-12 flex items-center gap-3">

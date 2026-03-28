@@ -78,7 +78,7 @@ export default function MarketplacePage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero band */}
-      <section className="bg-black py-20 px-8 text-center">
+      <section className="bg-black py-14 sm:py-20 px-5 sm:px-8 text-center">
         <p className="font-mono text-[10px] tracking-[.2em] uppercase text-white/30 mb-6">
           {t("mkt_eyebrow")}
         </p>
@@ -101,7 +101,7 @@ export default function MarketplacePage() {
 
       {/* Filter bar */}
       <div className="bg-white border-b border-black/8 sticky top-[60px] z-10">
-        <div className="max-w-5xl mx-auto px-8 flex gap-1 overflow-x-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 flex gap-1 overflow-x-auto">
           {FILTERS.map((f) => (
             <button
               key={f}
@@ -116,7 +116,7 @@ export default function MarketplacePage() {
       </div>
 
       {/* Creator grid */}
-      <div className="max-w-5xl mx-auto px-8 py-16">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((creator) => (
             <div
@@ -169,7 +169,7 @@ export default function MarketplacePage() {
       </div>
 
       {/* Request band */}
-      <section id="request" className="bg-black py-20 px-8 mt-8">
+      <section id="request" className="bg-black py-14 sm:py-20 px-5 sm:px-8 mt-8">
         <div className="max-w-xl mx-auto">
           <p className="font-mono text-[10px] tracking-[.2em] uppercase text-white/30 mb-4">
             {t("mkt_req_eyebrow")}

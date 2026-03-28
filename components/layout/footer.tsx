@@ -53,7 +53,7 @@ export function Footer() {
         </span>
       </div>
 
-      <div className="relative w-full max-w-7xl px-8">
+      <div className="relative w-full max-w-7xl px-5 sm:px-8">
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
@@ -140,7 +140,7 @@ export function Footer() {
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-start
                         sm:items-center justify-between gap-4">
           <span className="text-white/20 text-[10px] font-mono">{t("foot_copy")}</span>
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-3 sm:gap-5">
             {(["foot_privacy", "foot_biometric", "foot_terms", "foot_aup"] as const).map(k => (
               <a key={k} href="#"
                  className="text-white/20 hover:text-white/40 text-[10px] font-mono transition-colors
