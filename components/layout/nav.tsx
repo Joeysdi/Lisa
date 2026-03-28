@@ -89,7 +89,7 @@ export function Nav() {
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("nav_marketplace")}
             </a>
-            <a href="#demo"
+            <a href="/signin"
                className="text-white/35 hover:text-white text-[11px] tracking-[.1em] uppercase transition-colors
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("nav_signin")}
@@ -153,7 +153,7 @@ export function Nav() {
                             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
                 {t("nav_marketplace")}
               </a>
-              <a href="#demo" onClick={() => setOpen(false)}
+              <a href="/signin" onClick={() => setOpen(false)}
                  className="text-white/35 text-sm text-center tracking-[.1em] uppercase
                             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
                 {t("nav_signin")}

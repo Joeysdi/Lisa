@@ -6,6 +6,16 @@ import { FadeUp, StaggerParent, StaggerChild } from "@/components/ui/motion";
 import { useLocale } from "@/lib/locale-context";
 import { Button } from "@/components/ui/button";
 
+async function startCheckout(billing: "monthly" | "annual") {
+  const res = await fetch("/api/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ billing }),
+  });
+  const data = await res.json();
+  if (data.url) window.location.href = data.url;
+}
+
 const PRO_M = 49, PRO_A = 39;
 
 const featureRows = [
@@ -43,6 +53,16 @@ function Cell({ ok }: { ok: boolean }) {
 export function Pricing() {
   const { t } = useLocale();
   const [annual, setAnnual] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleProClick() {
+    setLoading(true);
+    try {
+      await startCheckout(annual ? "annual" : "monthly");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <section id="pricing" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
@@ -118,8 +138,14 @@ export function Pricing() {
                       <span className="text-black/25 text-xs font-mono">
                         {annual ? t("tier_pro_cycle_a") : t("tier_pro_cycle_m")}
                       </span>
-                      <Button variant="primary" href="#get-started" size="sm" className="mt-2 w-full justify-center">
-                        {t("tier_pro_cta")}
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        className="mt-2 w-full justify-center"
+                        onClick={handleProClick}
+                        disabled={loading}
+                      >
+                        {loading ? "..." : t("tier_pro_cta")}
                       </Button>
                       <p className="font-mono text-[9px] tracking-[.1em] uppercase text-black/30 text-center leading-relaxed">
                         {t("trust_gdpr")} · {t("trust_no_sell")} · {t("trust_encrypted")}

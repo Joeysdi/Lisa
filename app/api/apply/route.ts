@@ -30,12 +30,8 @@ export async function POST(req: NextRequest) {
 
     if (process.env.RESEND_API_KEY) {
       const { resend } = await import("@/lib/resend");
-      await resend.emails.send({
-        from: "Lisa <noreply@lisa-modeling-protection.vercel.app>",
-        to: email as string,
-        subject: "Application received — Lisa Creator Marketplace",
-        html: `<p>Hi ${fullName},</p><p>We've received your application and will review it within 3–5 business days.</p><p>— The Lisa team</p>`,
-      });
+      const { sendApplyConfirmation } = await import("@/lib/emails");
+      await sendApplyConfirmation(resend, email as string, fullName as string);
     }
 
     return NextResponse.json({ ok: true });

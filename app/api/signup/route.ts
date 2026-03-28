@@ -14,9 +14,20 @@ export async function POST(req: NextRequest) {
 
     if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
       const { supabase } = await import("@/lib/supabase");
-      await supabase.from("signups").insert({ email, role });
+      await supabase.from("signups").insert({ email, role, source: "landing" });
     } else {
       console.log("[signup]", { email, role, ts: new Date().toISOString() });
+    }
+
+    if (process.env.RESEND_API_KEY) {
+      const { resend } = await import("@/lib/resend");
+      const { sendSignupWelcome, sendAdminNotification } = await import("@/lib/emails");
+
+      await sendSignupWelcome(resend, email);
+
+      if (role === "model" || role === "actor") {
+        await sendAdminNotification(resend, email, role);
+      }
     }
 
     return NextResponse.json({ ok: true }, { status: 200 });
