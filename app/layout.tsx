@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: "Your image, your rules. AI-powered protection from deepfakes and unauthorized use.",
     url: "https://www.lotiai.com",
     siteName: "Lisa Modeling Protection",
+    images: [{ url: "https://www.lotiai.com/og-image.png", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
