@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lisa Modeling Protection",
     description: "Your image, your rules. AI-powered protection from deepfakes and unauthorized use.",
-    url: "https://www.lotiai.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "",
     siteName: "Lisa Modeling Protection",
-    images: [{ url: "https://www.lotiai.com/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/og-image.png`, width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },

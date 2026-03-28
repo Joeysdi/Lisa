@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.lotiai.com";
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: base,
