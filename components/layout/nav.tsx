@@ -84,6 +84,11 @@ export function Nav() {
                          focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
               {t("lang_switch")}
             </button>
+            <a href="/marketplace"
+               className="text-white/35 hover:text-white text-[11px] tracking-[.1em] uppercase transition-colors
+                          focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
+              {t("nav_marketplace")}
+            </a>
             <a href="#demo"
                className="text-white/35 hover:text-white text-[11px] tracking-[.1em] uppercase transition-colors
                           focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
@@ -143,6 +148,11 @@ export function Nav() {
             </nav>
 
             <div className="mt-12 flex flex-col gap-4">
+              <a href="/marketplace" onClick={() => setOpen(false)}
+                 className="text-white/35 text-sm text-center tracking-[.1em] uppercase
+                            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">
+                {t("nav_marketplace")}
+              </a>
               <a href="#demo" onClick={() => setOpen(false)}
                  className="text-white/35 text-sm text-center tracking-[.1em] uppercase
                             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50">

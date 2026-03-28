@@ -12,8 +12,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Role is required" }, { status: 400 });
     }
 
-    // TODO: persist to database / send to email provider (e.g. Resend, Loops, Mailchimp)
-    console.log("[signup]", { email, role, ts: new Date().toISOString() });
+    if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      const { supabase } = await import("@/lib/supabase");
+      await supabase.from("signups").insert({ email, role });
+    } else {
+      console.log("[signup]", { email, role, ts: new Date().toISOString() });
+    }
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch {
