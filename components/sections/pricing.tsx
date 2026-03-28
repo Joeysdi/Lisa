@@ -23,6 +23,7 @@ const featureRows = [
   { label: "Developer API access",      free: false, pro: false, ent: true  },
   { label: "White-label reporting",     free: false, pro: false, ent: true  },
   { label: "Legal team access",         free: false, pro: false, ent: true  },
+  { label: "Likeness marketplace (add-on)", free: false, pro: true,  ent: true  },
 ];
 
 function Cell({ ok }: { ok: boolean }) {
@@ -114,6 +115,11 @@ export function Pricing() {
                       <Button variant="primary" href="#get-started" size="sm" className="mt-2 w-full justify-center">
                         {t("tier_pro_cta")}
                       </Button>
+                      <div className="mt-2 border border-black/12 px-3 py-1.5 w-full text-center">
+                        <span className="font-mono text-[9px] tracking-[.15em] text-black/35 uppercase">
+                          {t("pricing_addon_badge")}
+                        </span>
+                      </div>
                     </div>
                   </th>
 
