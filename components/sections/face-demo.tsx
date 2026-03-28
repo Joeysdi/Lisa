@@ -179,11 +179,12 @@ export function FaceDemo() {
               }}
               onClick={() => fileInputRef.current?.click()}
               className={[
-                "cursor-pointer transition-all duration-200 border border-dashed",
-                "flex flex-col items-center justify-center gap-6 py-16 px-8",
+                "group cursor-pointer transition-all duration-300",
+                "flex flex-col items-center justify-center gap-8 py-20 px-8",
+                "border border-dashed relative overflow-hidden",
                 isDragging
-                  ? "border-white/40 bg-white/5"
-                  : "border-white/12 hover:border-white/25 hover:bg-white/[0.025]",
+                  ? "border-white/50 bg-white/[0.06]"
+                  : "border-white/10 hover:border-white/30 hover:bg-white/[0.03]",
               ].join(" ")}
             >
               <input
@@ -194,18 +195,35 @@ export function FaceDemo() {
                 onChange={(e) => handleFiles(e.target.files)}
               />
 
-              {/* Icon in a subtle circle */}
-              <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.03]">
-                <CameraIcon />
+              {/* Glow blob behind icon */}
+              <div className={[
+                "absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300",
+                isDragging ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+              ].join(" ")}>
+                <div className="w-64 h-64 rounded-full bg-white/[0.03] blur-3xl" />
               </div>
 
-              {/* Primary label styled like a soft button */}
-              <div className="text-center flex flex-col items-center gap-3">
-                <span className="inline-flex items-center gap-2 border border-white/20 px-5 py-2.5 text-white/70 text-[11px] font-sans tracking-[.08em] uppercase hover:border-white/35 hover:text-white/90 transition-colors">
+              {/* Icon */}
+              <div className={[
+                "relative w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300",
+                "border",
+                isDragging
+                  ? "border-white/40 bg-white/10"
+                  : "border-white/10 bg-white/[0.04] group-hover:border-white/25 group-hover:bg-white/[0.07]",
+              ].join(" ")}>
+                <CameraIcon className="w-9 h-9 text-white/40 group-hover:text-white/65 transition-colors duration-300" />
+              </div>
+
+              {/* Text stack */}
+              <div className="relative text-center flex flex-col items-center gap-3">
+                <p
+                  className="font-sans text-white/80 group-hover:text-white transition-colors duration-200"
+                  style={{ fontSize: "15px", letterSpacing: "0.01em" }}
+                >
                   {t("face_drop")}
-                </span>
-                <p className="text-white/22 text-[10px] font-mono tracking-wider">{t("face_hint")}</p>
-                <p className="font-mono text-[9px] text-white/30 tracking-[.08em] text-center mt-2 max-w-xs">
+                </p>
+                <p className="text-white/25 text-[10px] font-mono tracking-[.1em]">{t("face_hint")}</p>
+                <p className="font-mono text-[9px] text-white/20 tracking-[.08em] text-center max-w-xs leading-relaxed mt-1">
                   {t("face_privacy_note")}
                 </p>
               </div>
@@ -341,9 +359,9 @@ function RetryButton({ onClick, label }: { onClick: () => void; label: string })
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
-function CameraIcon() {
+function CameraIcon({ className = "w-8 h-8 text-white/25" }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white/25"
+    <svg xmlns="http://www.w3.org/2000/svg" className={className}
       fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
       <path strokeLinecap="round" strokeLinejoin="round"
         d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
