@@ -53,7 +53,7 @@ export default function ApplyPage() {
 
   if (submitted) {
     return (
-      <div className="bg-black min-h-screen flex flex-col items-center justify-center px-8 text-center">
+      <div className="bg-black min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 text-center">
         <p className="font-mono text-[10px] tracking-[.2em] uppercase text-white/30 mb-6">
           {t("apply_eyebrow")}
         </p>
@@ -75,12 +75,12 @@ export default function ApplyPage() {
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="max-w-xl mx-auto px-8 py-24">
+      <div className="max-w-xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
         {/* Header */}
         <p className="font-mono text-[10px] tracking-[.2em] uppercase text-white/30 mb-6">
           {t("apply_eyebrow")}
         </p>
-        <h1 className="font-display font-light text-4xl sm:text-5xl text-white mb-2">
+        <h1 className="font-display font-light text-3xl sm:text-5xl text-white mb-2">
           {t("apply_h1_1")}{" "}
           <span className="text-white/30">{t("apply_h1_2")}</span>
         </h1>

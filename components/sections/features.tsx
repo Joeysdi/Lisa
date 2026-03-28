@@ -37,8 +37,8 @@ export function Features() {
   const { t } = useLocale();
 
   return (
-    <section id="features" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
-      <div className="w-full max-w-6xl px-8">
+    <section id="features" className="bg-white py-16 sm:py-24 border-t border-black/8 flex flex-col items-center">
+      <div className="w-full max-w-6xl px-5 sm:px-8">
 
         <FadeUp className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -59,7 +59,7 @@ export function Features() {
         <StaggerParent className="grid grid-cols-1 md:grid-cols-3 gap-0 border-b border-black/8">
           {pillars.map((p, idx) => (
             <StaggerChild key={p.tKey}>
-              <div className={`bg-white p-8 flex flex-col gap-5 h-full${idx < pillars.length - 1 ? " border-r border-black/8" : ""}`}>
+              <div className={`bg-white p-5 sm:p-8 flex flex-col gap-5 h-full${idx < pillars.length - 1 ? " md:border-r border-black/8" : ""}`}>
                 <div>
                   <div
                     className="font-display font-light text-black mb-1"

@@ -20,8 +20,8 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-6xl px-8">
+    <section id="how" className="bg-surface-dark py-16 sm:py-24 border-t border-white/6 flex flex-col items-center">
+      <div className="w-full max-w-6xl px-5 sm:px-8">
 
         <FadeUp className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -53,7 +53,7 @@ export function HowItWorks() {
                     {s.title}
                   </h3>
                 </div>
-                <p className="text-white/55 text-base font-sans leading-relaxed pl-10 max-w-2xl">
+                <p className="text-white/55 text-base font-sans leading-relaxed pl-7 sm:pl-10 max-w-2xl">
                   {s.desc}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export function HowItWorks() {
 
         {/* Stats strip */}
         <FadeUp delay={0.1} className="mt-14 pt-10 border-t border-white/6">
-          <div className="flex flex-wrap gap-8 justify-start">
+          <div className="flex flex-wrap gap-5 sm:gap-8 justify-start">
             {stats.map(s => (
               <span key={s.key} className="font-mono text-[10px] text-white/35 tracking-[.15em]">
                 {t(s.key)}

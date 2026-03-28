@@ -11,7 +11,7 @@ export function Hero() {
     <section className="min-h-screen bg-black flex flex-col overflow-hidden relative">
 
       {/* Main content — vertically centered */}
-      <div className="relative z-10 flex-1 flex items-center justify-center px-8 pt-24 pb-16">
+      <div className="relative z-10 flex-1 flex items-center justify-center px-5 sm:px-8 pt-24 pb-16">
         <StaggerParent className="flex flex-col items-center text-center max-w-4xl w-full mx-auto">
 
           {/* Eyebrow */}
@@ -60,7 +60,7 @@ export function Hero() {
 
       {/* Bottom strip — 4 static stats */}
       <div className="relative z-10 border-t border-white/6 w-full">
-        <div className="max-w-6xl mx-auto w-full px-8 py-5 flex flex-wrap gap-x-8 gap-y-2">
+        <div className="max-w-6xl mx-auto w-full px-5 sm:px-8 py-5 flex flex-wrap gap-x-5 sm:gap-x-8 gap-y-2">
           {([t("hero_stat1"), t("hero_stat2"), t("hero_stat3"), t("hero_stat4")] as string[]).map(s => (
             <span key={s} className="font-mono text-[10px] text-white/60 tracking-[.15em]">{s}</span>
           ))}

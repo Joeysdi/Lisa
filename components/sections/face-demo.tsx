@@ -145,8 +145,8 @@ export function FaceDemo() {
   // ── Render ─────────────────────────────────────────────────────────────────
 
   return (
-    <section className="bg-black border-t border-white/6 py-24 flex justify-center">
-      <div className="max-w-2xl w-full px-8">
+    <section className="bg-black border-t border-white/6 py-16 sm:py-24 flex justify-center">
+      <div className="max-w-2xl w-full px-5 sm:px-8">
 
         {/* Header */}
         <FadeUp>
@@ -180,7 +180,7 @@ export function FaceDemo() {
               onClick={() => fileInputRef.current?.click()}
               className={[
                 "group cursor-pointer transition-all duration-300",
-                "flex flex-col items-center justify-center gap-8 py-20 px-8",
+                "flex flex-col items-center justify-center gap-5 py-12 sm:py-20 px-5 sm:px-8",
                 "border border-dashed relative overflow-hidden",
                 isDragging
                   ? "border-white/50 bg-white/[0.06]"
@@ -200,12 +200,12 @@ export function FaceDemo() {
                 "absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300",
                 isDragging ? "opacity-100" : "opacity-0 group-hover:opacity-100",
               ].join(" ")}>
-                <div className="w-64 h-64 rounded-full bg-white/[0.03] blur-3xl" />
+                <div className="w-40 h-40 sm:w-64 sm:h-64 rounded-full bg-white/[0.03] blur-3xl" />
               </div>
 
               {/* Icon */}
               <div className={[
-                "relative w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300",
+                "relative w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all duration-300",
                 "border",
                 isDragging
                   ? "border-white/40 bg-white/10"

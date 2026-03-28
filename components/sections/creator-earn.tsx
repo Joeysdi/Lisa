@@ -15,8 +15,8 @@ export function CreatorEarn() {
   const { t } = useLocale();
 
   return (
-    <section id="creator-earn" className="bg-black py-24 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-5xl px-8 flex flex-col items-center">
+    <section id="creator-earn" className="bg-black py-16 sm:py-24 border-t border-white/6 flex flex-col items-center">
+      <div className="w-full max-w-5xl px-5 sm:px-8 flex flex-col items-center">
 
         {/* A. Section header */}
         <FadeUp className="text-center max-w-2xl">
@@ -45,7 +45,7 @@ export function CreatorEarn() {
             {steps.map(({ num, tKey, dKey }) => (
               <StaggerChild
                 key={num}
-                className="px-6 py-4 [&:not(:last-child)]:border-r [&:not(:last-child)]:border-white/6"
+                className="px-6 py-4 [&:not(:last-child)]:border-b sm:[&:not(:last-child)]:border-b-0 sm:[&:not(:last-child)]:border-r border-white/6"
               >
                 <span className="font-mono text-white/20 text-xs mb-4 block">{num}</span>
                 <p className="font-display font-light text-white" style={{ fontSize: "22px" }}>
@@ -78,7 +78,7 @@ export function CreatorEarn() {
 
         {/* D. Stat strip */}
         <FadeUp className="w-full max-w-4xl mt-10">
-          <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center">
+          <div className="flex flex-wrap gap-x-5 sm:gap-x-8 gap-y-3 justify-center">
             {(["earn_stat1", "earn_stat2", "earn_stat3"] as const).map(key => (
               <span key={key} className="font-mono text-[10px] text-white/30 tracking-[.15em] uppercase">
                 {t(key)}
@@ -89,7 +89,7 @@ export function CreatorEarn() {
 
         {/* E. CTA band */}
         <FadeUp className="w-full max-w-4xl mt-14 pt-10 border-t border-white/6">
-          <div className="border border-white/12 px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="border border-white/12 px-5 py-6 sm:px-8 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
               <p className="font-mono text-[9px] text-white/25 tracking-[.2em] uppercase mb-2">
                 {t("earn_cta_sub")}

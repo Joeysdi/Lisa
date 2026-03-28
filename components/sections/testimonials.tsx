@@ -30,8 +30,8 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="proof" className="bg-surface-dark py-24 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-6xl px-8">
+    <section id="proof" className="bg-surface-dark py-16 sm:py-24 border-t border-white/6 flex flex-col items-center">
+      <div className="w-full max-w-6xl px-5 sm:px-8">
 
         {/* Header */}
         <FadeUp className="mb-12 text-center">
@@ -73,7 +73,7 @@ export function Testimonials() {
         <FadeUp delay={0.1}>
           <div className="mt-14 pt-10 border-t border-white/6 text-center">
             <p className="text-[9px] tracking-[.3em] uppercase text-white/15 mb-6 font-sans">As seen in</p>
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
               {press.map(p => (
                 <span key={p}
                   className="text-white/30 hover:text-white/55 text-xs tracking-widest font-sans

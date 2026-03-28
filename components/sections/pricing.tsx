@@ -41,7 +41,7 @@ const featureRows = [
 
 function Cell({ ok }: { ok: boolean }) {
   return (
-    <td className="px-4 py-4 text-center font-mono text-sm">
+    <td className="px-3 py-3 sm:px-4 sm:py-4 text-center font-mono text-sm">
       {ok
         ? <span className="text-black">✓</span>
         : <span className="text-black/15">—</span>
@@ -65,8 +65,8 @@ export function Pricing() {
   }
 
   return (
-    <section id="pricing" className="bg-white py-24 border-t border-black/8 flex flex-col items-center">
-      <div className="w-full max-w-5xl px-8">
+    <section id="pricing" className="bg-white py-16 sm:py-24 border-t border-black/8 flex flex-col items-center">
+      <div className="w-full max-w-5xl px-5 sm:px-8">
 
         <FadeUp className="mb-12 text-center">
           {/* Section marker */}
@@ -107,14 +107,14 @@ export function Pricing() {
         {/* Feature comparison table */}
         <FadeUp delay={0.08}>
           <div className="overflow-x-auto border border-black/8">
-            <table className="w-full text-sm">
+            <table className="w-full min-w-[580px] text-sm">
               <thead>
                 <tr className="border-b border-black/8">
                   {/* Feature label col */}
-                  <th className="text-left px-5 py-5 w-1/2" />
+                  <th className="text-left px-3 py-3 sm:px-5 sm:py-5 w-1/2" />
 
                   {/* Free */}
-                  <th className="px-4 py-5 text-center align-top">
+                  <th className="px-3 py-3 sm:px-5 sm:py-5 text-center align-top">
                     <div className="flex flex-col items-center gap-2">
                       <span className="text-[9px] tracking-[.3em] uppercase text-black/35 font-sans">{t("tier_free_name")}</span>
                       <span className="font-display font-light text-3xl text-black leading-none">{t("tier_free_price")}</span>
@@ -159,7 +159,7 @@ export function Pricing() {
                   </th>
 
                   {/* Enterprise */}
-                  <th className="px-4 py-5 text-center align-top">
+                  <th className="px-3 py-3 sm:px-5 sm:py-5 text-center align-top">
                     <div className="flex flex-col items-center gap-2">
                       <span className="text-[9px] tracking-[.3em] uppercase text-black/35 font-sans">{t("tier_ent_name")}</span>
                       <span className="font-display font-light text-3xl text-black leading-none">{t("tier_ent_price")}</span>
@@ -174,9 +174,9 @@ export function Pricing() {
               <tbody>
                 {featureRows.map(row => (
                   <tr key={row.label} className="border-b border-black/5 last:border-0 hover:bg-black/[0.015] transition-colors">
-                    <td className="px-5 py-4 text-black/55 font-sans">{row.label}</td>
+                    <td className="px-3 py-3 sm:px-5 sm:py-4 text-black/55 font-sans">{row.label}</td>
                     <Cell ok={row.free} />
-                    <td className="px-4 py-4 text-center font-mono text-sm bg-black/[0.03]">
+                    <td className="px-3 py-3 sm:px-4 sm:py-4 text-center font-mono text-sm bg-black/[0.03]">
                       {row.pro
                         ? <span className="text-black">✓</span>
                         : <span className="text-black/15">—</span>

@@ -29,8 +29,8 @@ export function GetStarted() {
   }
 
   return (
-    <section id="get-started" className="bg-black py-32 border-t border-white/6 flex flex-col items-center">
-      <div className="w-full max-w-2xl px-8">
+    <section id="get-started" className="bg-black py-16 sm:py-32 border-t border-white/6 flex flex-col items-center">
+      <div className="w-full max-w-2xl px-5 sm:px-8">
 
         <FadeUp className="w-full text-center">
           <span className="text-[10px] tracking-[.35em] uppercase font-sans text-white/30 mb-6 block text-center">
