@@ -339,6 +339,23 @@ export const translations = {
     mkt_req_type:       "ประเภทครีเอเตอร์ที่ต้องการ",
     mkt_req_submit:     "ส่งคำขอ",
     mkt_req_success:    "ได้รับคำขอแล้ว เราจะติดต่อกลับภายใน 24 ชั่วโมง",
+
+    // CRO — new keys
+    pricing_annual_label:   "รายปี — ประหยัด 20% ($120/ปี)",
+    trust_gdpr:             "GDPR Compliant",
+    trust_no_sell:          "ไม่ขายข้อมูล",
+    trust_encrypted:        "เข้ารหัสทั้งระบบ",
+    face_privacy_note:      "รูปของคุณถูกวิเคราะห์ในเบราว์เซอร์เท่านั้น ไม่มีอะไรถูกอัปโหลดออกไป",
+    hero_soft_cta:          "ดูวิธีการทำงาน ↓",
+    sticky_cta_label:       "เริ่มฟรี — ไม่ต้องใช้บัตรเครดิต",
+    gs_role_model:          "นางแบบ / ครีเอเตอร์",
+    gs_role_actor:          "นักแสดง",
+    gs_role_agency:         "เอเจนซี่",
+    gs_role_brand:          "แบรนด์",
+    gs_role_other:          "อื่นๆ",
+    exit_h:                 "ก่อนจะไป — ใบหน้าของคุณถูกสแกนไปแล้ว 847 ครั้งวันนี้",
+    exit_sub:               "เริ่มต้นการตรวจสอบฟรีใน 2 นาที",
+    exit_email_placeholder: "อีเมลของคุณ",
   },
 
   en: {
@@ -668,6 +685,23 @@ export const translations = {
     mkt_req_type:       "Creator type needed",
     mkt_req_submit:     "Send request",
     mkt_req_success:    "Request received. We'll be in touch within 24 hours.",
+
+    // CRO — new keys
+    pricing_annual_label:   "Annual — Save 20% ($120/yr)",
+    trust_gdpr:             "GDPR Compliant",
+    trust_no_sell:          "Data Never Sold",
+    trust_encrypted:        "End-to-End Encrypted",
+    face_privacy_note:      "Your photo is analyzed entirely in your browser. Nothing is ever uploaded.",
+    hero_soft_cta:          "How it works ↓",
+    sticky_cta_label:       "Start Free — No Credit Card",
+    gs_role_model:          "Model / Creator",
+    gs_role_actor:          "Actor",
+    gs_role_agency:         "Agency",
+    gs_role_brand:          "Brand",
+    gs_role_other:          "Other",
+    exit_h:                 "Before you go — your face was scanned 847 times today.",
+    exit_sub:               "Start free monitoring in 2 minutes.",
+    exit_email_placeholder: "Your email",
   },
 } as const;
 

@@ -62,21 +62,28 @@ export function GetStarted() {
                            placeholder:text-white/25 font-sans focus:outline-none focus:border-white/40
                            transition-colors"
               />
-              <select
-                required
-                value={role}
-                onChange={e => setRole(e.target.value)}
-                className="w-full bg-black border border-white/15 px-4 py-3 text-sm text-white
-                           font-sans focus:outline-none focus:border-white/40 transition-colors
-                           appearance-none"
-              >
-                <option value="" disabled>{t("demo_role")}</option>
-                <option value="model">{t("demo_role1")}</option>
-                <option value="actor">{t("demo_role2")}</option>
-                <option value="agency">{t("demo_role3")}</option>
-                <option value="brand">{t("demo_role4")}</option>
-                <option value="other">{t("demo_role5")}</option>
-              </select>
+              <div className="flex flex-wrap gap-2">
+                {([
+                  { value: "model",  label: t("gs_role_model")  },
+                  { value: "actor",  label: t("gs_role_actor")  },
+                  { value: "agency", label: t("gs_role_agency") },
+                  { value: "brand",  label: t("gs_role_brand")  },
+                  { value: "other",  label: t("gs_role_other")  },
+                ] as { value: string; label: string }[]).map(opt => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setRole(opt.value)}
+                    className={`px-4 py-2 text-[11px] font-sans tracking-[.06em] transition-colors border
+                      ${role === opt.value
+                        ? "bg-white text-black border-white"
+                        : "bg-transparent text-white/50 border-white/20 hover:border-white/40 hover:text-white/70"
+                      }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
               <Button
                 variant="primary"
                 type="submit"
@@ -90,7 +97,10 @@ export function GetStarted() {
             {status === "error" && (
               <p className="text-white/40 text-xs font-sans mt-3 text-center">Something went wrong. Please try again.</p>
             )}
-            <p className="text-white/25 text-xs font-sans mt-6 text-center">{t("gs_privacy")}</p>
+            <p className="font-mono text-[9px] tracking-[.1em] uppercase text-white/30 text-center mt-4">
+              {t("trust_gdpr")} · {t("trust_no_sell")} · {t("trust_encrypted")}
+            </p>
+            <p className="text-white/25 text-xs font-sans mt-3 text-center">{t("gs_privacy")}</p>
           </FadeUp>
         )}
 

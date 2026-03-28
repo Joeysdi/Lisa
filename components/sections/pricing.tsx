@@ -9,21 +9,24 @@ import { Button } from "@/components/ui/button";
 const PRO_M = 49, PRO_A = 39;
 
 const featureRows = [
-  { label: "Face & voice monitoring",    free: true,  pro: true,  ent: true  },
-  { label: "Weekly scan reports",        free: true,  pro: true,  ent: true  },
-  { label: "Suspicious content alerts",  free: true,  pro: true,  ent: true  },
-  { label: "Personal dashboard",         free: true,  pro: true,  ent: true  },
+  // Pro-exclusive rows first (makes Pro look more powerful vs Free at a glance)
   { label: "Real-time scanning",         free: false, pro: true,  ent: true  },
   { label: "Automated DMCA",            free: false, pro: true,  ent: true  },
   { label: "Deepfake & AI detection",   free: false, pro: true,  ent: true  },
   { label: "Voice cloning protection",  free: false, pro: true,  ent: true  },
   { label: "Dark Web scanning",         free: false, pro: true,  ent: true  },
   { label: "Priority support",          free: false, pro: true,  ent: true  },
+  // Shared rows follow
+  { label: "Face & voice monitoring",    free: true,  pro: true,  ent: true  },
+  { label: "Weekly scan reports",        free: true,  pro: true,  ent: true  },
+  { label: "Suspicious content alerts",  free: true,  pro: true,  ent: true  },
+  { label: "Personal dashboard",         free: true,  pro: true,  ent: true  },
+  { label: "Likeness marketplace (add-on)", free: false, pro: true,  ent: true  },
+  // Enterprise-only rows
   { label: "Unlimited talent mgmt",     free: false, pro: false, ent: true  },
   { label: "Developer API access",      free: false, pro: false, ent: true  },
   { label: "White-label reporting",     free: false, pro: false, ent: true  },
   { label: "Legal team access",         free: false, pro: false, ent: true  },
-  { label: "Likeness marketplace (add-on)", free: false, pro: true,  ent: true  },
 ];
 
 function Cell({ ok }: { ok: boolean }) {
@@ -74,7 +77,7 @@ export function Pricing() {
                     transition={{ type: "spring", stiffness: 400, damping: 30 }} />
                 )}
                 <span className="relative">
-                  {isA ? `${t("pricing_annual")} — ${t("pricing_save")}` : t("pricing_monthly")}
+                  {isA ? t("pricing_annual_label") : t("pricing_monthly")}
                 </span>
               </button>
             ))}
@@ -105,6 +108,9 @@ export function Pricing() {
                   {/* Pro */}
                   <th className="px-4 py-5 text-center align-top bg-black/[0.03]">
                     <div className="flex flex-col items-center gap-2">
+                      <span className="bg-black text-white text-[9px] font-mono tracking-[.15em] px-2 py-0.5 uppercase">
+                        {t("tier_pro_badge")}
+                      </span>
                       <span className="text-[9px] tracking-[.3em] uppercase text-black/35 font-sans">{t("tier_pro_name")}</span>
                       <span className="font-display font-light text-3xl text-black leading-none">
                         ${annual ? PRO_A : PRO_M}
@@ -115,6 +121,9 @@ export function Pricing() {
                       <Button variant="primary" href="#get-started" size="sm" className="mt-2 w-full justify-center">
                         {t("tier_pro_cta")}
                       </Button>
+                      <p className="font-mono text-[9px] tracking-[.1em] uppercase text-black/30 text-center leading-relaxed">
+                        {t("trust_gdpr")} · {t("trust_no_sell")} · {t("trust_encrypted")}
+                      </p>
                       <div className="mt-2 border border-black/12 px-3 py-1.5 w-full text-center">
                         <span className="font-mono text-[9px] tracking-[.15em] text-black/35 uppercase">
                           {t("pricing_addon_badge")}

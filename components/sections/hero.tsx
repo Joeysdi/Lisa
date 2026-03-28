@@ -40,10 +40,19 @@ export function Hero() {
 
           {/* CTA */}
           <StaggerChild>
-            <Button variant="primary" href="#get-started"
-              style={{ padding: "8px 16px", fontSize: "11px", letterSpacing: "0.08em" }}>
-              {t("hero_cta1")}
-            </Button>
+            <div className="flex flex-col items-center">
+              <Button variant="primary" href="#get-started"
+                style={{ padding: "8px 16px", fontSize: "11px", letterSpacing: "0.08em" }}>
+                {t("hero_cta1")}
+              </Button>
+              <span className="font-mono text-[9px] text-white/35 tracking-[.12em] uppercase mt-3">
+                {t("hero_stat1")}
+              </span>
+              <a href="#how"
+                className="text-white/30 hover:text-white/60 text-[10px] font-mono tracking-[.15em] uppercase transition-colors mt-4 block">
+                {t("hero_soft_cta")}
+              </a>
+            </div>
           </StaggerChild>
 
         </StaggerParent>
@@ -53,7 +62,7 @@ export function Hero() {
       <div className="relative z-10 border-t border-white/6 w-full">
         <div className="max-w-6xl mx-auto w-full px-8 py-5 flex flex-wrap gap-x-8 gap-y-2">
           {([t("hero_stat1"), t("hero_stat2"), t("hero_stat3"), t("hero_stat4")] as string[]).map(s => (
-            <span key={s} className="font-mono text-[10px] text-white/30 tracking-[.15em]">{s}</span>
+            <span key={s} className="font-mono text-[10px] text-white/60 tracking-[.15em]">{s}</span>
           ))}
         </div>
       </div>

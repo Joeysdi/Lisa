@@ -1,6 +1,7 @@
 import { Nav }              from "@/components/layout/nav";
 import { Footer }           from "@/components/layout/footer";
 import { Hero }             from "@/components/sections/hero";
+import { ThreatTicker }     from "@/components/sections/threat-ticker";
 import { ProblemAgitation } from "@/components/sections/problem-agitation";
 import { HowItWorks }       from "@/components/sections/how-it-works";
 import { Features }         from "@/components/sections/features";
@@ -19,14 +20,15 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
+        <ThreatTicker />
         <FaceDemo />
         <ProblemAgitation />
         <HowItWorks />
         <Features />
         <Testimonials />
         <Pricing />
-        <CreatorEarn />
         <Faq />
+        <CreatorEarn />
         <GetStarted />
       </main>
       <Footer />

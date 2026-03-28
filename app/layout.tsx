@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/locale-context";
+import { StickyCta } from "@/components/ui/sticky-cta";
+import { ExitIntent } from "@/components/ui/exit-intent";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin", "latin-ext"],
@@ -57,6 +59,8 @@ export default function RootLayout({
       <body>
         <LocaleProvider>
           {children}
+          <StickyCta />
+          <ExitIntent />
         </LocaleProvider>
       </body>
     </html>

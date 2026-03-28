@@ -205,6 +205,9 @@ export function FaceDemo() {
                   {t("face_drop")}
                 </span>
                 <p className="text-white/22 text-[10px] font-mono tracking-wider">{t("face_hint")}</p>
+                <p className="font-mono text-[9px] text-white/30 tracking-[.08em] text-center mt-2 max-w-xs">
+                  {t("face_privacy_note")}
+                </p>
               </div>
             </div>
           </FadeUp>
