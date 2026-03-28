@@ -160,7 +160,7 @@ export function FaceDemo() {
             >
               {t("face_h2")}
             </h2>
-            <p className="text-white/50 text-sm font-sans leading-relaxed max-w-xl mx-auto text-center">
+            <p className="text-white/50 text-sm font-sans leading-relaxed text-center">
               {t("face_sub")}
             </p>
           </div>
